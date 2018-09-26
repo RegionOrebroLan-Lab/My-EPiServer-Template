@@ -1,0 +1,25 @@
+<Project>
+	<Target Name="DeployScriptsToApplicationDataDirectory" AfterTargets="PublishScripts">
+		<PropertyGroup>
+			<_DestinationFolder>$(SolutionDir)Application\App_Data\</_DestinationFolder>
+			<_SourceFile>$(OutputPath)$(SqlTargetName).sql</_SourceFile>
+		</PropertyGroup>
+		<Message
+			Importance="high"
+			Text="Copying '$(_SourceFile)' to '$(_DestinationFolder)'."
+		/>
+		<Copy DestinationFolder="$(_DestinationFolder)" SourceFiles="$(_SourceFile)" />
+	</Target>
+	<Target Name="PublishScripts" AfterTargets="AfterBuild">
+		<SqlPublishTask SourceModel="@(SqlTarget)" SqlPublishProfilePath="Build.publish.xml" UpdateDatabase="false" />
+	</Target>
+	<Target Name="ResolveVersion" AfterTargets="CoreCompile">
+		<GetAssemblyIdentity AssemblyFiles="$(IntermediateTargetFullFileName)">
+			<Output PropertyName="IntermediateTargetAssembly" TaskParameter="Assemblies" />
+		</GetAssemblyIdentity>
+		<PropertyGroup>
+			<DacVersion>$(IntermediateTargetAssembly.Split(',')[1].Split('=')[1])</DacVersion>
+		</PropertyGroup>
+		<Message Importance="high" Text="Setting dac-version to $(DacVersion)." />
+	</Target>
+</Project>

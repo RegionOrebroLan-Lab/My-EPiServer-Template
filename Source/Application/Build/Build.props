@@ -1,0 +1,28 @@
+<Project>
+	<PropertyGroup>
+		<AssemblyName>MyCompany.MyWebApplication</AssemblyName>
+		<CodeAnalysisRuleSet>CodeAnalysis\Rules.ruleset</CodeAnalysisRuleSet>
+		<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+		<PackagesDirectory Condition="$(PackagesDirectory) == ''">$(SolutionDir)packages\</PackagesDirectory>
+		<RunCodeAnalysis>true</RunCodeAnalysis>
+	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<FileToCopy>
+			<CopyAlways>false</CopyAlways>
+		</FileToCopy>
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<FileToCopy Include="$(PackagesDirectory)EPiServer.*\content\modules\_protected\**\*">
+			<DestinationFile>$([System.String]::Copy(%(RecursiveDir)).Split('\', StringSplitOptions.RemoveEmptyEntries))</DestinationFile>
+			<DestinationFile>$([System.String]::Copy(%(DestinationFile)).Replace($([System.String]::Copy(%(DestinationFile)).Split(';')[0]), '').Trim(';'))</DestinationFile>
+			<DestinationFile>$([System.String]::Copy(%(DestinationFile)).Replace($([System.String]::Copy(%(DestinationFile)).Split(';')[0]), '').Trim(';'))</DestinationFile>
+			<DestinationFile>$([System.String]::Copy(%(DestinationFile)).Replace($([System.String]::Copy(%(DestinationFile)).Split(';')[0]), '').Trim(';'))</DestinationFile>
+			<DestinationFile>$([System.String]::Copy(%(DestinationFile)).Replace($([System.String]::Copy(%(DestinationFile)).Split(';')[0]), '').Trim(';'))</DestinationFile>
+			<DestinationFile>$([System.String]::Copy(%(DestinationFile)).Replace(';', '\'))</DestinationFile>
+			<DestinationFile>Modules\_Protected\%(DestinationFile)\%(Filename)%(Extension)</DestinationFile>
+		</FileToCopy>
+		<FileToCopy Include="$(PackagesDirectory)EPiServer.CMS.*\content\App_Data\GeoLiteCity.dat">
+			<DestinationFile>App_Data\%(Filename)%(Extension)</DestinationFile>
+		</FileToCopy>
+	</ItemGroup>
+</Project>

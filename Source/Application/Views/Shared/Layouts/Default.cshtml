@@ -1,0 +1,30 @@
+@model IPageViewModel<SitePage>
+<!DOCTYPE html>
+<html>
+	<head>
+		@Html.Partial("~/Views/Shared/Layouts/Parts/HtmlHead.cshtml", Model)
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="/">Home</a>
+			<button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" type="button">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="/">Home again</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/">Home yet again</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main role="main" class="container">
+			<h1>@Model.CurrentPage.Name</h1>
+			@RenderBody()
+		</main><!-- /.container -->
+		@Html.Partial("~/Views/Shared/Layouts/Parts/Scripts.cshtml", Model)
+	</body>
+</html>

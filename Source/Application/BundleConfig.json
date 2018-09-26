@@ -1,0 +1,23 @@
+[
+	{
+		"inputFiles": [
+			"Style/Libraries/bootstrap.css",
+			"Style/Main.css"
+		],
+		"outputFileName": "Style/Site.min.css"
+	},
+	{
+		"inputFiles": [
+			"Scripts/Libraries/jquery.js",
+			"Scripts/Libraries/popper.js",
+			"Scripts/Libraries/bootstrap.js",
+			"Scripts/Main.js"
+		],
+		"minify": {
+			"enabled": true,
+			"renameLocals": true
+		},
+		"outputFileName": "Scripts/Site.min.js",
+		"sourceMap": false
+	}
+]

@@ -1,0 +1,6 @@
+<Project>
+	<PropertyGroup>
+		<AssemblyName>MyCompany.MyWebApplication.UnitTests</AssemblyName>
+		<CodeAnalysisRuleSet>CodeAnalysis\Rules.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+</Project>

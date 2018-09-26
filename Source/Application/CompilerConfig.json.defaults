@@ -1,0 +1,26 @@
+{
+	"compilers": {
+		"sass": {
+			"includePath": "",
+			"indentType": "tab",
+			"indentWidth": 1,
+			"outputStyle": "nested",
+			"precision": 5,
+			"relativeUrls": true,
+			"sourceMapRoot": "",
+			"sourceMap": false
+		}
+	},
+	"minifiers": {
+		"css": {
+			"enabled": false,
+			"gzip": false,
+			"termSemicolons": true
+		},
+		"javascript": {
+			"enabled": false,
+			"gzip": false,
+			"termSemicolons": true
+		}
+	}
+}

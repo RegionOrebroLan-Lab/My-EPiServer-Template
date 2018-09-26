@@ -1,0 +1,20 @@
+<!-- https://docs.microsoft.com/en-us/visualstudio/code-quality/how-to-customize-the-code-analysis-dictionary?view=vs-2017 -->
+<Dictionary>
+	<Acronyms>
+		<CasingExceptions>
+			<!--<Acronym></Acronym>-->
+		</CasingExceptions>
+	</Acronyms>
+	<Words>
+		<DiscreteExceptions>
+			<Term>epi</Term>
+		</DiscreteExceptions>
+		<Recognized>
+			<Word>epi</Word>
+			<Word>mvc</Word>
+		</Recognized>
+		<Unrecognized>
+			<!--<Word></Word>-->
+		</Unrecognized>
+	</Words>
+</Dictionary>

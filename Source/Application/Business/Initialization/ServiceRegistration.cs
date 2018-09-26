@@ -1,0 +1,47 @@
+﻿using System;
+using System.IO.Abstractions;
+using EPiServer.Data.SchemaUpdates;
+using EPiServer.Framework;
+using EPiServer.Framework.Initialization;
+using EPiServer.ServiceLocation;
+using MyCompany.MyWebApplication.Business.Configuration;
+using MyCompany.MyWebApplication.Business.Data.SchemaUpdates;
+using MyCompany.MyWebApplication.Business.Personalization;
+using MyCompany.MyWebApplication.Business.Web;
+using MyCompany.MyWebApplication.Business.Web.Profile;
+
+namespace MyCompany.MyWebApplication.Business.Initialization
+{
+	/// <summary>
+	/// The module-dependency to MyCompany.EPiServer.Initialization.DataInitialization is important.
+	/// The first thing that is done in MyCompany.EPiServer.Initialization.DataInitialization is that all
+	/// registrations for ISchemaUpdater are removed. See:
+	/// https://github.com/MyCompany/EPiServer-Initialization/blob/master/Source/Project/DataInitialization.cs#L25
+	/// So our registration context.Services.AddSingleton&lt;ISchemaUpdater, ExtensionsSchemaUpdater&gt;(); must come after.
+	/// </summary>
+	[InitializableModule]
+	[ModuleDependency(typeof(RegionOrebroLan.EPiServer.Initialization.DataInitialization))]
+	public class ServiceRegistration : IConfigurableModule
+	{
+		#region Methods
+
+		public virtual void ConfigureContainer(ServiceConfigurationContext context)
+		{
+			if(context == null)
+				throw new ArgumentNullException(nameof(context));
+
+			context.Services.AddSingleton(AppDomain.CurrentDomain);
+			context.Services.AddSingleton<IConfigurationManager, ConfigurationManagerWrapper>();
+			context.Services.AddSingleton<IFileSystem, FileSystem>();
+			context.Services.AddSingleton<IProfileManager, ProfileManagerWrapper>();
+			context.Services.AddSingleton<IProfileRepository, ProfileRepository>();
+			context.Services.AddSingleton<ISchemaUpdater, ExtensionsSchemaUpdater>();
+			context.Services.AddSingleton<IWebFacade, WebFacade>();
+		}
+
+		public virtual void Initialize(InitializationEngine context) { }
+		public virtual void Uninitialize(InitializationEngine context) { }
+
+		#endregion
+	}
+}

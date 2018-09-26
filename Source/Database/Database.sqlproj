@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="Build\Build.props" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <DacApplicationName>$(AssemblyName)</DacApplicationName>
+    <DacVersion>$(Version)</DacVersion>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DefineTrace>true</DefineTrace>
+    <DeployToDatabase>True</DeployToDatabase>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <ErrorReport>prompt</ErrorReport>
+    <GenerateCreateScript>False</GenerateCreateScript>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <ModelCollation>1033, CI</ModelCollation>
+    <OutputType>Database</OutputType>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{f8b3c236-dccf-4d69-a8f1-2ad3e784626c}</ProjectGuid>
+    <ProjectVersion>4.1</ProjectVersion>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+    <SchemaVersion>2.0</SchemaVersion>
+    <SqlServerVerification>False</SqlServerVerification>
+    <SqlTargetName>$(AssemblyName)</SqlTargetName>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <TargetConnectionString>Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=$(DatabaseName);Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
+    <TargetDatabase>$(DatabaseName)</TargetDatabase>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Compile Include="Properties\Assembly-information.cs" />
+    <Folder Include="Build\" />
+    <None Include="Build\Build.props" />
+    <None Include="Build\Build.targets" />
+    <Folder Include="Scripts\" />
+    <None Include="Scripts\First.sql" />
+    <PostDeploy Include="Scripts\PostDeployment.sql" />
+    <None Include="Scripts\Second.sql" />
+    <Folder Include="Tables\" />
+    <Build Include="Tables\Test.sql" />
+    <None Include="Build.publish.xml" />
+  </ItemGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Project="Build\Build.targets" />
+</Project>

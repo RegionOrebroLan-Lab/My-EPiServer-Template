@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="false" Service="EPiServer.Search.IndexingService.IndexingService" Factory="MyCompany.MyWebApplication.Services.IndexingServiceHostFactory" %>
