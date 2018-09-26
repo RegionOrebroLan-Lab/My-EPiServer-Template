@@ -70,7 +70,7 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 
 		protected internal virtual bool IncludeAssembly(Assembly assembly)
 		{
-			const string name = "MyCompany";
+			const string name = "RegionOrebroLan";
 			var assemblyName = assembly?.GetName().Name;
 
 			// ReSharper disable InvertIf
