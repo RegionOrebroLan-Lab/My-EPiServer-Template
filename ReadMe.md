@@ -32,4 +32,4 @@ To change it:
 3. Change Project/ProjectExtensions/VisualStudio/FlavorProperties/WebProjectProperties/IISUrl from **https://localhost:44377/** to what you want
 4. Reload the Application-project
 
-You should also change this value: [baseUri="https://localhost:44377/Services/IndexingService.svc"](/Source/Application/Web.config#L102)
+You should also change this value: [baseUri="https://localhost:44377/Services/IndexingService.svc"](/Source/Application/Web.config#L107)
