@@ -6,7 +6,7 @@ These values are in files in the solution so you can use **Replace in Files** (C
 
 For example in the **Application**-project:
 - [**&lt;AssemblyName&gt;MyCompany.MyWebApplication&lt;/AssemblyName&gt;**](/Source/Application/Build/Build.props#L3) is in the [**Build\Build.props**](/Source/Application/Build/Build.props)-file
-- [**&lt;RootNamespace&gt;$(AssemblyName)&lt;/RootNamespace&gt;**](/Source/Application/Application.csproj#L3) is in the [**Application.csproj**](/Source/Application/Application.csproj)-file
+- [**&lt;RootNamespace&gt;$(AssemblyName)&lt;/RootNamespace&gt;**](/Source/Application/Application.csproj#L18) is in the [**Application.csproj**](/Source/Application/Application.csproj)-file
 
 You also should change the name of the solution file, [**MyCompany-MyWebApplication.sln**](/Source/MyCompany-MyWebApplication.sln).
 
