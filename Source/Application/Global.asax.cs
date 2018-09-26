@@ -11,14 +11,14 @@ using EPiServer.ServiceLocation;
 using EPiServer.Shell.Security;
 using log4net;
 using log4net.Config;
-using RegionOrebroLan.EPiServer.Framework.Initialization;
 using MyCompany.MyWebApplication.Business.Personalization;
 using MyCompany.MyWebApplication.Business.Web.Profile;
+using RegionOrebroLan.EPiServer.Framework.Initialization;
 
 namespace MyCompany.MyWebApplication
 {
 	[SuppressMessage("Microsoft.Naming", "CA1716:Identifiers should not match keywords")]
-	public class Global : global::EPiServer.Global
+	public class Global : EPiServer.Global
 	{
 		#region Fields
 
