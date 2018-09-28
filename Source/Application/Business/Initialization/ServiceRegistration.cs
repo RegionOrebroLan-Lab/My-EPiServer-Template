@@ -13,10 +13,10 @@ using MyCompany.MyWebApplication.Business.Web.Profile;
 namespace MyCompany.MyWebApplication.Business.Initialization
 {
 	/// <summary>
-	/// The module-dependency to MyCompany.EPiServer.Initialization.DataInitialization is important.
-	/// The first thing that is done in MyCompany.EPiServer.Initialization.DataInitialization is that all
+	/// The module-dependency to RegionOrebroLan.EPiServer.Initialization.DataInitialization is important.
+	/// The first thing that is done in RegionOrebroLan.EPiServer.Initialization.DataInitialization is that all
 	/// registrations for ISchemaUpdater are removed. See:
-	/// https://github.com/MyCompany/EPiServer-Initialization/blob/master/Source/Project/DataInitialization.cs#L25
+	/// https://github.com/RegionOrebroLan/EPiServer-Initialization/blob/master/Source/Project/DataInitialization.cs#L25
 	/// So our registration context.Services.AddSingleton&lt;ISchemaUpdater, ExtensionsSchemaUpdater&gt;(); must come after.
 	/// </summary>
 	[InitializableModule]
