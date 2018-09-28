@@ -43,15 +43,15 @@ namespace MyCompany.MyWebApplication
 		#region Methods
 
 		[SuppressMessage("Microsoft.Naming", "CA1707:Identifiers should not contain underscores")]
-		protected void Application_Start(object sender, EventArgs e)
-		{
-			AreaRegistration.RegisterAllAreas();
-		}
-
-		[SuppressMessage("Microsoft.Naming", "CA1707:Identifiers should not contain underscores")]
 		protected void Application_AuthenticateRequest()
 		{
 			this.CreateAdministratorIfNecessary();
+		}
+
+		[SuppressMessage("Microsoft.Naming", "CA1707:Identifiers should not contain underscores")]
+		protected void Application_Start(object sender, EventArgs e)
+		{
+			AreaRegistration.RegisterAllAreas();
 		}
 
 		protected internal virtual void CreateAdministratorIfNecessary()
@@ -60,7 +60,7 @@ namespace MyCompany.MyWebApplication
 				return;
 
 			_firstRequest = false;
-			// ReSharper disable All
+
 			if(!this.Request.IsLocal)
 				return;
 
@@ -78,7 +78,7 @@ namespace MyCompany.MyWebApplication
 				const string administrationRoleName = "WebAdmins";
 				var roleProvider = ServiceLocator.Current.GetInstance<UIRoleProvider>();
 				roleProvider.CreateRole(administrationRoleName);
-				roleProvider.AddUserToRoles(user.Username, new string[] {administrationRoleName});
+				roleProvider.AddUserToRoles(user.Username, new[] {administrationRoleName});
 
 				var profileManager = ServiceLocator.Current.GetInstance<IProfileManager>();
 				if(profileManager.Enabled)
@@ -92,12 +92,16 @@ namespace MyCompany.MyWebApplication
 				var contentSecurityRepository = ServiceLocator.Current.GetInstance<IContentSecurityRepository>();
 				var contentSecurityDescriptor = contentSecurityRepository.Get(ContentReference.RootPage).CreateWritableClone() as IContentSecurityDescriptor;
 
+				// ReSharper disable PossibleNullReferenceException
 				contentSecurityDescriptor.AddEntry(new AccessControlEntry(administrationRoleName, AccessLevel.FullAccess));
+				// ReSharper restore PossibleNullReferenceException
 				contentSecurityRepository.Save(ContentReference.RootPage, contentSecurityDescriptor, SecuritySaveType.Replace);
 			}
 			else
 			{
+				// ReSharper disable PossibleMultipleEnumeration
 				throw new InvalidOperationException("Could not create administrator.", errors.Any() ? new InvalidOperationException(errors.First()) : null);
+				// ReSharper restore PossibleMultipleEnumeration
 			}
 		}
 
