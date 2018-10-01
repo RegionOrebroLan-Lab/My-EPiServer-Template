@@ -1,5 +1,34 @@
 <Project>
-	<Target Name="CopyFiles" BeforeTargets="BeforeBuild">
+
+
+
+
+
+
+	<Target Name="PopulateFileToCopy">
+		<ItemGroup>
+			<FileToCopy Include="$(PackagesDirectory)EPiServer.*\content\modules\_protected\**\*">
+				<DestinationFile>Modules\_Protected\$([System.String]::Copy(%(RecursiveDir)).Split('\', StringSplitOptions.RemoveEmptyEntries)[4])\%(Filename)%(Extension)</DestinationFile>
+			</FileToCopy>
+			<FileToCopy Include="$(PackagesDirectory)EPiServer.CMS.*\content\App_Data\GeoLiteCity.dat">
+				<DestinationFile>App_Data\%(Filename)%(Extension)</DestinationFile>
+			</FileToCopy>
+		</ItemGroup>
+	</Target>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	<Target Name="CopyFiles" BeforeTargets="BeforeBuild" DependsOnTargets="PopulateFileToCopy">
 		<Message Importance="High" Text="Info: DestinationFile = '%(FileToCopy.DestinationFile)', CopyAlways = '%(FileToCopy.CopyAlways)'" />
 		<!--
 		<Message
