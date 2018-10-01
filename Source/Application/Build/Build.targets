@@ -1,4 +1,20 @@
 <Project>
+	<Target Name="CopyFiles" BeforeTargets="BeforeBuild">
+		<Message Importance="High" Text="Info: DestinationFile = '%(FileToCopy.DestinationFile)', CopyAlways = '%(FileToCopy.CopyAlways)'" />
+		<!--
+		<Message
+			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
+			Importance="high"
+			Text="Target 'CopyFiles': Copying '%(FileToCopy.FullPath)' to '%(DestinationFile)'."
+		/>
+		<Copy
+			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
+			DestinationFiles="%(DestinationFile)"
+			SourceFiles="%(FileToCopy.FullPath)"
+		/>
+		-->
+	</Target>
+	<!--
 	<Target Name="CopyFiles" BeforeTargets="BeforeBuild" Condition="@(FileToCopy) != ''">
 		<Message
 			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
@@ -11,6 +27,7 @@
 			SourceFiles="%(FileToCopy.FullPath)"
 		/>
 	</Target>
+	-->
 	<Target Name="EnsureConnectionsFile" BeforeTargets="PrepareForRun">
 		<PropertyGroup>
 			<_DestinationFile>Connections.config</_DestinationFile>
@@ -31,6 +48,7 @@
 			SourceFiles="$(_SourceFile)"
 		/>
 	</Target>
+	<!--
 	<Target Name="ValidateCopyFiles" AfterTargets="BeforeBuild">
 		<PropertyGroup>
 			<EPiServerCmsModuleWebConfigPath>Modules\_Protected\CMS\Web.config</EPiServerCmsModuleWebConfigPath>
@@ -45,4 +63,5 @@
 			Text="The EPiServer-modules and the EPiServer-geolocation-file has not been copied. Try rebuild the solution again."
 		/>
 	</Target>
+	-->
 </Project>
