@@ -1,9 +1,5 @@
 <Project>
 	<Target Name="CopyFiles" AfterTargets="Build" DependsOnTargets="PopulateFilesToCopy">
-		<Message Importance="High" Text="-" />
-		<Message Importance="High" Text="DestinationFile = %(FileToCopy.DestinationFile), CopyAlways = %(CopyAlways)" />
-		<Message Importance="High" Text="-" />
-		<!--
 		<Message
 			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
 			Importance="high"
@@ -14,7 +10,6 @@
 			DestinationFiles="%(DestinationFile)"
 			SourceFiles="%(FileToCopy.FullPath)"
 		/>
-		-->
 	</Target>
 	<Target Name="EnsureConnectionsFile" BeforeTargets="PrepareForRun">
 		<PropertyGroup>
