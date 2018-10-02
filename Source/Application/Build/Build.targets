@@ -1,35 +1,8 @@
 <Project>
-
-
-
-
-
-
-	<Target Name="PopulateFileToCopy">
-		<ItemGroup>
-			<FileToCopy Include="$(PackagesDirectory)EPiServer.*\content\modules\_protected\**\*">
-				<DestinationFile>Modules\_Protected\$([System.String]::Copy(%(RecursiveDir)).Split('\', StringSplitOptions.RemoveEmptyEntries)[4])\%(Filename)%(Extension)</DestinationFile>
-			</FileToCopy>
-			<FileToCopy Include="$(PackagesDirectory)EPiServer.CMS.*\content\App_Data\GeoLiteCity.dat">
-				<DestinationFile>App_Data\%(Filename)%(Extension)</DestinationFile>
-			</FileToCopy>
-		</ItemGroup>
-	</Target>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	<Target Name="CopyFiles" BeforeTargets="BeforeBuild" DependsOnTargets="PopulateFileToCopy">
-		<Message Importance="High" Text="Info: DestinationFile = '%(FileToCopy.DestinationFile)', CopyAlways = '%(FileToCopy.CopyAlways)'" />
+	<Target Name="CopyFiles" AfterTargets="Build" DependsOnTargets="PopulateFilesToCopy">
+		<Message Importance="High" Text="-" />
+		<Message Importance="High" Text="DestinationFile = %(FileToCopy.DestinationFile), CopyAlways = %(CopyAlways)" />
+		<Message Importance="High" Text="-" />
 		<!--
 		<Message
 			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
@@ -43,20 +16,6 @@
 		/>
 		-->
 	</Target>
-	<!--
-	<Target Name="CopyFiles" BeforeTargets="BeforeBuild" Condition="@(FileToCopy) != ''">
-		<Message
-			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
-			Importance="high"
-			Text="Target 'CopyFiles': Copying '%(FileToCopy.FullPath)' to '%(DestinationFile)'."
-		/>
-		<Copy
-			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
-			DestinationFiles="%(DestinationFile)"
-			SourceFiles="%(FileToCopy.FullPath)"
-		/>
-	</Target>
-	-->
 	<Target Name="EnsureConnectionsFile" BeforeTargets="PrepareForRun">
 		<PropertyGroup>
 			<_DestinationFile>Connections.config</_DestinationFile>
@@ -77,20 +36,18 @@
 			SourceFiles="$(_SourceFile)"
 		/>
 	</Target>
-	<!--
-	<Target Name="ValidateCopyFiles" AfterTargets="BeforeBuild">
-		<PropertyGroup>
-			<EPiServerCmsModuleWebConfigPath>Modules\_Protected\CMS\Web.config</EPiServerCmsModuleWebConfigPath>
-			<EPiServerGeolocationFilePath>App_Data\GeoLiteCity.dat</EPiServerGeolocationFilePath>
-		</PropertyGroup>
-		<Error
-			Condition="!Exists('$(EPiServerGeolocationFilePath)') AND @(FileToCopy) == ''"
-			Text="The files to copy are unexpectedly empty. Try rebuild the solution again."
-		/>
-		<Error
-			Condition="!Exists('$(EPiServerGeolocationFilePath)') OR !Exists('$(EPiServerCmsModuleWebConfigPath)')"
-			Text="The EPiServer-modules and the EPiServer-geolocation-file has not been copied. Try rebuild the solution again."
-		/>
+	<Target Name="PopulateFilesToCopy">
+		<ItemGroup>
+			<_ApplicationDataFileToCopy Include="$(PackagesDirectory)EPiServer.CMS.*\content\App_Data\GeoLiteCity.dat" />
+			<_ModuleFileToCopy Include="$(PackagesDirectory)EPiServer.*\content\modules\_protected\**\*" />
+		</ItemGroup>
+		<ItemGroup>
+			<FileToCopy Include="@(_ApplicationDataFileToCopy)">
+				<DestinationFile>App_Data\%(_ApplicationDataFileToCopy.Filename)%(_ApplicationDataFileToCopy.Extension)</DestinationFile>
+			</FileToCopy>
+			<FileToCopy Include="@(_ModuleFileToCopy)">
+				<DestinationFile>Modules\_Protected\$([System.String]::Copy(%(_ModuleFileToCopy.RecursiveDir)).Split('\', StringSplitOptions.RemoveEmptyEntries)[4])\%(_ModuleFileToCopy.Filename)%(_ModuleFileToCopy.Extension)</DestinationFile>
+			</FileToCopy>
+		</ItemGroup>
 	</Target>
-	-->
 </Project>
