@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web.Mvc;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
-using EPiServer.Framework.Initialization;
 using EPiServer.Security;
 using EPiServer.ServiceLocation;
 using EPiServer.Shell.Security;
@@ -13,7 +12,6 @@ using log4net;
 using log4net.Config;
 using MyCompany.MyWebApplication.Business.Personalization;
 using MyCompany.MyWebApplication.Business.Web.Profile;
-using RegionOrebroLan.EPiServer.Framework.Initialization;
 
 namespace MyCompany.MyWebApplication
 {
@@ -34,8 +32,6 @@ namespace MyCompany.MyWebApplication
 			// Check if log4net is configured, if not configure it with "Log.config".
 			if(!LogManager.GetRepository().Configured)
 				XmlConfigurator.ConfigureAndWatch(new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "Log.config"));
-
-			Initializer.Initialize(HostType.WebApplication);
 		}
 
 		#endregion

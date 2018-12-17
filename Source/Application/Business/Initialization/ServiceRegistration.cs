@@ -16,7 +16,7 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 	/// The module-dependency to RegionOrebroLan.EPiServer.Initialization.DataInitialization is important.
 	/// The first thing that is done in RegionOrebroLan.EPiServer.Initialization.DataInitialization is that all
 	/// registrations for ISchemaUpdater are removed. See:
-	/// https://github.com/RegionOrebroLan/EPiServer-Initialization/blob/master/Source/Project/DataInitialization.cs#L25
+	/// https://github.com/RegionOrebroLan/EPiServer-Initialization/blob/master/Source/Project/DataInitialization.cs#L30
 	/// So our registration context.Services.AddSingleton&lt;ISchemaUpdater, ExtensionsSchemaUpdater&gt;(); must come after.
 	/// </summary>
 	[InitializableModule]
