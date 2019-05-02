@@ -23,6 +23,7 @@ namespace MyCompany.MyWebApplication.IntegrationTests
 		[SuppressMessage("Usage", "CA1801:Review unused parameters")]
 		public static void AssemblyInitialize(TestContext testContext) { }
 
+		[SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters")]
 		public static string GetDirectoryPath(Type type)
 		{
 			if(type == null)
