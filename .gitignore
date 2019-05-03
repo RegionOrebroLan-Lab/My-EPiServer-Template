@@ -262,12 +262,18 @@ __pycache__/
 
 # Custom
 Source/Application/App_Data/*
-Source/Application/Connections.config
-Source/Application/Modules/
-Source/Application/Scripts/*.min.js
-Source/Application/Style/Main.css
-Source/Application/Style/*.min.css
-
 !Source/Application/App_Data/DefaultSiteContent.episerverdata
 !Source/Application/App_Data/EPiServer.Data.Resources.SqlCreateScripts.zip-Replacements.zip
+Source/Application/Connections.config
+Source/Application/Modules/
+Source/Application/Scripts/*
+!Source/Application/Scripts/.gitkeep
+Source/Application/Style/*
+!Source/Application/Style/.gitkeep
+
 !Source/Database/Build.publish.xml
+
+Source/Prototype/wwwroot/Scripts/
+Source/Prototype/wwwroot/Style/
+Source/Prototype/package-lock.json
+Source/Prototype/yarn.lock

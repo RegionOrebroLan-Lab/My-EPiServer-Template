@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Global", ".Global", "{EB0E655E-23ED-4ED4-A1D3-F8F168C76862}"
 EndProject
@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{F00C334F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{1D7D5F1A-63B2-4C94-BEFA-68F2606350E1}"
 	ProjectSection(SolutionItems) = preProject
+		..\.editorconfig = ..\.editorconfig
 		..\.gitignore = ..\.gitignore
 	EndProjectSection
 EndProject
@@ -34,6 +35,8 @@ EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{F8B3C236-DCCF-4D69-A8F1-2AD3E784626C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integration-tests", "Integration-tests\Integration-tests.csproj", "{E2B680A8-29F5-44E3-BA58-BD61F43718C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype", "Prototype\Prototype.csproj", "{BFC3E2EA-3203-44C1-980F-4B5ED6534ADF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit-tests", "Unit-tests\Unit-tests.csproj", "{7F1DC351-ABD0-4290-BF95-2E1F361C3E79}"
 EndProject
@@ -57,6 +60,10 @@ Global
 		{E2B680A8-29F5-44E3-BA58-BD61F43718C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2B680A8-29F5-44E3-BA58-BD61F43718C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2B680A8-29F5-44E3-BA58-BD61F43718C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC3E2EA-3203-44C1-980F-4B5ED6534ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC3E2EA-3203-44C1-980F-4B5ED6534ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC3E2EA-3203-44C1-980F-4B5ED6534ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC3E2EA-3203-44C1-980F-4B5ED6534ADF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F1DC351-ABD0-4290-BF95-2E1F361C3E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F1DC351-ABD0-4290-BF95-2E1F361C3E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F1DC351-ABD0-4290-BF95-2E1F361C3E79}.Release|Any CPU.ActiveCfg = Release|Any CPU

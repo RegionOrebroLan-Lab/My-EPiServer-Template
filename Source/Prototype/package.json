@@ -1,0 +1,35 @@
+{
+	"author": "Region Örebro län, https://regionorebrolan.se",
+	"description": "Prototype: regionorebrolan.se",
+	"dependencies": {
+		"bootstrap": "^4.3.1",
+		"jquery": "^3.3.1",
+		"popper.js": "^1.14.7",
+		"reset-css": "^4.0.1",
+		"svgxuse": "^1.2.6"
+	},
+	"devDependencies": {
+		"@types/bootstrap": "^4.3.0",
+		"del": "^4.1.0",
+		"gulp": "^4.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-rename": "^1.4.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-svg-sprite": "^1.5.0",
+		"rollup": "^1.8.0",
+		"rollup-plugin-commonjs": "^9.3.4",
+		"rollup-plugin-node-resolve": "^4.1.0",
+		"rollup-plugin-typescript": "^1.0.1",
+		"rollup-plugin-uglify": "^6.0.2",
+		"tslib": "^1.9.3",
+		"typescript": "^3.4.5"
+	},
+	"name": "@regionorebrolan/prototype",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/RegionOrebroLan-Lab/My-EPiServer-Template/"
+	},
+	"version": "0.0.0"
+}

@@ -355,21 +355,20 @@
 		<Content Include="Modules\_Protected\Shell\Shell.zip" />
 		<Content Include="Modules\_Protected\Shell\Web.config" />
 		<Compile Include="Properties\Assembly-information.cs" />
-		<Content Include="Scripts\Libraries\bootstrap.js" />
-		<Content Include="Scripts\Libraries\jquery.js" />
-		<Content Include="Scripts\Libraries\popper.js" />
-		<Content Include="Scripts\Main.js" />
-		<Content Include="Scripts\Site.min.js" />
+		<Content Include="Scripts\Libraries\TinyMCE\Cultures\sv-SE.js" />
+		<Content Include="Scripts\Site.js" />
+		<Content Include="Scripts\Site.min.js">
+			<DependentUpon>Site.js</DependentUpon>
+		</Content>
 		<Content Include="Services\IndexingService.svc" />
 		<Compile Include="Services\IndexingServiceHostFactory.cs" />
-		<Content Include="Style\Libraries\bootstrap.css" />
-		<None Include="Style\Parts\Alerts.scss" />
-		<None Include="Style\Parts\Forms.scss" />
-		<None Include="Style\Parts\Framework.scss" />
-		<None Include="Style\Parts\Variables.scss" />
-		<Content Include="Style\Main.css" />
-		<None Include="Style\Main.scss" />
-		<Content Include="Style\Site.min.css" />
+		<Content Include="Style\Icons\sprite.svg" />
+		<Content Include="Style\Images\logo.png" />
+		<Content Include="Style\Images\logo.svg" />
+		<Content Include="Style\Site.css" />
+		<Content Include="Style\Site.min.css">
+			<DependentUpon>Site.css</DependentUpon>
+		</Content>
 		<Content Include="Views\InformationPage\Index.cshtml" />
 		<Content Include="Views\Shared\Layouts\Parts\HtmlHead.cshtml" />
 		<Content Include="Views\Shared\Layouts\Parts\Scripts.cshtml" />
@@ -380,11 +379,6 @@
 			<SubType>Designer</SubType>
 		</Content>
 		<Content Include="Application-offline.html" />
-		<None Include="BundleConfig.json" />
-		<None Include="CompilerConfig.json" />
-		<None Include="CompilerConfig.json.defaults">
-			<DependentUpon>CompilerConfig.json</DependentUpon>
-		</None>
 		<None Include="Connections.config" />
 		<None Include="Connections.Default.config">
 			<DependentUpon>Connections.config</DependentUpon>
@@ -495,19 +489,9 @@
 	<ItemGroup>
 		<Folder Include="Models\Blocks\" />
 		<Folder Include="Models\Forms\" />
-		<Folder Include="Scripts\Modules\" />
 	</ItemGroup>
 	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 	<Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
 	<Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-	<Import Project="..\packages\BuildBundlerMinifier.2.9.406\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.2.9.406\build\BuildBundlerMinifier.targets')" />
-	<Import Project="..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets" Condition="Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" />
 	<Import Project="Build\Build.targets" />
-	<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-		<PropertyGroup>
-			<ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-		</PropertyGroup>
-		<Error Condition="!Exists('..\packages\BuildBundlerMinifier.2.9.406\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.2.9.406\build\BuildBundlerMinifier.targets'))" />
-		<Error Condition="!Exists('..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildWebCompiler.1.12.394\build\BuildWebCompiler.targets'))" />
-	</Target>
 </Project>

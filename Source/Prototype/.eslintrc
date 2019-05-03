@@ -1,0 +1,8 @@
+{
+	"rules": {
+		"comma-dangle": [ "error", "never" ],
+		"eol-last": [ "error", "never" ],
+		"indent": [ "error", "tab" ],
+		"quotes": [ "error", "double" ]
+	}
+}

@@ -1,0 +1,109 @@
+﻿@using System.Collections
+@{
+	var atHome = this.ViewData["At-Home"] as bool? ?? false;
+	var mainNavigation = ViewData["Main-Navigation"] ?? new[]
+	{
+		new
+		{
+			Color = "blue",
+			ContentColor = "blue2",
+			Path = "/InformationPage/",
+			Title = "Information 1"
+		},
+		new
+		{
+			Color = "pink",
+			ContentColor = "pink",
+			Path = "/InformationPage/",
+			Title = "Information 2"
+		}
+		,
+		new
+		{
+			Color = "green",
+			ContentColor = "green",
+			Path = "/InformationPage/",
+			Title = "Information 3"
+		}
+	};
+}
+<header class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand-lg">
+					<a accesskey="1" class="navbar-brand@(atHome ? " -active" : string.Empty)" href="/" title="Nära Cancer">
+						<svg class="icon -logo" role="presentation">
+							<use xlink:href="/Style/Icons/sprite.svg#nara-cancer-logo" />
+						</svg>
+					</a>
+					<div class="collapse navbar-collapse">
+						<ul class="nav m-auto">
+							@foreach(var item in (IEnumerable)mainNavigation)
+							{
+								var color = item.GetType().GetProperty("Color").GetValue(item);
+								var contentColor = item.GetType().GetProperty("ContentColor").GetValue(item);
+								var path = item.GetType().GetProperty("Path").GetValue(item);
+								var title = item.GetType().GetProperty("Title").GetValue(item);
+								var active = Equals(title, this.ViewData["Title"]);
+								<li class="nav-item -@color@(active ? " -active" : string.Empty)">
+									<a class="nav-link" href="@path?Color=@contentColor&Title=@title">@title</a>
+								</li>
+							}
+						</ul>
+					</div>
+					<ul class="nav justify-content-end">
+						<li class="nav-item">
+							<a accesskey="s" aria-haspopup="true" aria-label="Gör en sökning" class="nav-link-search js-menuSearchTrigger js-menuTabWith" data-target="#searchModal" data-toggle="modal" href="#">
+								<svg class="icon -search" role="presentation">
+									<use xlink:href="/Style/Icons/sprite.svg#magnifying-glass" />
+								</svg>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a aria-haspopup="true" aria-label="Öppna menyn" class="nav-link-hamburger js-menuTrigger js-menuTabWith" data-target="#menu" href="#">
+								<span class="nav-link-hamburger-slice" role="presentation"></span>
+								<span class="nav-link-hamburger-slice" role="presentation"></span>
+								<span class="nav-link-hamburger-slice" role="presentation"></span>
+							</a>
+						</li>
+					</ul>
+					<div id="menu" class="menu-container" aria-hidden="true">
+						<ul class="menu">
+							@foreach (var item in (IEnumerable)mainNavigation)
+							{
+								var contentColor = item.GetType().GetProperty("ContentColor").GetValue(item);
+								var path = item.GetType().GetProperty("Path").GetValue(item);
+								var title = item.GetType().GetProperty("Title").GetValue(item);
+								<li class="menu-item">
+									<a class="menu-link" href="@path?Color=@contentColor&Title=@title">@title</a>
+								</li>
+							}
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+<div aria-hidden="true" class="modal search fade" id="searchModal" role="dialog" tabindex="-1">
+	<button class="search-dismiss" data-dismiss="modal" type="button">
+		<svg class="icon -close" role="presentation">
+			<use xlink:href="/Style/Icons/sprite.svg#cross" />
+		</svg>
+	</button>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form action="#" autocomplete="off" class="search-form" method="get" role="search">
+				<label class="visuallyhidden" for="s">Sök vad som helst …</label>
+				<button class="search-submit" type="submit">
+					<svg class="icon -search" role="presentation">
+						<use xlink:href="/Style/Icons/sprite.svg#magnifying-glass" />
+					</svg>
+				</button>
+				<input autocomplete="off" class="search-input" id="s" minlength="1" placeholder="Sök på näracancer.se" required="required" type="search" />
+				<span class="search-input-underline"></span>
+			</form>
+		</div>
+	</div>
+</div>

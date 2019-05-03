@@ -1,0 +1,122 @@
+// URL
+$base-URL: "/Style/";
+$image-URL: "#{$base-URL}Images/";
+
+// Colors
+$colors: (
+	bw: (
+		1: #001c34,
+		2: #b0b7bd,
+		3: #f2f2f2,
+		4: #fffbfc
+	),
+	blue: (
+		1: #46c6e1,
+		2: #96d9e5,
+		3: #d2f0f5
+	),
+	green: (
+		1: #b1e3cc,
+		2: #e1f3eb
+	),
+		pink: (
+		1: #ffd8e2,
+		2: #fff0f4
+	),
+	yellow: (
+		1: #fff1c7,
+		2: #fef9ea
+	),
+	error: #ff377d,
+	visited: #884380
+);
+
+$colorsToloopThrough: (
+	blue: map-get(map-get($colors, blue), 1),
+	blue2: map-get(map-get($colors, blue), 2),
+	blue3: map-get(map-get($colors, blue), 3),
+	green: map-get(map-get($colors, green), 1),
+	green2: map-get(map-get($colors, green), 2),
+	pink: map-get(map-get($colors, pink), 1),
+	pink2: map-get(map-get($colors, pink), 2),
+	yellow: map-get(map-get($colors, yellow), 1),
+	yellow2: map-get(map-get($colors, yellow), 2),
+	bw3: map-get(map-get($colors, bw), 3),
+	bw4: map-get(map-get($colors, bw), 4)
+);
+
+// Fonts
+$fonts: (
+	soleil: #{'soleil', helvetica, arial, sans-serif},
+	carlson: #{'adobe-caslon-pro', Georgia, serif},
+	playfair: #{'Playfair Display', Georgia, serif}
+);
+
+// Grid
+$grid-maxwidth: 96rem;
+$grid-padding-mobile: 1.5rem;
+$grid-padding-desktop: 1rem;
+
+// Z-Index
+$zIndex: (
+	tooltip: 9001,
+	modal: 9000,
+	menu: 8000,
+	chatBtn: 5000,
+	topBtn: 5001,
+	select: 2000
+);
+
+// Nav
+$header-pad-t: 2.7rem;
+$header-pad-b: 2.1rem;
+$header-border-w: 0.2rem;
+
+// Breakpoints
+$breakpoints: (
+	xs: 0,
+	sm: 577px,
+	md: 769px,
+	lg: 993px,
+	xl: 1201px
+);
+
+// Tweakpoints
+$tweakpoints: ();
+
+// Easings
+$easings: (
+	easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53),
+	easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+	easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22),
+	easeInQuint: cubic-bezier(0.755, 0.05, 0.855, 0.06),
+	easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715),
+	easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035),
+	easeInCirc: cubic-bezier(0.6, 0.04, 0.98, 0.335),
+	easeInBack: cubic-bezier(0.6, -0.28, 0.735, 0.045),
+	appleOut: cubic-bezier(0.4, 0.01, 0.165, 0.99),
+	swiftOut: cubic-bezier(0.55, 0, 0.1, 1),
+	easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+	easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+	easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1),
+	easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1),
+	easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1),
+	easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1),
+	easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1),
+	easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+	easeInOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+	easeInOutSine: cubic-bezier(0.39, 0.575, 0.565, 1),
+	easeInOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+	easeInOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1),
+	easeInOutQuint: cubic-bezier(0.23, 1, 0.32, 1),
+	easeInOutExpo: cubic-bezier(0.19, 1, 0.22, 1),
+	easeInOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1),
+	easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+);
+
+// hamburger
+$hamburger: (
+	width: 2rem,
+	thickness: 0.2rem,
+	spacing: 0.5rem
+);

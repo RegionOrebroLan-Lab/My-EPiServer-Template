@@ -1,0 +1,122 @@
+﻿@page
+@{
+	this.ViewData["Title"] = this.Request.Query["Title"].FirstOrDefault() ?? "Informations-sida";
+}
+<main id="main">
+	<button class="btn-top" id="scroll-to-top" style="display: none;">
+		<svg class="icon -top" role="presentation">
+			<use xlink:href="/Style/Icons/sprite.svg#top" />
+		</svg>
+	</button>
+	<button class="btn-chat">
+		<svg class="icon -speech-bubble" role="presentation">
+			<use xlink:href="/Style/Icons/sprite.svg#speech-bubble" />
+		</svg>
+	</button>
+	<section class="hero-image">
+		<img src="//placehold.it/1280x430" alt="" />
+	</section>
+	<section class="section -ingress text-center bg-color-@this.Request.Query["Color"].FirstOrDefault()">
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col-md-10">
+					<h1 class="title -h1">@this.ViewData["Title"]</h1>
+					<p class="ingress">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. In purus ex, suscipit dictum nulla a, pharetra posuere odio. Suspendisse faucibus quam eget mauris ultricies, in porta dui malesuada. Fusce pretium scelerisque mi a tempus. In at dolor quis tortor volutpat auctor eget nec lorem. Sed vitae nisi purus. Integer convallis, purus et tempus bibendum, lectus turpis sagittis leo, a dictum velit libero pretium lorem. Morbi efficitur augue eget posuere rutrum. Phasellus nec feugiat justo. Nulla ut augue ut libero suscipit condimentum a non justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis eu commodo ante.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="section js-shapeTrigger">
+		<section class="section-bottom container mb-5 mb-md-4">
+			<div class="row">
+				<div class="col-sm-4">
+					<article class="card">
+						<a href="#" class="card-link">
+							<div class="card-img-container">
+								<img src="https://placehold.it/1280x430"
+									 class="card-img-top"
+									 alt="Responsive image" />
+							</div>
+							<div class="card-body">
+								<h3 class="card-title">
+									Hur går egentligen en begravning till? Vi berättar.
+								</h3>
+								<div class="card-action">
+									<button class="btn btn-secondary -white" tabindex="-1">
+										Läs mer
+										<svg class="icon -arrow-right" role="presentation">
+											<use xlink:href="/Style/Icons/sprite.svg#arrow-right" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</a>
+					</article>
+				</div>
+			</div>
+			<div class="row text-center pt-3 pt-md-5">
+				<div class="col pt-md-1">
+					<button type="button" class="btn btn-primary">
+						Läs in fler artiklar
+					</button>
+				</div>
+			</div>
+		</section>
+		<section class="container">
+			<div class="row">
+				<div class="col">
+					<h2 class="title -h2">
+						Läs mer om cancer och olika behandlingar
+					</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 d-flex align-items-stretch">
+					<article class="card -big bg-color-green2">
+						<div class="card-img-top">
+							<img src="https://placehold.it/500x333"
+								 alt="Card image cap" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								Kan jag vara ledig från skolan eller jobbet för att ta hand
+								om min förälder?
+							</h3>
+							<div class="card-action">
+								<a href="#" class="btn btn-secondary -white">
+									Läs mer
+									<svg class="icon -arrow-right" role="presentation">
+										<use xlink:href="/Style/Icons/sprite.svg#arrow-right" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</article>
+				</div>
+				<div class="col-sm-6 d-flex align-items-stretch">
+					<article class="card -big bg-color-green2">
+						<div class="card-img-top">
+							<img src="https://placehold.it/500x233"
+								 alt="Card image cap" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">
+								Varför får man cancer – och kan man undvika det?
+							</h3>
+							<div class="card-action">
+								<a href="#" class="btn btn-secondary -white">
+									Läs mer
+									<svg class="icon -arrow-right" role="presentation">
+										<use xlink:href="/Style/Icons/sprite.svg#arrow-right" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+	</div>
+</main>

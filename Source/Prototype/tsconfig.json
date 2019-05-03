@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"noEmitOnError": false,
+		"noImplicitAny": false,
+		"sourceMap": true,
+		"target": "es5"
+	}
+}

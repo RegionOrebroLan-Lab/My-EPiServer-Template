@@ -1,0 +1,1 @@
+Katalog för script som vi inte kan "bundla".
