@@ -43,16 +43,6 @@
 	const styleDestinationDirectory = path.join(destinationRootDirectoryName, styleDirectoryName);
 	const styleSourceDirectory = styleDirectoryName;
 
-
-
-
-
-	async function writeRollupBundle(bundle, file, sourcemap) {
-		return bundle.write(createRollupOutputOptions(file, sourcemap)).then(console.log(" - writing \"" + file + "\"..."));
-	}
-
-
-
 	async function buildScriptBundle() {
 		console.log("Building script-bundle...");
 
@@ -263,6 +253,10 @@
 		]; 
 		
 		gulp.watch(patterns, buildScriptBundle);
+	}
+
+	async function writeRollupBundle(bundle, file, sourcemap) {
+		return bundle.write(createRollupOutputOptions(file, sourcemap)).then(console.log(" - writing \"" + file + "\"..."));
 	}
 
 	gulp.task("build-script-bundle", buildScriptBundle);
