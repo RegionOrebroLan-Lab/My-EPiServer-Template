@@ -50,16 +50,12 @@
 
 		var bundleName = "Site.js";
 
-		await rollup.rollup(createRollupInputOptions()).then(async bundle => {
-			await writeRollupBundle(bundle, path.join(scriptsDestinationDirectory, bundleName), true);
-			await writeRollupBundle(bundle, path.join(applicationScriptsDestinationDirectory, bundleName), true);
+		rollup.rollup(createRollupInputOptions()).then(bundle => {
+			writeScriptBundle(bundle, path.join(scriptsDestinationDirectory, bundleName), true);
 		});
 
-		await rollup.rollup(createRollupInputOptions(true)).then(async bundle => {
-			bundleName = bundleName.replace(".", ".min.");
-
-			await writeRollupBundle(bundle, path.join(scriptsDestinationDirectory, bundleName));
-			await writeRollupBundle(bundle, path.join(applicationScriptsDestinationDirectory, bundleName));
+		return rollup.rollup(createRollupInputOptions(true)).then(bundle => {
+			return writeScriptBundle(bundle, path.join(scriptsDestinationDirectory, bundleName.replace(".", ".min.")));
 		});
 	}
 
@@ -159,7 +155,11 @@
 		];
 
 		if (minify) {
-			plugins.push(rollupUglify.uglify());
+			plugins.push(rollupUglify.uglify({
+				output: {
+					comments: "/^!/"
+				}
+			}));
 		}
 
 		return {
@@ -255,8 +255,14 @@
 		gulp.watch(patterns, buildScriptBundle);
 	}
 
-	async function writeRollupBundle(bundle, file, sourcemap) {
-		return bundle.write(createRollupOutputOptions(file, sourcemap)).then(console.log(" - writing \"" + file + "\"..."));
+	async function writeScriptBundle(bundle, file, sourcemap) {
+		return bundle.write(createRollupOutputOptions(file, sourcemap)).then(() => {
+			return gulp.src(file)
+				.pipe(rename(item => {
+					item.dirname = "";
+				}))
+				.pipe(gulp.dest(applicationScriptsDestinationDirectory));
+		});
 	}
 
 	gulp.task("build-script-bundle", buildScriptBundle);
