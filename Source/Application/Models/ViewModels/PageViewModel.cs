@@ -1,7 +1,7 @@
 ﻿using System;
 using MyCompany.MyWebApplication.Models.Pages;
 
-namespace MyCompany.MyWebApplication.Models.ViewModels
+namespace MyCompany.MyWebApplication.Models.ViewModels.Internal
 {
 	public class PageViewModel<T> : IPageViewModel<T> where T : SitePage
 	{

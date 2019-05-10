@@ -4,11 +4,7 @@ using EPiServer.Data.SchemaUpdates;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using MyCompany.MyWebApplication.Business.Configuration;
 using MyCompany.MyWebApplication.Business.Data.SchemaUpdates;
-using MyCompany.MyWebApplication.Business.Personalization;
-using MyCompany.MyWebApplication.Business.Web;
-using MyCompany.MyWebApplication.Business.Web.Profile;
 
 namespace MyCompany.MyWebApplication.Business.Initialization
 {
@@ -31,12 +27,8 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 				throw new ArgumentNullException(nameof(context));
 
 			context.Services.AddSingleton(AppDomain.CurrentDomain);
-			context.Services.AddSingleton<IConfigurationManager, ConfigurationManagerWrapper>();
 			context.Services.AddSingleton<IFileSystem, FileSystem>();
-			context.Services.AddSingleton<IProfileManager, ProfileManagerWrapper>();
-			context.Services.AddSingleton<IProfileRepository, ProfileRepository>();
 			context.Services.AddSingleton<ISchemaUpdater, ExtensionsSchemaUpdater>();
-			context.Services.AddSingleton<IWebFacade, WebFacade>();
 		}
 
 		public virtual void Initialize(InitializationEngine context) { }

@@ -1,0 +1,11 @@
+﻿@model IViewModel
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@if(Model.Layout.Keywords.Any())
+{
+	<meta name="keywords" content="@string.Join(", ", Model.Layout.Keywords)" />
+}
+@if(!string.IsNullOrWhiteSpace(Model.Layout.Description))
+{
+	<meta name="description" content="@Model.Layout.Description" />
+}

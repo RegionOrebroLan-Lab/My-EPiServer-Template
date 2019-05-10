@@ -1,36 +1,14 @@
-﻿using System.Web.Mvc;
-using EPiServer.Web.Routing;
+﻿using MyCompany.MyWebApplication.Controllers.Internal;
 using MyCompany.MyWebApplication.Models.Pages;
-using MyCompany.MyWebApplication.Models.ViewModels;
+using MyCompany.MyWebApplication.Models.ViewModels.Internal;
 
 namespace MyCompany.MyWebApplication.Controllers
 {
-	public class DefaultPageController : SitePageController<SitePage>
+	public class DefaultPageController : SitePageController<SitePage, IPageViewModel<SitePage>>
 	{
-		#region Fields
-
-		private IPageViewModel<SitePage> _model;
-
-		#endregion
-
 		#region Constructors
 
-		public DefaultPageController(IContentRouteHelper contentRouteHelper) : base(contentRouteHelper) { }
-
-		#endregion
-
-		#region Properties
-
-		protected internal virtual IPageViewModel<SitePage> Model => this._model ?? (this._model = new PageViewModel<SitePage>(this.CurrentContent));
-
-		#endregion
-
-		#region Methods
-
-		public virtual ActionResult Index()
-		{
-			return this.View(this.ViewPath, this.Model);
-		}
+		public DefaultPageController(IControllerFacade facade) : base(facade) { }
 
 		#endregion
 	}

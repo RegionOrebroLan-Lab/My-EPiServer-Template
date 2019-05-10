@@ -1,8 +1,10 @@
 ﻿using System.Collections.Specialized;
 using System.Configuration;
+using EPiServer.ServiceLocation;
 
 namespace MyCompany.MyWebApplication.Business.Configuration
 {
+	[ServiceConfiguration(typeof(IConfigurationManager), Lifecycle = ServiceInstanceScope.Singleton)]
 	public class ConfigurationManagerWrapper : IConfigurationManager
 	{
 		#region Properties

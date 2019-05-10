@@ -3,10 +3,12 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Web.Profile;
 using EPiServer.Personalization;
+using EPiServer.ServiceLocation;
 using RegionOrebroLan.Abstractions;
 
 namespace MyCompany.MyWebApplication.Business.Personalization
 {
+	[ServiceConfiguration(typeof(IProfileRepository), Lifecycle = ServiceInstanceScope.Singleton)]
 	public class ProfileRepository : IProfileRepository
 	{
 		#region Methods

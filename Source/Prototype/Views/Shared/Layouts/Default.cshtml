@@ -46,12 +46,6 @@
 		}
 	</head>
 	<body>
-		<a accesskey="2" class="accessibility-first" href="#main">
-			Hoppa till huvudinnehållet
-			<svg class="icon -arrow-right" role="presentation">
-				<use xlink:href="/Style/Icons/sprite.svg#arrow-right" />
-			</svg>
-		</a>
 		@if(IsSectionDefined("Header"))
 		{
 			@RenderSection("Header")
@@ -60,7 +54,18 @@
 		{
 			<partial name="~/Views/Shared/Parts/Header.cshtml" />
 		}
-		@RenderBody()
+		@if(IsSectionDefined("Main"))
+		{
+			@RenderSection("Main")
+		}
+		else
+		{
+			<main role="main" class="container">
+				<h1>@ViewData["H1"]</h1>
+				@RenderBody()
+			</main>
+			<!-- /.container -->
+		}
 		@if(IsSectionDefined("Footer"))
 		{
 			@RenderSection("Footer")
@@ -69,7 +74,14 @@
 		{
 			<partial name="~/Views/Shared/Parts/Footer.cshtml" />
 		}
-		<partial name="~/Views/Shared/Parts/Scripts.cshtml" />
+		@if(IsSectionDefined("Scripts"))
+		{
+			@RenderSection("Scripts")
+		}
+		else
+		{
+			<partial name="~/Views/Shared/Parts/Scripts.cshtml" />
+		}
 		@if(IsSectionDefined("AdditionalScripts"))
 		{
 			@RenderSection("AdditionalScripts")
