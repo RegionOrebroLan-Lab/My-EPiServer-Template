@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	@if(Model.Layout.MainNavigation.Content != null)
 	{
-		@Html.ContentLink(Model.Layout.MainNavigation.Content, null, new {@class = "navbar-brand" + (Model.Layout.MainNavigation.Active ? " active" : string.Empty)})
+		@Html.ContentLink(Model.Layout.MainNavigation.Text, Model.Layout.MainNavigation.Content.ContentLink, null, new {@class = "navbar-brand" + (Model.Layout.MainNavigation.Active ? " active" : string.Empty)})
 	}
 	@if(Model.Layout.MainNavigation.Any())
 	{
@@ -14,7 +14,7 @@
 				@foreach(var node in Model.Layout.MainNavigation)
 				{
 					<li class="nav-item">
-						@Html.ContentLink(node.Content, null, new {@class = "nav-link" + (node.Active || node.ActiveAncestor ? " active" : string.Empty)})
+						@Html.ContentLink(node.Text, node.Content.ContentLink, null, new {@class = "nav-link" + (node.Active || node.ActiveAncestor ? " active" : string.Empty)})
 					</li>
 				}
 			</ul>
