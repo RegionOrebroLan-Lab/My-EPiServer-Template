@@ -2,28 +2,28 @@
 using System.Linq;
 using EPiServer;
 using EPiServer.Core;
-using EPiServer.Filters;
 using EPiServer.ServiceLocation;
 using EPiServer.Web;
-using MyCompany.MyWebApplication.Business.Filters;
 using MyCompany.MyWebApplication.Models.Navigation;
 
 namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 {
-	[ServiceConfiguration(typeof(ILayoutFactory), Lifecycle = ServiceInstanceScope.Singleton)]
+	[ServiceConfiguration(typeof(ILayoutFactory), Lifecycle = ServiceInstanceScope.Hybrid)]
 	public class LayoutFactory : ILayoutFactory
 	{
 		#region Fields
 
-		private IContentFilter _navigationFilter;
+		private static INavigationSettings _mainNavigationSettings;
+		private static INavigationSettings _subNavigationSettings;
 
 		#endregion
 
 		#region Constructors
 
-		public LayoutFactory(IContentLoader contentLoader, ISiteDefinitionResolver siteDefinitionResolver)
+		public LayoutFactory(IContentLoader contentLoader, INavigationFactory navigationFactory, ISiteDefinitionResolver siteDefinitionResolver)
 		{
 			this.ContentLoader = contentLoader ?? throw new ArgumentNullException(nameof(contentLoader));
+			this.NavigationFactory = navigationFactory ?? throw new ArgumentNullException(nameof(navigationFactory));
 			this.SiteDefinitionResolver = siteDefinitionResolver ?? throw new ArgumentNullException(nameof(siteDefinitionResolver));
 		}
 
@@ -32,8 +32,10 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		#region Properties
 
 		protected internal virtual IContentLoader ContentLoader { get; }
-		protected internal virtual IContentFilter NavigationFilter => this._navigationFilter ?? (this._navigationFilter = new CompositeFilter(new FilterContentForVisitor(), new VisibleInMenuFilter()));
+		protected internal virtual INavigationSettings MainNavigationSettings => _mainNavigationSettings ?? (_mainNavigationSettings = new NavigationSettings {Depth = 1});
+		protected internal virtual INavigationFactory NavigationFactory { get; }
 		protected internal virtual ISiteDefinitionResolver SiteDefinitionResolver { get; }
+		protected internal virtual INavigationSettings SubNavigationSettings => _subNavigationSettings ?? (_subNavigationSettings = new NavigationSettings());
 
 		#endregion
 
@@ -58,59 +60,44 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 
 			var startPageLink = this.SiteDefinitionResolver.GetByContent(content?.ContentLink, true)?.StartPage;
 
-			// ReSharper disable InvertIf
-			if(!ContentReference.IsNullOrEmpty(startPageLink))
-			{
-				var startPage = this.ContentLoader.Get<IContent>(startPageLink);
-
-				layout.MainNavigation = this.CreateMainNavigation(content, startPage);
-				layout.SubNavigation = this.CreateSubNavigation(content, startPage);
-			}
-			// ReSharper restore InvertIf
+			layout.MainNavigation = this.CreateMainNavigation(startPageLink);
+			layout.SubNavigation = this.CreateSubNavigation(content, startPageLink);
 
 			return layout;
 		}
 
-		protected internal virtual INavigationNode CreateMainNavigation(IContent content, IContent startPage)
+		protected internal virtual INavigationRoot CreateMainNavigation(ContentReference startPageLink)
 		{
-			return new NavigationNode(startPage, this.NavigationFilter, this.ContentLoader, null, content?.ContentLink)
-			{
-				Exclude = true
-			};
+			return this.NavigationFactory.Create(startPageLink, this.MainNavigationSettings);
 		}
 
-		protected internal virtual INavigationNode CreateSubNavigation(IContent content, IContent startPage)
+		protected internal virtual INavigationRoot CreateSubNavigation(IContent content, ContentReference startPageLink)
 		{
-			if(startPage == null)
-				throw new ArgumentNullException(nameof(startPage));
-
 			// We can check some property to get the root-container for the sub-menu.
 
-			var contentLink = content?.ContentLink;
+			ContentReference subNavigationRoot = null;
 
-			if(ContentReference.IsNullOrEmpty(contentLink))
-				return null;
-
-			var ancestors = this.ContentLoader.GetAncestors(contentLink).ToArray();
-
-			// ReSharper disable All
-			for(var i = 0; i < ancestors.Length; i++)
+			// ReSharper disable InvertIf
+			if(content != null && !ContentReference.IsNullOrEmpty(startPageLink))
 			{
-				var ancestor = ancestors[i];
+				// We can check some property on the content to get the root-container for the sub-menu.
 
-				if(ancestor.ContentLink.CompareToIgnoreWorkID(startPage.ContentLink))
+				var ancestors = this.ContentLoader.GetAncestors(content.ContentLink).ToArray();
+
+				for(var i = 0; i < ancestors.Length; i++)
 				{
-					var navigationRoot = i == 0 ? content : ancestors[i - 1];
+					var ancestor = ancestors[i];
 
-					return new NavigationNode(navigationRoot, this.NavigationFilter, this.ContentLoader, null, contentLink)
+					if(ancestor.ContentLink.CompareToIgnoreWorkID(startPageLink))
 					{
-						Exclude = true
-					};
+						subNavigationRoot = i == 0 ? content.ContentLink : ancestors[i - 1].ContentLink;
+						break;
+					}
 				}
 			}
-			// ReSharper restore All
+			// ReSharper restore InvertIf
 
-			return null;
+			return this.NavigationFactory.Create(subNavigationRoot, this.SubNavigationSettings);
 		}
 
 		#endregion

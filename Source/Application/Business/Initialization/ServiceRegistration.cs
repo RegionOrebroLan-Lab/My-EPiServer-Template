@@ -3,6 +3,7 @@ using System.IO.Abstractions;
 using EPiServer.Data.SchemaUpdates;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
+using EPiServer.Logging;
 using EPiServer.ServiceLocation;
 using MyCompany.MyWebApplication.Business.Data.SchemaUpdates;
 
@@ -29,6 +30,7 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 			context.Services.AddSingleton(AppDomain.CurrentDomain);
 			context.Services.AddSingleton<IFileSystem, FileSystem>();
 			context.Services.AddSingleton<ISchemaUpdater, ExtensionsSchemaUpdater>();
+			context.Services.AddSingleton(LogManager.LoggerFactory());
 		}
 
 		public virtual void Initialize(InitializationEngine context) { }

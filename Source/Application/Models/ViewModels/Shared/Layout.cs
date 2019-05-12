@@ -27,8 +27,8 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		public virtual CultureInfo Culture { get; set; }
 		public virtual string Description { get; set; }
 		public virtual IList<string> Keywords { get; } = new List<string>();
-		public virtual INavigationNode MainNavigation { get; set; }
-		public virtual INavigationNode SubNavigation { get; set; }
+		public virtual INavigationRoot MainNavigation { get; set; }
+		public virtual INavigationRoot SubNavigation { get; set; }
 		public virtual string Title { get; set; }
 
 		#endregion

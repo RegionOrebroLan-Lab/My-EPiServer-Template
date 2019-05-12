@@ -342,6 +342,12 @@
     <Compile Include="Controllers\Internal\IControllerFacade.cs" />
     <Compile Include="Controllers\Internal\SitePageController.cs" />
     <Compile Include="Controllers\Internal\SiteContentController.cs" />
+    <Compile Include="Models\Navigation\NavigationFactory.cs" />
+    <Compile Include="Models\Navigation\INavigationFactory.cs" />
+    <Compile Include="Models\Navigation\INavigationRoot.cs" />
+    <Compile Include="Models\Navigation\NavigationRoot.cs" />
+    <Compile Include="Models\Navigation\NavigationSettings.cs" />
+    <Compile Include="Models\Navigation\INavigationSettings.cs" />
     <Compile Include="Models\Navigation\INavigationNode.cs" />
     <Compile Include="Models\Navigation\NavigationNode.cs" />
     <Compile Include="Models\Pages\SitePage.cs" />
