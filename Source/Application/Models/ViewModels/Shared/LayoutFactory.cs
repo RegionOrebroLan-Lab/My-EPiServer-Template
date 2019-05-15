@@ -73,8 +73,6 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 
 		protected internal virtual INavigationRoot CreateSubNavigation(IContent content, ContentReference startPageLink)
 		{
-			// We can check some property to get the root-container for the sub-menu.
-
 			ContentReference subNavigationRoot = null;
 
 			// ReSharper disable InvertIf
