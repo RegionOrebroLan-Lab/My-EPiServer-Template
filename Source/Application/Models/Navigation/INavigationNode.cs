@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using EPiServer.Core;
 
 namespace MyCompany.MyWebApplication.Models.Navigation
 {
-	public interface INavigationNode
+	[SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
+	public interface INavigationNode : IEnumerable<INavigationNode>
 	{
 		#region Properties
 
@@ -23,6 +25,8 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 		IEnumerable<INavigationNode> Children { get; }
 
 		IContent Content { get; }
+		bool Include { get; }
+		int Index { get; }
 
 		/// <summary>
 		/// If the node is a leaf or not. If the node is a leaf it has no children to expand. If the node is not a leaf it has children to expand, but the children property can still be empty if the node is not expanded.
@@ -30,6 +34,12 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 		bool Leaf { get; }
 
 		int Level { get; }
+
+		/// <summary>
+		/// If the parent is null it is the root node.
+		/// </summary>
+		INavigationNode Parent { get; }
+
 		string Text { get; }
 
 		#endregion

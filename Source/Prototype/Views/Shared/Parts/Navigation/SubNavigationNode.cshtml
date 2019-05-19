@@ -1,0 +1,38 @@
+﻿@model INavigationNode
+@if(Model != null)
+{
+	if(Model.Parent == null && Model.Include)
+	{
+		@:<ul>
+	}
+	if(Model.Include)
+	{
+		@:<li class="@(((Model.Active ? " active" : string.Empty) + (Model.ActiveAncestor ? " active-ancestor" : string.Empty)).Trim())">
+		<a href="@Model.Url">
+			@Model.Text
+			@if(!Model.Leaf || Model.Active)
+			{
+				<svg class="icon" role="presentation">
+					<use xlink:href="/Style/Icons/sprite.svg#@(Model.Active ? "arrow-right" : Model.ActiveAncestor ? "chevron-down" : "chevron-up")"></use>
+				</svg>
+			}
+		</a>
+	}
+	if(Model.Children.Any())
+	{
+		<ul>
+			@foreach(var child in Model.Children)
+			{
+				<partial model="@child" name="~/Views/Shared/Parts/Navigation/SubNavigationNode.cshtml" />
+			}
+		</ul>
+	}
+	if(Model.Include)
+	{
+		@:</li>
+	}
+	if(Model.Parent == null && Model.Include)
+	{
+		@:</ul>
+	}
+}

@@ -11,8 +11,8 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		CultureInfo Culture { get; set; }
 		string Description { get; set; }
 		IList<string> Keywords { get; }
-		INavigationRoot MainNavigation { get; set; }
-		INavigationRoot SubNavigation { get; set; }
+		INavigationNode MainNavigation { get; set; }
+		INavigationNode SubNavigation { get; set; }
 		string Title { get; set; }
 
 		#endregion

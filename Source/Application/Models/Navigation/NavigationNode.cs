@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using EPiServer;
 using EPiServer.Core;
 
 namespace MyCompany.MyWebApplication.Models.Navigation
 {
+	[SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
 	public class NavigationNode : INavigationNode
 	{
 		#region Fields
@@ -21,12 +24,13 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 
 		#region Constructors
 
-		public NavigationNode(ContentReference activeLink, IEnumerable<ContentReference> activeLinkAncestors, IContent content, IContentLoader contentLoader, INavigationNode parent, INavigationSettings settings)
+		public NavigationNode(ContentReference activeLink, IEnumerable<ContentReference> activeLinkAncestors, IContent content, IContentLoader contentLoader, int index, INavigationNode parent, INavigationSettings settings)
 		{
 			this.ActiveLink = activeLink;
 			this.ActiveLinkAncestors = activeLinkAncestors ?? throw new ArgumentNullException(nameof(activeLinkAncestors));
 			this.Content = content;
 			this.ContentLoader = contentLoader ?? throw new ArgumentNullException(nameof(contentLoader));
+			this.Index = index;
 			this.Parent = parent;
 			this.Settings = settings ?? throw new ArgumentNullException(nameof(settings));
 		}
@@ -93,9 +97,9 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 
 					if(this.Active || this.ActiveAncestor || this.Level == 0 || this.Settings.ExpandAll)
 					{
-						foreach(var child in this.ChildContents)
+						for(var i = 0; i < this.ChildContents.Count(); i++)
 						{
-							children.Add(new NavigationNode(this.ActiveLink, this.ActiveLinkAncestors, child, this.ContentLoader, this, this.Settings));
+							children.Add(new NavigationNode(this.ActiveLink, this.ActiveLinkAncestors, this.ChildContents.ElementAt(i), this.ContentLoader, i, this, this.Settings));
 						}
 					}
 
@@ -136,9 +140,11 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 			}
 		}
 
+		public virtual bool Include => this.Content != null;
+		public virtual int Index { get; }
 		public virtual bool Leaf => !this.ChildContents.Any();
 		public virtual int Level => this.Parent?.Level + 1 ?? 0;
-		protected internal virtual INavigationNode Parent { get; }
+		public virtual INavigationNode Parent { get; }
 		protected internal virtual INavigationSettings Settings { get; }
 
 		public virtual string Text
@@ -150,6 +156,22 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 
 				return this._text.Value;
 			}
+		}
+
+		#endregion
+
+		#region Methods
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return this.GetEnumerator();
+		}
+
+		public virtual IEnumerator<INavigationNode> GetEnumerator()
+		{
+			var self = this.Include ? new[] {this} : Enumerable.Empty<INavigationNode>();
+
+			return self.Concat(this.Descendants).GetEnumerator();
 		}
 
 		#endregion

@@ -62,10 +62,27 @@
 		else
 		{
 			<main role="main" class="container">
-				<h1>@Model.Content.Name</h1>
-				@RenderBody()
-			</main>
-			<!-- /.container -->
+				<div class="row">
+					@if(Model.Layout.SubNavigation.Any())
+					{
+						@Html.Partial("~/Views/Shared/Parts/Navigation/SubNavigation.cshtml", Model)
+						@:<div class="col-md-9">
+					}
+					else
+					{
+						@:<div class="col-md-12">
+					}
+					<h1>@(Model.Content.Name)</h1>
+					@*
+					@if(!string.IsNullOrEmpty(Model.View.HtmlContent))
+					{
+						@Html.Raw(Model.View.HtmlContent)
+					}
+					*@
+					@RenderBody()
+					@Html.Raw("</div>")
+				</div>
+			</main><!-- /.container -->
 		}
 		@if(IsSectionDefined("Footer"))
 		{

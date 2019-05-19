@@ -6,7 +6,7 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 	{
 		#region Methods
 
-		INavigationRoot Create(ContentReference root, INavigationSettings settings);
+		INavigationNode Create(ContentReference root, INavigationSettings settings);
 
 		#endregion
 	}

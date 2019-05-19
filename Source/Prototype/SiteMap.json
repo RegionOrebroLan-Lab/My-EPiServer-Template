@@ -1,0 +1,174 @@
+﻿{
+	"Name": "Hem",
+	"Path": "/Index",
+	"UrlSegment": "start",
+	"Children": [
+		{
+			"Name": "Sida 1",
+			"Path": "/InformationPage/Index",
+			"UrlSegment": "sida-1",
+			"Children": [
+				{
+					"Name": "Sida 1.1",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-1"
+				},
+				{
+					"Name": "Sida 1.2",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-2"
+				},
+				{
+					"Heading": "Rubrik för sida 1.3",
+					"HtmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pretium arcu et sapien tempus blandit. Fusce iaculis ut lorem at porta. Donec tempor nisl libero, a blandit erat ornare sit amet. Sed vel velit a mauris malesuada mollis. Aliquam et condimentum tortor. Mauris condimentum lectus urna, eu tincidunt ante pretium at. Etiam vel augue eleifend, sodales nibh vel, semper nunc. Sed efficitur porta metus, nec euismod erat sollicitudin a. Donec feugiat justo ut porttitor cursus.</p><p>Aenean vel ultrices massa, vitae pulvinar justo. Integer eu nibh vel risus gravida congue quis vitae dolor. Curabitur varius rutrum maximus. Maecenas nec neque non tortor volutpat blandit. Nunc rutrum non risus sed vulputate. Sed ut hendrerit orci, at rhoncus nulla. Cras ut pretium ipsum, quis malesuada libero. In consequat, ipsum vel molestie maximus, neque dolor rutrum purus, eu vehicula ligula augue a dolor. Donec ipsum nisi, dapibus sed sodales eu, ultrices et lacus. Proin at mauris at odio ornare posuere. Pellentesque rhoncus purus vitae felis faucibus rhoncus. In tristique sem sit amet nulla maximus, sed imperdiet magna viverra. Nam at leo leo. Ut eget dictum sem, a lobortis dui. Maecenas sit amet feugiat nunc.</p><p>Quisque sollicitudin malesuada diam et maximus. Nulla facilisi. Vivamus commodo cursus justo, luctus elementum enim fringilla in. Donec urna felis, vehicula eu tincidunt id, tempus vel neque. Sed semper commodo eleifend. Pellentesque sed tellus sit amet nisi auctor suscipit ut et eros. Aenean sit amet sapien nunc. Vivamus ex elit, semper sed ligula volutpat, laoreet tincidunt mi. Pellentesque blandit ante a nunc accumsan, quis gravida magna tempor. Suspendisse at dignissim sapien.</p><p>Cras porttitor quam ac tempor semper. Aliquam accumsan placerat urna, eget luctus tellus. Morbi sit amet consequat dui, vel maximus mauris. Maecenas mattis cursus molestie. Nam auctor convallis neque sed sollicitudin. Morbi purus purus, tincidunt ac dolor a, posuere elementum justo. Phasellus dapibus sem vitae rhoncus viverra. Sed eleifend interdum libero, a commodo odio consequat et. Maecenas vitae arcu a tortor varius iaculis. Nunc hendrerit felis dui, id tristique purus accumsan a. Phasellus eget efficitur ipsum, in tristique ligula. Maecenas tincidunt vulputate quam, sit amet vehicula libero condimentum vel.</p><p>Pellentesque scelerisque eu purus eget ullamcorper. Phasellus fringilla viverra libero quis vestibulum. Morbi mattis orci libero, sed congue metus eleifend non. Sed bibendum libero nisl, gravida pharetra purus sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac aliquam neque. Proin eu ipsum est. Nulla tincidunt diam sed congue vestibulum. Fusce ultrices neque vel tellus dapibus tincidunt. Phasellus mollis justo sed turpis ullamcorper dignissim. Etiam laoreet euismod pharetra. Aenean vehicula auctor velit, a vulputate dui rhoncus eu. Donec consequat volutpat viverra.</p>",
+					"Name": "Sida 1.3",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-3"
+				},
+				{
+					"Name": "Sida 1.4",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-4"
+				}
+			]
+		},
+		{
+			"Name": "Sida 2",
+			"Path": "/InformationPage/Index",
+			"UrlSegment": "sida-2",
+			"Children": [
+				{
+					"Name": "Sida 2.1",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-1",
+					"Children": [
+						{
+							"HtmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pretium arcu et sapien tempus blandit. Fusce iaculis ut lorem at porta. Donec tempor nisl libero, a blandit erat ornare sit amet. Sed vel velit a mauris malesuada mollis. Aliquam et condimentum tortor. Mauris condimentum lectus urna, eu tincidunt ante pretium at. Etiam vel augue eleifend, sodales nibh vel, semper nunc. Sed efficitur porta metus, nec euismod erat sollicitudin a. Donec feugiat justo ut porttitor cursus.</p><p>Aenean vel ultrices massa, vitae pulvinar justo. Integer eu nibh vel risus gravida congue quis vitae dolor. Curabitur varius rutrum maximus. Maecenas nec neque non tortor volutpat blandit. Nunc rutrum non risus sed vulputate. Sed ut hendrerit orci, at rhoncus nulla. Cras ut pretium ipsum, quis malesuada libero. In consequat, ipsum vel molestie maximus, neque dolor rutrum purus, eu vehicula ligula augue a dolor. Donec ipsum nisi, dapibus sed sodales eu, ultrices et lacus. Proin at mauris at odio ornare posuere. Pellentesque rhoncus purus vitae felis faucibus rhoncus. In tristique sem sit amet nulla maximus, sed imperdiet magna viverra. Nam at leo leo. Ut eget dictum sem, a lobortis dui. Maecenas sit amet feugiat nunc.</p><p>Quisque sollicitudin malesuada diam et maximus. Nulla facilisi. Vivamus commodo cursus justo, luctus elementum enim fringilla in. Donec urna felis, vehicula eu tincidunt id, tempus vel neque. Sed semper commodo eleifend. Pellentesque sed tellus sit amet nisi auctor suscipit ut et eros. Aenean sit amet sapien nunc. Vivamus ex elit, semper sed ligula volutpat, laoreet tincidunt mi. Pellentesque blandit ante a nunc accumsan, quis gravida magna tempor. Suspendisse at dignissim sapien.</p><p>Cras porttitor quam ac tempor semper. Aliquam accumsan placerat urna, eget luctus tellus. Morbi sit amet consequat dui, vel maximus mauris. Maecenas mattis cursus molestie. Nam auctor convallis neque sed sollicitudin. Morbi purus purus, tincidunt ac dolor a, posuere elementum justo. Phasellus dapibus sem vitae rhoncus viverra. Sed eleifend interdum libero, a commodo odio consequat et. Maecenas vitae arcu a tortor varius iaculis. Nunc hendrerit felis dui, id tristique purus accumsan a. Phasellus eget efficitur ipsum, in tristique ligula. Maecenas tincidunt vulputate quam, sit amet vehicula libero condimentum vel.</p><p>Pellentesque scelerisque eu purus eget ullamcorper. Phasellus fringilla viverra libero quis vestibulum. Morbi mattis orci libero, sed congue metus eleifend non. Sed bibendum libero nisl, gravida pharetra purus sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac aliquam neque. Proin eu ipsum est. Nulla tincidunt diam sed congue vestibulum. Fusce ultrices neque vel tellus dapibus tincidunt. Phasellus mollis justo sed turpis ullamcorper dignissim. Etiam laoreet euismod pharetra. Aenean vehicula auctor velit, a vulputate dui rhoncus eu. Donec consequat volutpat viverra.</p>",
+							"Name": "Sida 2.1.1",
+							"Path": "/InformationPage/Index",
+							"UrlSegment": "sida-1"
+						},
+						{
+							"Heading": "Rubrik för sida 2.1.2",
+							"Name": "Sida 2.1.2",
+							"Path": "/InformationPage/Index",
+							"UrlSegment": "sida-2"
+						},
+						{
+							"Name": "Sida 2.1.3",
+							"Path": "/InformationPage/Index",
+							"UrlSegment": "sida-3",
+							"Children": [
+								{
+									"HtmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pretium arcu et sapien tempus blandit. Fusce iaculis ut lorem at porta. Donec tempor nisl libero, a blandit erat ornare sit amet. Sed vel velit a mauris malesuada mollis. Aliquam et condimentum tortor. Mauris condimentum lectus urna, eu tincidunt ante pretium at. Etiam vel augue eleifend, sodales nibh vel, semper nunc. Sed efficitur porta metus, nec euismod erat sollicitudin a. Donec feugiat justo ut porttitor cursus.</p><p>Aenean vel ultrices massa, vitae pulvinar justo. Integer eu nibh vel risus gravida congue quis vitae dolor. Curabitur varius rutrum maximus. Maecenas nec neque non tortor volutpat blandit. Nunc rutrum non risus sed vulputate. Sed ut hendrerit orci, at rhoncus nulla. Cras ut pretium ipsum, quis malesuada libero. In consequat, ipsum vel molestie maximus, neque dolor rutrum purus, eu vehicula ligula augue a dolor. Donec ipsum nisi, dapibus sed sodales eu, ultrices et lacus. Proin at mauris at odio ornare posuere. Pellentesque rhoncus purus vitae felis faucibus rhoncus. In tristique sem sit amet nulla maximus, sed imperdiet magna viverra. Nam at leo leo. Ut eget dictum sem, a lobortis dui. Maecenas sit amet feugiat nunc.</p><p>Quisque sollicitudin malesuada diam et maximus. Nulla facilisi. Vivamus commodo cursus justo, luctus elementum enim fringilla in. Donec urna felis, vehicula eu tincidunt id, tempus vel neque. Sed semper commodo eleifend. Pellentesque sed tellus sit amet nisi auctor suscipit ut et eros. Aenean sit amet sapien nunc. Vivamus ex elit, semper sed ligula volutpat, laoreet tincidunt mi. Pellentesque blandit ante a nunc accumsan, quis gravida magna tempor. Suspendisse at dignissim sapien.</p><p>Cras porttitor quam ac tempor semper. Aliquam accumsan placerat urna, eget luctus tellus. Morbi sit amet consequat dui, vel maximus mauris. Maecenas mattis cursus molestie. Nam auctor convallis neque sed sollicitudin. Morbi purus purus, tincidunt ac dolor a, posuere elementum justo. Phasellus dapibus sem vitae rhoncus viverra. Sed eleifend interdum libero, a commodo odio consequat et. Maecenas vitae arcu a tortor varius iaculis. Nunc hendrerit felis dui, id tristique purus accumsan a. Phasellus eget efficitur ipsum, in tristique ligula. Maecenas tincidunt vulputate quam, sit amet vehicula libero condimentum vel.</p><p>Pellentesque scelerisque eu purus eget ullamcorper. Phasellus fringilla viverra libero quis vestibulum. Morbi mattis orci libero, sed congue metus eleifend non. Sed bibendum libero nisl, gravida pharetra purus sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac aliquam neque. Proin eu ipsum est. Nulla tincidunt diam sed congue vestibulum. Fusce ultrices neque vel tellus dapibus tincidunt. Phasellus mollis justo sed turpis ullamcorper dignissim. Etiam laoreet euismod pharetra. Aenean vehicula auctor velit, a vulputate dui rhoncus eu. Donec consequat volutpat viverra.</p>",
+									"Name": "Sida 2.1.3.1",
+									"Path": "/InformationPage/Index",
+									"UrlSegment": "sida-1"
+								},
+								{
+									"Name": "Sida 2.1.3.2",
+									"Path": "/InformationPage/Index",
+									"UrlSegment": "sida-2"
+								},
+								{
+									"HtmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pretium arcu et sapien tempus blandit. Fusce iaculis ut lorem at porta. Donec tempor nisl libero, a blandit erat ornare sit amet. Sed vel velit a mauris malesuada mollis. Aliquam et condimentum tortor. Mauris condimentum lectus urna, eu tincidunt ante pretium at. Etiam vel augue eleifend, sodales nibh vel, semper nunc. Sed efficitur porta metus, nec euismod erat sollicitudin a. Donec feugiat justo ut porttitor cursus.</p><p>Aenean vel ultrices massa, vitae pulvinar justo. Integer eu nibh vel risus gravida congue quis vitae dolor. Curabitur varius rutrum maximus. Maecenas nec neque non tortor volutpat blandit. Nunc rutrum non risus sed vulputate. Sed ut hendrerit orci, at rhoncus nulla. Cras ut pretium ipsum, quis malesuada libero. In consequat, ipsum vel molestie maximus, neque dolor rutrum purus, eu vehicula ligula augue a dolor. Donec ipsum nisi, dapibus sed sodales eu, ultrices et lacus. Proin at mauris at odio ornare posuere. Pellentesque rhoncus purus vitae felis faucibus rhoncus. In tristique sem sit amet nulla maximus, sed imperdiet magna viverra. Nam at leo leo. Ut eget dictum sem, a lobortis dui. Maecenas sit amet feugiat nunc.</p><p>Quisque sollicitudin malesuada diam et maximus. Nulla facilisi. Vivamus commodo cursus justo, luctus elementum enim fringilla in. Donec urna felis, vehicula eu tincidunt id, tempus vel neque. Sed semper commodo eleifend. Pellentesque sed tellus sit amet nisi auctor suscipit ut et eros. Aenean sit amet sapien nunc. Vivamus ex elit, semper sed ligula volutpat, laoreet tincidunt mi. Pellentesque blandit ante a nunc accumsan, quis gravida magna tempor. Suspendisse at dignissim sapien.</p><p>Cras porttitor quam ac tempor semper. Aliquam accumsan placerat urna, eget luctus tellus. Morbi sit amet consequat dui, vel maximus mauris. Maecenas mattis cursus molestie. Nam auctor convallis neque sed sollicitudin. Morbi purus purus, tincidunt ac dolor a, posuere elementum justo. Phasellus dapibus sem vitae rhoncus viverra. Sed eleifend interdum libero, a commodo odio consequat et. Maecenas vitae arcu a tortor varius iaculis. Nunc hendrerit felis dui, id tristique purus accumsan a. Phasellus eget efficitur ipsum, in tristique ligula. Maecenas tincidunt vulputate quam, sit amet vehicula libero condimentum vel.</p><p>Pellentesque scelerisque eu purus eget ullamcorper. Phasellus fringilla viverra libero quis vestibulum. Morbi mattis orci libero, sed congue metus eleifend non. Sed bibendum libero nisl, gravida pharetra purus sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac aliquam neque. Proin eu ipsum est. Nulla tincidunt diam sed congue vestibulum. Fusce ultrices neque vel tellus dapibus tincidunt. Phasellus mollis justo sed turpis ullamcorper dignissim. Etiam laoreet euismod pharetra. Aenean vehicula auctor velit, a vulputate dui rhoncus eu. Donec consequat volutpat viverra.</p>",
+									"Name": "Sida 2.1.3.3",
+									"Path": "/InformationPage/Index",
+									"UrlSegment": "sida-3"
+								},
+								{
+									"Heading": "Rubrik för sida 2.1.3.4",
+									"Name": "Sida 2.1.3.4",
+									"Path": "/InformationPage/Index",
+									"UrlSegment": "sida-4"
+								}
+							]
+						},
+						{
+							"Name": "Sida 2.1.4",
+							"Path": "/InformationPage/Index",
+							"UrlSegment": "sida-4"
+						}
+					]
+				},
+				{
+					"Name": "Sida 2.2",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-2"
+				},
+				{
+					"Heading": "Rubrik för sida 2.3",
+					"HtmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pretium arcu et sapien tempus blandit. Fusce iaculis ut lorem at porta. Donec tempor nisl libero, a blandit erat ornare sit amet. Sed vel velit a mauris malesuada mollis. Aliquam et condimentum tortor. Mauris condimentum lectus urna, eu tincidunt ante pretium at. Etiam vel augue eleifend, sodales nibh vel, semper nunc. Sed efficitur porta metus, nec euismod erat sollicitudin a. Donec feugiat justo ut porttitor cursus.</p><p>Aenean vel ultrices massa, vitae pulvinar justo. Integer eu nibh vel risus gravida congue quis vitae dolor. Curabitur varius rutrum maximus. Maecenas nec neque non tortor volutpat blandit. Nunc rutrum non risus sed vulputate. Sed ut hendrerit orci, at rhoncus nulla. Cras ut pretium ipsum, quis malesuada libero. In consequat, ipsum vel molestie maximus, neque dolor rutrum purus, eu vehicula ligula augue a dolor. Donec ipsum nisi, dapibus sed sodales eu, ultrices et lacus. Proin at mauris at odio ornare posuere. Pellentesque rhoncus purus vitae felis faucibus rhoncus. In tristique sem sit amet nulla maximus, sed imperdiet magna viverra. Nam at leo leo. Ut eget dictum sem, a lobortis dui. Maecenas sit amet feugiat nunc.</p><p>Quisque sollicitudin malesuada diam et maximus. Nulla facilisi. Vivamus commodo cursus justo, luctus elementum enim fringilla in. Donec urna felis, vehicula eu tincidunt id, tempus vel neque. Sed semper commodo eleifend. Pellentesque sed tellus sit amet nisi auctor suscipit ut et eros. Aenean sit amet sapien nunc. Vivamus ex elit, semper sed ligula volutpat, laoreet tincidunt mi. Pellentesque blandit ante a nunc accumsan, quis gravida magna tempor. Suspendisse at dignissim sapien.</p><p>Cras porttitor quam ac tempor semper. Aliquam accumsan placerat urna, eget luctus tellus. Morbi sit amet consequat dui, vel maximus mauris. Maecenas mattis cursus molestie. Nam auctor convallis neque sed sollicitudin. Morbi purus purus, tincidunt ac dolor a, posuere elementum justo. Phasellus dapibus sem vitae rhoncus viverra. Sed eleifend interdum libero, a commodo odio consequat et. Maecenas vitae arcu a tortor varius iaculis. Nunc hendrerit felis dui, id tristique purus accumsan a. Phasellus eget efficitur ipsum, in tristique ligula. Maecenas tincidunt vulputate quam, sit amet vehicula libero condimentum vel.</p><p>Pellentesque scelerisque eu purus eget ullamcorper. Phasellus fringilla viverra libero quis vestibulum. Morbi mattis orci libero, sed congue metus eleifend non. Sed bibendum libero nisl, gravida pharetra purus sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac aliquam neque. Proin eu ipsum est. Nulla tincidunt diam sed congue vestibulum. Fusce ultrices neque vel tellus dapibus tincidunt. Phasellus mollis justo sed turpis ullamcorper dignissim. Etiam laoreet euismod pharetra. Aenean vehicula auctor velit, a vulputate dui rhoncus eu. Donec consequat volutpat viverra.</p>",
+					"Name": "Sida 2.3",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-3"
+				},
+				{
+					"Name": "Sida 2.4",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-4"
+				}
+			]
+		},
+		{
+			"Name": "Sida 3",
+			"Path": "/InformationPage/Index",
+			"UrlSegment": "sida-3"
+		},
+		{
+			"HtmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pretium arcu et sapien tempus blandit. Fusce iaculis ut lorem at porta. Donec tempor nisl libero, a blandit erat ornare sit amet. Sed vel velit a mauris malesuada mollis. Aliquam et condimentum tortor. Mauris condimentum lectus urna, eu tincidunt ante pretium at. Etiam vel augue eleifend, sodales nibh vel, semper nunc. Sed efficitur porta metus, nec euismod erat sollicitudin a. Donec feugiat justo ut porttitor cursus.</p><p>Aenean vel ultrices massa, vitae pulvinar justo. Integer eu nibh vel risus gravida congue quis vitae dolor. Curabitur varius rutrum maximus. Maecenas nec neque non tortor volutpat blandit. Nunc rutrum non risus sed vulputate. Sed ut hendrerit orci, at rhoncus nulla. Cras ut pretium ipsum, quis malesuada libero. In consequat, ipsum vel molestie maximus, neque dolor rutrum purus, eu vehicula ligula augue a dolor. Donec ipsum nisi, dapibus sed sodales eu, ultrices et lacus. Proin at mauris at odio ornare posuere. Pellentesque rhoncus purus vitae felis faucibus rhoncus. In tristique sem sit amet nulla maximus, sed imperdiet magna viverra. Nam at leo leo. Ut eget dictum sem, a lobortis dui. Maecenas sit amet feugiat nunc.</p><p>Quisque sollicitudin malesuada diam et maximus. Nulla facilisi. Vivamus commodo cursus justo, luctus elementum enim fringilla in. Donec urna felis, vehicula eu tincidunt id, tempus vel neque. Sed semper commodo eleifend. Pellentesque sed tellus sit amet nisi auctor suscipit ut et eros. Aenean sit amet sapien nunc. Vivamus ex elit, semper sed ligula volutpat, laoreet tincidunt mi. Pellentesque blandit ante a nunc accumsan, quis gravida magna tempor. Suspendisse at dignissim sapien.</p><p>Cras porttitor quam ac tempor semper. Aliquam accumsan placerat urna, eget luctus tellus. Morbi sit amet consequat dui, vel maximus mauris. Maecenas mattis cursus molestie. Nam auctor convallis neque sed sollicitudin. Morbi purus purus, tincidunt ac dolor a, posuere elementum justo. Phasellus dapibus sem vitae rhoncus viverra. Sed eleifend interdum libero, a commodo odio consequat et. Maecenas vitae arcu a tortor varius iaculis. Nunc hendrerit felis dui, id tristique purus accumsan a. Phasellus eget efficitur ipsum, in tristique ligula. Maecenas tincidunt vulputate quam, sit amet vehicula libero condimentum vel.</p><p>Pellentesque scelerisque eu purus eget ullamcorper. Phasellus fringilla viverra libero quis vestibulum. Morbi mattis orci libero, sed congue metus eleifend non. Sed bibendum libero nisl, gravida pharetra purus sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac aliquam neque. Proin eu ipsum est. Nulla tincidunt diam sed congue vestibulum. Fusce ultrices neque vel tellus dapibus tincidunt. Phasellus mollis justo sed turpis ullamcorper dignissim. Etiam laoreet euismod pharetra. Aenean vehicula auctor velit, a vulputate dui rhoncus eu. Donec consequat volutpat viverra.</p>",
+			"Name": "Sida 4",
+			"Path": "/InformationPage/Index",
+			"UrlSegment": "sida-4",
+			"Children": [
+				{
+					"Name": "Sida 4.1",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-1"
+				},
+				{
+					"Heading": "Rubrik för sida 4.2",
+					"HtmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pretium arcu et sapien tempus blandit. Fusce iaculis ut lorem at porta. Donec tempor nisl libero, a blandit erat ornare sit amet. Sed vel velit a mauris malesuada mollis. Aliquam et condimentum tortor. Mauris condimentum lectus urna, eu tincidunt ante pretium at. Etiam vel augue eleifend, sodales nibh vel, semper nunc. Sed efficitur porta metus, nec euismod erat sollicitudin a. Donec feugiat justo ut porttitor cursus.</p><p>Aenean vel ultrices massa, vitae pulvinar justo. Integer eu nibh vel risus gravida congue quis vitae dolor. Curabitur varius rutrum maximus. Maecenas nec neque non tortor volutpat blandit. Nunc rutrum non risus sed vulputate. Sed ut hendrerit orci, at rhoncus nulla. Cras ut pretium ipsum, quis malesuada libero. In consequat, ipsum vel molestie maximus, neque dolor rutrum purus, eu vehicula ligula augue a dolor. Donec ipsum nisi, dapibus sed sodales eu, ultrices et lacus. Proin at mauris at odio ornare posuere. Pellentesque rhoncus purus vitae felis faucibus rhoncus. In tristique sem sit amet nulla maximus, sed imperdiet magna viverra. Nam at leo leo. Ut eget dictum sem, a lobortis dui. Maecenas sit amet feugiat nunc.</p><p>Quisque sollicitudin malesuada diam et maximus. Nulla facilisi. Vivamus commodo cursus justo, luctus elementum enim fringilla in. Donec urna felis, vehicula eu tincidunt id, tempus vel neque. Sed semper commodo eleifend. Pellentesque sed tellus sit amet nisi auctor suscipit ut et eros. Aenean sit amet sapien nunc. Vivamus ex elit, semper sed ligula volutpat, laoreet tincidunt mi. Pellentesque blandit ante a nunc accumsan, quis gravida magna tempor. Suspendisse at dignissim sapien.</p><p>Cras porttitor quam ac tempor semper. Aliquam accumsan placerat urna, eget luctus tellus. Morbi sit amet consequat dui, vel maximus mauris. Maecenas mattis cursus molestie. Nam auctor convallis neque sed sollicitudin. Morbi purus purus, tincidunt ac dolor a, posuere elementum justo. Phasellus dapibus sem vitae rhoncus viverra. Sed eleifend interdum libero, a commodo odio consequat et. Maecenas vitae arcu a tortor varius iaculis. Nunc hendrerit felis dui, id tristique purus accumsan a. Phasellus eget efficitur ipsum, in tristique ligula. Maecenas tincidunt vulputate quam, sit amet vehicula libero condimentum vel.</p><p>Pellentesque scelerisque eu purus eget ullamcorper. Phasellus fringilla viverra libero quis vestibulum. Morbi mattis orci libero, sed congue metus eleifend non. Sed bibendum libero nisl, gravida pharetra purus sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac aliquam neque. Proin eu ipsum est. Nulla tincidunt diam sed congue vestibulum. Fusce ultrices neque vel tellus dapibus tincidunt. Phasellus mollis justo sed turpis ullamcorper dignissim. Etiam laoreet euismod pharetra. Aenean vehicula auctor velit, a vulputate dui rhoncus eu. Donec consequat volutpat viverra.</p>",
+					"Name": "Sida 4.2",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-2"
+				},
+				{
+					"Name": "Sida 4.3",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-3"
+				},
+				{
+					"HtmlContent": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed pretium arcu et sapien tempus blandit. Fusce iaculis ut lorem at porta. Donec tempor nisl libero, a blandit erat ornare sit amet. Sed vel velit a mauris malesuada mollis. Aliquam et condimentum tortor. Mauris condimentum lectus urna, eu tincidunt ante pretium at. Etiam vel augue eleifend, sodales nibh vel, semper nunc. Sed efficitur porta metus, nec euismod erat sollicitudin a. Donec feugiat justo ut porttitor cursus.</p><p>Aenean vel ultrices massa, vitae pulvinar justo. Integer eu nibh vel risus gravida congue quis vitae dolor. Curabitur varius rutrum maximus. Maecenas nec neque non tortor volutpat blandit. Nunc rutrum non risus sed vulputate. Sed ut hendrerit orci, at rhoncus nulla. Cras ut pretium ipsum, quis malesuada libero. In consequat, ipsum vel molestie maximus, neque dolor rutrum purus, eu vehicula ligula augue a dolor. Donec ipsum nisi, dapibus sed sodales eu, ultrices et lacus. Proin at mauris at odio ornare posuere. Pellentesque rhoncus purus vitae felis faucibus rhoncus. In tristique sem sit amet nulla maximus, sed imperdiet magna viverra. Nam at leo leo. Ut eget dictum sem, a lobortis dui. Maecenas sit amet feugiat nunc.</p><p>Quisque sollicitudin malesuada diam et maximus. Nulla facilisi. Vivamus commodo cursus justo, luctus elementum enim fringilla in. Donec urna felis, vehicula eu tincidunt id, tempus vel neque. Sed semper commodo eleifend. Pellentesque sed tellus sit amet nisi auctor suscipit ut et eros. Aenean sit amet sapien nunc. Vivamus ex elit, semper sed ligula volutpat, laoreet tincidunt mi. Pellentesque blandit ante a nunc accumsan, quis gravida magna tempor. Suspendisse at dignissim sapien.</p><p>Cras porttitor quam ac tempor semper. Aliquam accumsan placerat urna, eget luctus tellus. Morbi sit amet consequat dui, vel maximus mauris. Maecenas mattis cursus molestie. Nam auctor convallis neque sed sollicitudin. Morbi purus purus, tincidunt ac dolor a, posuere elementum justo. Phasellus dapibus sem vitae rhoncus viverra. Sed eleifend interdum libero, a commodo odio consequat et. Maecenas vitae arcu a tortor varius iaculis. Nunc hendrerit felis dui, id tristique purus accumsan a. Phasellus eget efficitur ipsum, in tristique ligula. Maecenas tincidunt vulputate quam, sit amet vehicula libero condimentum vel.</p><p>Pellentesque scelerisque eu purus eget ullamcorper. Phasellus fringilla viverra libero quis vestibulum. Morbi mattis orci libero, sed congue metus eleifend non. Sed bibendum libero nisl, gravida pharetra purus sagittis sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac aliquam neque. Proin eu ipsum est. Nulla tincidunt diam sed congue vestibulum. Fusce ultrices neque vel tellus dapibus tincidunt. Phasellus mollis justo sed turpis ullamcorper dignissim. Etiam laoreet euismod pharetra. Aenean vehicula auctor velit, a vulputate dui rhoncus eu. Donec consequat volutpat viverra.</p>",
+					"Name": "Sida 4.4",
+					"Path": "/InformationPage/Index",
+					"UrlSegment": "sida-4"
+				}
+			]
+		},
+		{
+			"Heading": "Exempel på komponenter",
+			"HtmlContent": "Välj exempel på olika komponenter i menyn till vänster.",
+			"Name": "Komponenter",
+			"Path": "/Components/Index",
+			"UrlSegment": "komponenter",
+			"Children": [
+				{
+					"Name": "Alert",
+					"Path": "/Components/Alert/Index",
+					"UrlSegment": "alert"
+				},
+				{
+					"Name": "Form",
+					"Path": "/Components/Form/Index",
+					"UrlSegment": "form"
+				},
+				{
+					"Name": "Sprite",
+					"Path": "/Components/Sprite/Index",
+					"UrlSegment": "sprite"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,46 @@
+.sub-navigation {
+	background-color: $gray-200; /* bootstrap */
+	border-radius: .25rem;
+	padding: 0.4em 0 0 0.4em;
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		ul {
+			padding-left: 2em;
+			margin-top: 0.4em;
+		}
+
+		li {
+			display: block;
+			margin-bottom: 0.4em;
+		}
+
+		li {
+			a {
+				border-radius: .25rem;
+				color: $blue;
+				display: inline-block;
+				padding: 5px 10px;
+			}
+		}
+
+		li.active {
+			> a {
+				background-color: $blue; /* bootstrap */
+				color: $white; /* bootstrap */
+				display: inline-block;
+				font-weight: bolder;
+			}
+		}
+
+		li.active-ancestor {
+			> a {
+				background: $gray-600; /* bootstrap */
+				color: $white; /* bootstrap */
+				font-weight: bold;
+			}
+		}
+	}
+}

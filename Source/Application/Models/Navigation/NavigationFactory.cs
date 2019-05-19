@@ -45,7 +45,7 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 		#region Methods
 
 		[SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
-		public virtual INavigationRoot Create(ContentReference root, INavigationSettings settings)
+		public virtual INavigationNode Create(ContentReference root, INavigationSettings settings)
 		{
 			if(settings == null)
 				throw new ArgumentNullException(nameof(settings));

@@ -66,12 +66,12 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 			return layout;
 		}
 
-		protected internal virtual INavigationRoot CreateMainNavigation(ContentReference startPageLink)
+		protected internal virtual INavigationNode CreateMainNavigation(ContentReference startPageLink)
 		{
 			return this.NavigationFactory.Create(startPageLink, this.MainNavigationSettings);
 		}
 
-		protected internal virtual INavigationRoot CreateSubNavigation(IContent content, ContentReference startPageLink)
+		protected internal virtual INavigationNode CreateSubNavigation(IContent content, ContentReference startPageLink)
 		{
 			ContentReference subNavigationRoot = null;
 

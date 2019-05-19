@@ -2,6 +2,6 @@
 @import "reset-css/sass/reset";
 @import "bootstrap/scss/bootstrap";
 
-body {
-	padding-top: 60px;
-}
+@import "Parts/Layout";
+@import "Parts/Navigation";
+@import "Parts/Icon";

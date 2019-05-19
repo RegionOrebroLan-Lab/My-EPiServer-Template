@@ -1,5 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="@(ViewData["Culture"] ?? "sv")">
+﻿@model PageModel
+<!DOCTYPE html>
+<html lang="@Model.View.Layout.Culture">
 	<head>
 		@if(IsSectionDefined("HeadContent"))
 		{
@@ -13,7 +14,7 @@
 			}
 			else
 			{
-				<partial name="~/Views/Shared/Parts/Head/Meta.cshtml" />
+				<partial model="@Model.View" name="~/Views/Shared/Parts/Head/Meta.cshtml" />
 			}
 			if(IsSectionDefined("HeadTitle"))
 			{
@@ -21,7 +22,7 @@
 			}
 			else
 			{
-				<partial name="~/Views/Shared/Parts/Head/Title.cshtml" />
+				<partial model="@Model.View" name="~/Views/Shared/Parts/Head/Title.cshtml" />
 			}
 			if(IsSectionDefined("HeadLink"))
 			{
@@ -29,7 +30,7 @@
 			}
 			else
 			{
-				<partial name="~/Views/Shared/Parts/Head/Link.cshtml" />
+				<partial model="@Model.View" name="~/Views/Shared/Parts/Head/Link.cshtml" />
 			}
 			if(IsSectionDefined("HeadScript"))
 			{
@@ -37,7 +38,7 @@
 			}
 			else
 			{
-				<partial name="~/Views/Shared/Parts/Head/Script.cshtml" />
+				<partial model="@Model.View" name="~/Views/Shared/Parts/Head/Script.cshtml" />
 			}
 			if(IsSectionDefined("AdditionalHeadContent"))
 			{
@@ -52,7 +53,7 @@
 		}
 		else
 		{
-			<partial name="~/Views/Shared/Parts/Header.cshtml" />
+			<partial model="@Model.View" name="~/Views/Shared/Parts/Header.cshtml" />
 		}
 		@if(IsSectionDefined("Main"))
 		{
@@ -61,10 +62,25 @@
 		else
 		{
 			<main role="main" class="container">
-				<h1>@ViewData["H1"]</h1>
-				@RenderBody()
-			</main>
-			<!-- /.container -->
+				<div class="row">
+					@if(Model.View.Layout.SubNavigation.Any())
+					{
+						<partial model="@Model.View" name="~/Views/Shared/Parts/Navigation/SubNavigation.cshtml" />
+						@:<div class="col-md-9">
+					}
+					else
+					{
+						@:<div class="col-md-12">
+					}
+					<h1>@(Model.View.Heading ?? Model.View.Name)</h1>
+					@if(!string.IsNullOrEmpty(Model.View.HtmlContent))
+					{
+						@Html.Raw(Model.View.HtmlContent)
+					}
+					@RenderBody()
+					@Html.Raw("</div>")
+				</div>
+			</main><!-- /.container -->
 		}
 		@if(IsSectionDefined("Footer"))
 		{
@@ -72,7 +88,7 @@
 		}
 		else
 		{
-			<partial name="~/Views/Shared/Parts/Footer.cshtml" />
+			<partial model="@Model.View" name="~/Views/Shared/Parts/Footer.cshtml" />
 		}
 		@if(IsSectionDefined("Scripts"))
 		{
@@ -80,7 +96,7 @@
 		}
 		else
 		{
-			<partial name="~/Views/Shared/Parts/Scripts.cshtml" />
+			<partial model="@Model.View" name="~/Views/Shared/Parts/Scripts.cshtml" />
 		}
 		@if(IsSectionDefined("AdditionalScripts"))
 		{
