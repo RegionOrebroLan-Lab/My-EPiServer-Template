@@ -72,13 +72,8 @@
 					{
 						@:<div class="col-md-12">
 					}
-					<h1>@(Model.Content.Name)</h1>
-					@*
-					@if(!string.IsNullOrEmpty(Model.View.HtmlContent))
-					{
-						@Html.Raw(Model.View.HtmlContent)
-					}
-					*@
+					@Html.Partial("~/Views/Shared/Parts/Heading.cshtml", Model.Content as InformationPage, new ViewDataDictionary())
+					@Html.Partial("~/Views/Shared/Parts/MainBody.cshtml", Model.Content as InformationPage, new ViewDataDictionary())
 					@RenderBody()
 					@Html.Raw("</div>")
 				</div>

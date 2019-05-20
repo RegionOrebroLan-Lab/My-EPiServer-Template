@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language id="sv" name="svenska">
+		<!--
+		<categories>
+			<category name="Category-name">
+				<description>Kategori-beskrivning</description>
+			</category>
+		</categories>
+		-->
+		<!--http://world.episerver.com/Blogs/Linus-Ekstrom/Dates/2013/12/New-standardized-format-for-content-type-localizations/-->
+		<!--
+		<groups>
+			<example>Exempel-tabb</example>
+		</groups>
+		-->
+		<contenttypes>
+			<!-- For all content-types -->
+			<icontentdata>
+				<properties>
+					<description>
+						<caption>Beskrivning (meta)</caption>
+						<help></help>
+					</description>
+					<heading>
+						<caption>Rubrik</caption>
+						<help></help>
+					</heading>
+					<keywords>
+						<caption>Nyckelord (meta)</caption>
+						<help></help>
+					</keywords>
+					<mainbody>
+						<caption>Innehåll</caption>
+						<help>Innehåll kommer att visas i huvuddelen på sidan. Du kan skriva text, infoga bilder, skapa länkar m.m.</help>
+					</mainbody>
+				</properties>
+			</icontentdata>
+		</contenttypes>
+	</language>
+</languages>

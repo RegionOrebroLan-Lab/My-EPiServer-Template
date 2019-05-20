@@ -1,0 +1,14 @@
+﻿@model InformationPage
+@if(Model != null)
+{
+	<div class="main-body">
+		@if(PageEditing.PageIsInEditMode)
+		{
+			@Html.PropertyFor(model => model.MainBody)
+		}
+		else
+		{
+			@Html.DisplayFor(model => model.MainBody)
+		}
+	</div>
+}

@@ -1,0 +1,19 @@
+﻿@model InformationPage
+@if(Model != null)
+{
+	if(PageEditing.PageIsInEditMode)
+	{
+		<span>
+			<i>@Html.Translate("/editing/nameorheadingash1")</i>
+		</span>
+		<h1>
+			@Html.PropertyFor(model => model.Name)
+			<br />
+			@Html.PropertyFor(model => model.Heading)
+		</h1>
+	}
+	else
+	{
+		<h1>@(string.IsNullOrEmpty(Model.Heading) ? Model.Name : Model.Heading)</h1>
+	}
+}

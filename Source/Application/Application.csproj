@@ -178,6 +178,9 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.EntityFrameworkCore.Design">
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.design\2.2.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
@@ -383,6 +386,10 @@
     <Content Include="Modules\_Protected\Shell\Shell.zip" />
     <Content Include="Modules\_Protected\Shell\Web.config" />
     <Compile Include="Properties\Assembly-information.cs" />
+    <Content Include="Resources\EPiServer.en.xml" />
+    <Content Include="Resources\EPiServer.sv.xml" />
+    <Content Include="Resources\Texts.en.xml" />
+    <Content Include="Resources\Texts.sv.xml" />
     <Content Include="Scripts\Libraries\TinyMCE\Cultures\sv-SE.js" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Scripts\Site.min.js">
@@ -403,8 +410,12 @@
     <Content Include="Views\Shared\Parts\Head\Meta.cshtml" />
     <Content Include="Views\Shared\Parts\Head\Script.cshtml" />
     <Content Include="Views\Shared\Parts\Head\Title.cshtml" />
+    <Content Include="Views\Shared\Parts\Navigation\MainNavigation.cshtml" />
+    <Content Include="Views\Shared\Parts\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\Shared\Parts\Footer.cshtml" />
     <Content Include="Views\Shared\Parts\Header.cshtml" />
+    <Content Include="Views\Shared\Parts\Heading.cshtml" />
+    <Content Include="Views\Shared\Parts\MainBody.cshtml" />
     <Content Include="Views\Shared\Parts\Scripts.cshtml" />
     <Content Include="Views\StartPage\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -518,9 +529,6 @@
     <Content Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Shared\Parts\Navigation\MainNavigation.cshtml" />
-    <Content Include="Views\Shared\Parts\Navigation\SubNavigation.cshtml" />
-    <Content Include="Views\Shared\Parts\Navigation\SubNavigationNode.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Blocks\" />

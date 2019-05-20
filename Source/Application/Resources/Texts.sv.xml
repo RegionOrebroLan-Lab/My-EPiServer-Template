@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language id="sv" name="svenska">
+		<editing>
+			<nameorheadingash1>Namn eller rubrik som h1</nameorheadingash1>
+		</editing>
+	</language>
+</languages>

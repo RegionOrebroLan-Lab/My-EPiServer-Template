@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language id="en" name="English">
+		<editing>
+			<nameorheadingash1>Name or heading as h1</nameorheadingash1>
+		</editing>
+	</language>
+</languages>

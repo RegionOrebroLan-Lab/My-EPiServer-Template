@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language id="en" name="English">
+		<!--
+		<categories>
+			<category name="Category-name">
+				<description>Category-description</description>
+			</category>
+		</categories>
+		-->
+		<!--http://world.episerver.com/Blogs/Linus-Ekstrom/Dates/2013/12/New-standardized-format-for-content-type-localizations/-->
+		<!--
+		<groups>
+			<example>Example-tab</example>
+		</groups>
+		-->
+		<contenttypes>
+			<!-- For all content-types -->
+			<icontentdata>
+				<properties>
+					<description>
+						<caption>Description (meta)</caption>
+						<help></help>
+					</description>
+					<heading>
+						<caption>Heading</caption>
+						<help></help>
+					</heading>
+					<keywords>
+						<caption>Keywords (meta)</caption>
+						<help></help>
+					</keywords>
+					<mainbody>
+						<caption>Content</caption>
+						<help>The content will be shown in the main-part of the page. You can write text, attach images, create links etc.</help>
+					</mainbody>
+				</properties>
+			</icontentdata>
+		</contenttypes>
+	</language>
+</languages>

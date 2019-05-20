@@ -1,4 +1,45 @@
 ﻿@model IViewModel
 <nav class="col-md-3 sub-navigation">
-	@Html.Partial("~/Views/Shared/Parts/Navigation/SubNavigation.cshtml", Model.Layout.SubNavigation)
+	@Render(Model.Layout.SubNavigation)
 </nav>
+
+@helper Render(INavigationNode node)
+{
+	if(node != null)
+	{
+		if(node.Parent == null && node.Include)
+		{
+			@:<ul>
+		}
+		if(node.Include)
+		{
+			@:<li class="@( ((node.Active ? " active" : string.Empty) + (node.ActiveAncestor ? " active-ancestor" : string.Empty)).Trim())">
+			<a href="@Url.ContentUrl(node.Content.ContentLink)">
+				@node.Text
+				@if(!node.Leaf || node.Active)
+				{
+					<svg class="icon" role="presentation">
+						<use xlink:href="/Style/Icons/sprite.svg#@( node.Active ? "arrow-right" : node.ActiveAncestor ? "chevron-down" : "chevron-up")"></use>
+					</svg>
+				}
+			</a>
+		}
+		if(node.Children.Any())
+		{
+			<ul>
+				@foreach(var child in node.Children)
+				{
+					@Render(child)
+				}
+			</ul>
+		}
+		if(node.Include)
+		{
+			@:</li>
+		}
+		if(node.Parent == null && node.Include)
+		{
+			@:</ul>
+		}
+	}
+}
