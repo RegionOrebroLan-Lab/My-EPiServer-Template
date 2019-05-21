@@ -1,4 +1,9 @@
 ﻿{
+	"Culture": "sv",
+	"Cultures": [
+		"de",
+		"en"
+	],
 	"Name": "Hem",
 	"Path": "/Index",
 	"UrlSegment": "start",

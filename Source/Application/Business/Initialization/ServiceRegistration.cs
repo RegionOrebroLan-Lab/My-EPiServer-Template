@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO.Abstractions;
+using EPiServer.Configuration;
 using EPiServer.Data.SchemaUpdates;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
@@ -31,6 +32,7 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 			context.Services.AddSingleton<IFileSystem, FileSystem>();
 			context.Services.AddSingleton<ISchemaUpdater, ExtensionsSchemaUpdater>();
 			context.Services.AddSingleton(LogManager.LoggerFactory());
+			context.Services.AddSingleton(Settings.Instance);
 		}
 
 		public virtual void Initialize(InitializationEngine context) { }

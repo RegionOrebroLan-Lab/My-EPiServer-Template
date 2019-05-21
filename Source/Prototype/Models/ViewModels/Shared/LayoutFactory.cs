@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Prototype.Models.Content;
 using Prototype.Models.Navigation;
@@ -56,9 +58,14 @@ namespace Prototype.Models.ViewModels.Shared
 				SubNavigation = this.CreateSubNavigation(content, this.ContentMap)
 			};
 
+			this.PopulateCultureNavigation(content, layout.CultureNavigation);
+
 			// ReSharper disable InvertIf
 			if(content != null)
 			{
+				if(content.Culture != null)
+					layout.Culture = content.Culture;
+
 				layout.Description = content.Description;
 
 				foreach(var keyword in content.Keywords)
@@ -101,6 +108,25 @@ namespace Prototype.Models.ViewModels.Shared
 			// ReSharper restore InvertIf
 
 			return this.NavigationFactory.Create(subNavigationRoot, this.SubNavigationSettings);
+		}
+
+		protected internal virtual void PopulateCultureNavigation(IContentNode content, IDictionary<CultureInfo, Uri> cultureNavigation)
+		{
+			if(cultureNavigation == null)
+				throw new ArgumentNullException(nameof(cultureNavigation));
+
+			if(content == null)
+				return;
+
+			if(content.Culture != null)
+				cultureNavigation.Add(content.Culture, content.Url);
+
+			foreach(var culture in content.Cultures.Where(culture => !culture.Equals(content.Culture)))
+			{
+				var url = new Uri(content.Url + "#" + culture.Name, UriKind.RelativeOrAbsolute);
+
+				cultureNavigation.Add(culture, url);
+			}
 		}
 
 		#endregion

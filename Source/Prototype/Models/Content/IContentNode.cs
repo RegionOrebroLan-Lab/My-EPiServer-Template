@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Prototype.Models.Content
 {
@@ -9,6 +10,8 @@ namespace Prototype.Models.Content
 
 		IEnumerable<IContentNode> Ancestors { get; }
 		IEnumerable<IContentNode> Children { get; }
+		CultureInfo Culture { get; }
+		IEnumerable<CultureInfo> Cultures { get; }
 		IEnumerable<IContentNode> Descendants { get; }
 		string Description { get; }
 		string Heading { get; }

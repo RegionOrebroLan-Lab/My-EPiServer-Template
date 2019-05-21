@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Prototype.Models.Internal;
 
@@ -78,6 +79,8 @@ namespace Prototype.Models.Content
 			}
 		}
 
+		public virtual CultureInfo Culture => this.SiteMapNode.Culture;
+		public virtual IEnumerable<CultureInfo> Cultures => this.SiteMapNode.Cultures;
 		IEnumerable<IContentNode> IContentNode.Descendants => this.Descendants;
 
 		public virtual IEnumerable<ContentNode> Descendants

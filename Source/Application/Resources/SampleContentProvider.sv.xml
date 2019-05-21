@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+	<language id="sv" name="svenska">
+		<samplecontentprovider>
+			<heading>Rubrik för enda sidan</heading>
+			<mainbody><![CDATA[<h2>Under-rubrik</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis semper sapien at semper. Pellentesque maximus mollis ante vitae imperdiet. Duis molestie urna justo. Sed vel feugiat magna. Nullam blandit rhoncus nisl, faucibus lacinia libero mattis ut. In hac habitasse platea dictumst. Etiam tempus velit quis mi elementum, in sollicitudin sapien porttitor. Vestibulum quis lobortis nibh. Nullam sit amet augue a felis dignissim mollis. In hac habitasse platea dictumst. Fusce ornare pharetra enim a blandit. Aenean dignissim dolor nec nisi commodo, at posuere lectus consectetur. Aliquam faucibus rutrum justo. Cras consectetur mi sed arcu vulputate scelerisque eu ut ante. Sed et purus sed tellus fermentum condimentum eu eu odio.</p><p>Mauris aliquam eget justo sit amet rhoncus. Ut eget facilisis lorem. Phasellus vel turpis consequat, vestibulum nisl non, iaculis enim. Pellentesque a nisl id nibh faucibus euismod. Praesent varius ullamcorper ligula nec iaculis. Nunc hendrerit neque consequat dapibus consequat. Vivamus imperdiet, sapien et gravida tristique, mauris turpis porta arcu, eu placerat felis enim sed tortor.</p><p>Integer semper placerat eros at elementum. In hac habitasse platea dictumst. Sed tellus eros, ullamcorper sollicitudin imperdiet in, efficitur et massa. Morbi tempor tempus diam, quis imperdiet nisi euismod vel. Curabitur in pulvinar augue. Maecenas commodo aliquet orci sit amet tempus. Aenean velit tortor, consequat nec libero non, consequat pellentesque lacus. Vivamus tellus lorem, finibus ac nisi et, condimentum congue justo. Vestibulum semper et lacus ac tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur at augue et pellentesque. Vestibulum consequat ornare rhoncus. Curabitur metus diam, dignissim et dapibus ut, mollis eget quam</p>]]></mainbody>
+			<name>Enda sidan</name>
+			<urlsegment>enda-sidan</urlsegment>
+		</samplecontentprovider>
+	</language>
+</languages>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Prototype.Models.Navigation;
 
@@ -9,6 +10,7 @@ namespace Prototype.Models.ViewModels.Shared
 		#region Properties
 
 		CultureInfo Culture { get; set; }
+		IDictionary<CultureInfo, Uri> CultureNavigation { get; }
 
 		/// <summary>
 		/// Meta-description

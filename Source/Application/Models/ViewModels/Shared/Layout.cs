@@ -25,6 +25,7 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 
 		protected internal virtual IContent Content { get; }
 		public virtual CultureInfo Culture { get; set; }
+		public virtual IDictionary<CultureInfo, Uri> CultureNavigation { get; } = new Dictionary<CultureInfo, Uri>();
 		public virtual string Description { get; set; }
 		public virtual IList<string> Keywords { get; } = new List<string>();
 		public virtual INavigationNode MainNavigation { get; set; }

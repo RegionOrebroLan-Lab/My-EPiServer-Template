@@ -1,5 +1,43 @@
 # My EPiServer-template
 
+
+
+
+
+
+
+
+The site is setup for swedish as default if you want to change:
+<globalization culture="sv-SE" requestEncoding="utf-8" resourceProviderFactoryType="EPiServer.Framework.Localization.LocalizationServiceResourceProviderFactory, EPiServer.Framework.AspNet" responseEncoding="utf-8" uiCulture="sv" />
+<globalization culture="en-US" requestEncoding="utf-8" resourceProviderFactoryType="EPiServer.Framework.Localization.LocalizationServiceResourceProviderFactory, EPiServer.Framework.AspNet" responseEncoding="utf-8" uiCulture="en" />
+
+And change the replacement scripts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This is an EPiServer Visual Studio solution to use as a template. The idea is to download it and then do search and replace on some values and use it as a template for new EPiServer Visual Studio solutions. The values to search and replace are **MyCompany-MyWebApplication** and **MyCompany.MyWebApplication**.
 
 These values are in files in the solution so you can use **Replace in Files** (Ctrl+Shift+H) to easily replace them. The values are not in the *.csproj-files but in **Build.props** files imported in the *.csproj-files.

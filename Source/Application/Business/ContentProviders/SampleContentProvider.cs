@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using EPiServer.Construction;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
+using EPiServer.Framework.Localization;
 using EPiServer.Web;
 using MyCompany.MyWebApplication.Models.Pages;
-using RegionOrebroLan;
 
 namespace MyCompany.MyWebApplication.Business.ContentProviders
 {
@@ -24,12 +25,12 @@ namespace MyCompany.MyWebApplication.Business.ContentProviders
 
 		#region Constructors
 
-		public SampleContentProvider(IContentFactory contentFactory, IContentTypeRepository contentTypeRepository, IDateTimeContext dateTimeContext, ILanguageBranchRepository languageBranchRepository)
+		public SampleContentProvider(IContentFactory contentFactory, IContentTypeRepository contentTypeRepository, ILanguageBranchRepository cultureRepository, LocalizationService localization)
 		{
 			this.ContentFactory = contentFactory ?? throw new ArgumentNullException(nameof(contentFactory));
 			this.ContentTypeRepository = contentTypeRepository ?? throw new ArgumentNullException(nameof(contentTypeRepository));
-			this.DateTimeContext = dateTimeContext ?? throw new ArgumentNullException(nameof(dateTimeContext));
-			this.LanguageBranchRepository = languageBranchRepository ?? throw new ArgumentNullException(nameof(languageBranchRepository));
+			this.CultureRepository = cultureRepository ?? throw new ArgumentNullException(nameof(cultureRepository));
+			this.Localization = localization ?? throw new ArgumentNullException(nameof(localization));
 		}
 
 		#endregion
@@ -44,21 +45,22 @@ namespace MyCompany.MyWebApplication.Business.ContentProviders
 				if(this._contentDictionary == null)
 				{
 					var contentDictionary = new Dictionary<CultureInfo, IContent>();
-					var cultures = this.LanguageBranchRepository.ListEnabled().Select(languageBranch => languageBranch.Culture).ToArray();
-					var now = this.DateTimeContext.Now;
+					var cultures = this.CultureRepository.ListEnabled().Select(languageBranch => languageBranch.Culture).ToArray();
 
-					var defaultCulture = this.LanguageBranchRepository.LoadFirstEnabledBranch().Culture;
-					var defaultContent = this.CreateContent(defaultCulture, cultures, defaultCulture, now);
+					var defaultCulture = this.CultureRepository.LoadFirstEnabledBranch().Culture;
+					var defaultContent = this.CreateContent(defaultCulture, cultures, defaultCulture);
 
 					contentDictionary.Add(CultureInfo.InvariantCulture, defaultContent);
 					contentDictionary.Add(defaultCulture, defaultContent);
 
 					foreach(var culture in cultures.Where(culture => !culture.Equals(defaultCulture)))
 					{
-						contentDictionary.Add(culture, this.CreateContent(culture, cultures, defaultCulture, now));
+						contentDictionary.Add(culture, this.CreateContent(culture, cultures, defaultCulture));
 					}
 
 					this._contentDictionary = contentDictionary;
+
+					Thread.Sleep(500);
 				}
 				// ReSharper restore InvertIf
 
@@ -68,8 +70,8 @@ namespace MyCompany.MyWebApplication.Business.ContentProviders
 
 		protected internal new virtual IContentFactory ContentFactory { get; }
 		protected internal new virtual IContentTypeRepository ContentTypeRepository { get; }
-		protected internal virtual IDateTimeContext DateTimeContext { get; }
-		protected internal new virtual ILanguageBranchRepository LanguageBranchRepository { get; }
+		protected internal virtual ILanguageBranchRepository CultureRepository { get; }
+		protected internal virtual LocalizationService Localization { get; }
 		protected internal virtual Guid OnlyContentGuid => _onlyContentGuid;
 
 		protected internal virtual ContentReference OnlyContentReference
@@ -94,14 +96,12 @@ namespace MyCompany.MyWebApplication.Business.ContentProviders
 		#region Methods
 
 		[SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
-		protected internal virtual IContent CreateContent(CultureInfo culture, IEnumerable<CultureInfo> existingCultures, CultureInfo masterCulture, DateTime startPublish)
+		protected internal virtual IContent CreateContent(CultureInfo culture, IEnumerable<CultureInfo> existingCultures, CultureInfo masterCulture)
 		{
 			if(culture == null)
 				throw new ArgumentNullException(nameof(culture));
 
-			const string namePrefix = "Provider-content";
-			var informationSuffix = " in " + culture.NativeName;
-			const string html = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis semper sapien at semper. Pellentesque maximus mollis ante vitae imperdiet. Duis molestie urna justo. Sed vel feugiat magna. Nullam blandit rhoncus nisl, faucibus lacinia libero mattis ut. In hac habitasse platea dictumst. Etiam tempus velit quis mi elementum, in sollicitudin sapien porttitor. Vestibulum quis lobortis nibh. Nullam sit amet augue a felis dignissim mollis. In hac habitasse platea dictumst. Fusce ornare pharetra enim a blandit. Aenean dignissim dolor nec nisi commodo, at posuere lectus consectetur. Aliquam faucibus rutrum justo. Cras consectetur mi sed arcu vulputate scelerisque eu ut ante. Sed et purus sed tellus fermentum condimentum eu eu odio.</p><p>Mauris aliquam eget justo sit amet rhoncus. Ut eget facilisis lorem. Phasellus vel turpis consequat, vestibulum nisl non, iaculis enim. Pellentesque a nisl id nibh faucibus euismod. Praesent varius ullamcorper ligula nec iaculis. Nunc hendrerit neque consequat dapibus consequat. Vivamus imperdiet, sapien et gravida tristique, mauris turpis porta arcu, eu placerat felis enim sed tortor.</p><p>Integer semper placerat eros at elementum. In hac habitasse platea dictumst. Sed tellus eros, ullamcorper sollicitudin imperdiet in, efficitur et massa. Morbi tempor tempus diam, quis imperdiet nisi euismod vel. Curabitur in pulvinar augue. Maecenas commodo aliquet orci sit amet tempus. Aenean velit tortor, consequat nec libero non, consequat pellentesque lacus. Vivamus tellus lorem, finibus ac nisi et, condimentum congue justo. Vestibulum semper et lacus ac tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur at augue et pellentesque. Vestibulum consequat ornare rhoncus. Curabitur metus diam, dignissim et dapibus ut, mollis eget quam</p>";
+			const string localizationKeyPrefix = "/samplecontentprovider/";
 
 			var contentType = this.ContentTypeRepository.Load<InformationPage>();
 			var content = (InformationPage) this.ContentFactory.CreateContent(contentType);
@@ -111,17 +111,16 @@ namespace MyCompany.MyWebApplication.Business.ContentProviders
 			content.ContentGuid = this.OnlyContentGuid;
 			content.ContentLink = this.OnlyContentReference;
 			content.ExistingLanguages = existingCultures;
-			content.Heading = "Heading" + informationSuffix;
+			content.Heading = this.Localization.GetStringByCulture(localizationKeyPrefix + "heading", culture);
 			content.Language = culture;
 			content.LinkType = PageShortcutType.Normal;
 			content.LinkURL = this.ConstructContentUri(contentType.ID, this.OnlyContentReference, this.OnlyContentGuid).ToString();
-			content.MainBody = new XhtmlString("<h2>Main-body" + informationSuffix + "</h2>" + html);
+			content.MainBody = new XhtmlString(this.Localization.GetStringByCulture(localizationKeyPrefix + "mainbody", culture));
 			content.MasterLanguage = masterCulture;
-			content.Name = namePrefix + informationSuffix;
+			content.Name = this.Localization.GetStringByCulture(localizationKeyPrefix + "name", culture);
 			content.ParentLink = this.EntryPoint.ToPageReference();
-			content.StartPublish = startPublish;
 			content.Status = VersionStatus.Published;
-			content.URLSegment = content.Name.ToLowerInvariant();
+			content.URLSegment = this.Localization.GetStringByCulture(localizationKeyPrefix + "urlsegment", culture);
 			content.VisibleInMenu = true;
 
 			var contentSecurityDescriptor = content.GetContentSecurityDescriptor();

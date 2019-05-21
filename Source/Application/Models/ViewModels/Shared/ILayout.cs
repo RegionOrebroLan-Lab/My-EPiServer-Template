@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using MyCompany.MyWebApplication.Models.Navigation;
 
@@ -9,6 +10,7 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		#region Properties
 
 		CultureInfo Culture { get; set; }
+		IDictionary<CultureInfo, Uri> CultureNavigation { get; }
 		string Description { get; set; }
 		IList<string> Keywords { get; }
 		INavigationNode MainNavigation { get; set; }

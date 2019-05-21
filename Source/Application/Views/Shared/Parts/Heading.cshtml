@@ -1,14 +1,13 @@
 ﻿@model InformationPage
 @if(Model != null)
 {
-	if(PageEditing.PageIsInEditMode)
+	if(PageEditing.PageIsInEditMode && !DataFactory.Instance.ProviderMap.IsEntryPoint(Model.ContentLink) && string.IsNullOrEmpty(Model.ContentLink.ProviderName))
 	{
 		<span>
 			<i>@Html.Translate("/editing/nameorheadingash1")</i>
 		</span>
 		<h1>
 			@Html.PropertyFor(model => model.Name)
-			<br />
 			@Html.PropertyFor(model => model.Heading)
 		</h1>
 	}

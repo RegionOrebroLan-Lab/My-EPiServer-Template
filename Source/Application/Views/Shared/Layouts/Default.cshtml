@@ -72,8 +72,8 @@
 					{
 						@:<div class="col-md-12">
 					}
-					@Html.Partial("~/Views/Shared/Parts/Heading.cshtml", Model.Content as InformationPage, new ViewDataDictionary())
-					@Html.Partial("~/Views/Shared/Parts/MainBody.cshtml", Model.Content as InformationPage, new ViewDataDictionary())
+					@Html.Partial("~/Views/Shared/Parts/Heading.cshtml", Model.Content as InformationPage, this.ViewData)
+					@Html.Partial("~/Views/Shared/Parts/MainBody.cshtml", Model.Content as InformationPage, this.ViewData)
 					@RenderBody()
 					@Html.Raw("</div>")
 				</div>

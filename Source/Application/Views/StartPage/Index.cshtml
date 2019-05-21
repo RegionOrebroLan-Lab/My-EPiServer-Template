@@ -5,7 +5,7 @@
 	<main role="main">
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="display-3">@Model.Content.Name</h1>
+				<h1 class="display-3">@Html.PropertyFor(model => model.Content.Name)</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio.</p>
 				<p>
 					<a class="btn btn-primary btn-lg" href="#" role="button">Läs mer &raquo;</a>
