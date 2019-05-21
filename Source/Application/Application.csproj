@@ -111,14 +111,14 @@
     <Reference Include="EPiServer.Events, Version=11.11.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.Framework.11.11.3\lib\net461\EPiServer.Events.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Forms, Version=4.24.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Forms.4.24.2\lib\EPiServer.Forms.dll</HintPath>
+    <Reference Include="EPiServer.Forms, Version=4.24.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Forms.4.24.3\lib\EPiServer.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Forms.Core, Version=4.24.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Forms.Core.4.24.2\lib\EPiServer.Forms.Core.dll</HintPath>
+    <Reference Include="EPiServer.Forms.Core, Version=4.24.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Forms.Core.4.24.3\lib\EPiServer.Forms.Core.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Forms.UI, Version=4.24.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Forms.UI.4.24.2\lib\EPiServer.Forms.UI.dll</HintPath>
+    <Reference Include="EPiServer.Forms.UI, Version=4.24.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Forms.UI.4.24.3\lib\EPiServer.Forms.UI.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Framework, Version=11.11.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.Framework.11.11.3\lib\net461\EPiServer.Framework.dll</HintPath>
@@ -381,6 +381,7 @@
     <Content Include="Modules\_Protected\EPiServer.Forms\EPiServer.Forms.zip" />
     <Content Include="Modules\_Protected\EPiServer.Forms\Forms.config" />
     <Content Include="Modules\_Protected\EPiServer.Forms.UI\EPiServer.Forms.UI.zip" />
+    <Content Include="Modules\_Protected\EPiServer.Forms.UI\Module.config" />
     <Content Include="Modules\_Protected\EPiServer.Search.Cms\IndexContent.aspx" />
     <Content Include="Modules\_Protected\EPiServer.Search.Cms\Module.config" />
     <Content Include="Modules\_Protected\Shell\Shell.zip" />
