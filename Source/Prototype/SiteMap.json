@@ -155,7 +155,7 @@
 			"Heading": "Exempel på komponenter",
 			"HtmlContent": "Välj exempel på olika komponenter i menyn till vänster.",
 			"Name": "Komponenter",
-			"Path": "/Components/Index",
+			"Path": "/InformationPage/Index",
 			"UrlSegment": "komponenter",
 			"Children": [
 				{
