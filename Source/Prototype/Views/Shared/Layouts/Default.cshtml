@@ -14,7 +14,7 @@
 			}
 			else
 			{
-				<partial model="@Model.View" name="~/Views/Shared/Parts/Head/Meta.cshtml" />
+				<partial name="~/Views/Shared/Parts/Head/Meta.cshtml" />
 			}
 			if(IsSectionDefined("HeadTitle"))
 			{
@@ -22,7 +22,7 @@
 			}
 			else
 			{
-				<partial model="@Model.View" name="~/Views/Shared/Parts/Head/Title.cshtml" />
+				<partial name="~/Views/Shared/Parts/Head/Title.cshtml" />
 			}
 			if(IsSectionDefined("HeadLink"))
 			{
@@ -30,7 +30,7 @@
 			}
 			else
 			{
-				<partial model="@Model.View" name="~/Views/Shared/Parts/Head/Link.cshtml" />
+				<partial name="~/Views/Shared/Parts/Head/Link.cshtml" />
 			}
 			if(IsSectionDefined("HeadScript"))
 			{
@@ -38,7 +38,7 @@
 			}
 			else
 			{
-				<partial model="@Model.View" name="~/Views/Shared/Parts/Head/Script.cshtml" />
+				<partial name="~/Views/Shared/Parts/Head/Script.cshtml" />
 			}
 			if(IsSectionDefined("AdditionalHeadContent"))
 			{
@@ -53,7 +53,7 @@
 		}
 		else
 		{
-			<partial model="@Model.View" name="~/Views/Shared/Parts/Header.cshtml" />
+			<partial name="~/Views/Shared/Parts/Header.cshtml" />
 		}
 		@if(IsSectionDefined("Main"))
 		{
@@ -65,7 +65,7 @@
 				<div class="row">
 					@if(Model.View.Layout.SubNavigation.Any())
 					{
-						<partial model="@Model.View" name="~/Views/Shared/Parts/Navigation/SubNavigation.cshtml" />
+						<partial name="~/Views/Shared/Parts/Navigation/SubNavigation.cshtml" />
 						@:<div class="col-md-9">
 					}
 					else
@@ -88,7 +88,7 @@
 		}
 		else
 		{
-			<partial model="@Model.View" name="~/Views/Shared/Parts/Footer.cshtml" />
+			<partial name="~/Views/Shared/Parts/Footer.cshtml" />
 		}
 		@if(IsSectionDefined("Scripts"))
 		{
@@ -96,7 +96,7 @@
 		}
 		else
 		{
-			<partial model="@Model.View" name="~/Views/Shared/Parts/Scripts.cshtml" />
+			<partial name="~/Views/Shared/Parts/Scripts.cshtml" />
 		}
 		@if(IsSectionDefined("AdditionalScripts"))
 		{

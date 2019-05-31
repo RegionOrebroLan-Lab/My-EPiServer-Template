@@ -1,2 +1,32 @@
 ﻿@page
 @model PageModel
+<form>
+	<fieldset>
+		<legend>Form-legend</legend>
+		<div class="form-group">
+			<label for="text-input">Text</label>
+			<input id="text-input" type="text" />
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" id="checkbox-input" type="checkbox" />
+			<label class="form-check-label" for="checkbox-input">Checkbox</label>
+		</div>
+		<div class="form-check">
+			<div>
+				<input class="form-check-input" id="radio-input-1" name="Radio" type="radio" />
+				<label class="form-check-label" for="radio-input-1">Radio 1</label>
+			</div>
+			<div>
+				<input class="form-check-input" id="radio-input-2" name="Radio" type="radio" />
+				<label class="form-check-label" for="radio-input-2">Radio 2</label>
+			</div>
+			<div>
+				<input class="form-check-input" id="radio-input-3" name="Radio" type="radio" />
+				<label class="form-check-label" for="radio-input-3">Radio 3</label>
+			</div>
+		</div>
+	</fieldset>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+</form>

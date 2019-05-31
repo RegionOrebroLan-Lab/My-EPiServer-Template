@@ -1,10 +1,10 @@
-﻿@model IViewModel
-@if(Model.Layout.CultureNavigation.Count > 1)
+﻿@model PageModel
+@if(Model.View.Layout.CultureNavigation.Count > 1)
 {
 	<ul class="culture-navigation">
-		@foreach(var item in Model.Layout.CultureNavigation)
+		@foreach(var item in Model.View.Layout.CultureNavigation)
 		{
-			<li@(Html.Raw(item.Key.Equals(Model.Layout.Culture) ? " class=\"active\"" : string.Empty))>
+			<li@(Html.Raw(item.Key.Equals(Model.View.Layout.Culture) ? " class=\"active\"" : string.Empty))>
 				<svg class="icon" role="presentation">
 					<use xlink:href="/Style/Icons/sprite.svg#globe"></use>
 				</svg>

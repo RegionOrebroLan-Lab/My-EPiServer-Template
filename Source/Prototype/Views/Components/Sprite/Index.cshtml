@@ -1,79 +1,15 @@
 ﻿@page
+@using Microsoft.AspNetCore.Hosting
+@inject IHostingEnvironment HostingEnvironment
 @model PageModel
 <div class="text-center">
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#arrow-bottom" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#arrow-left" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#arrow-right" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#checkmark" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#chevron-down" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#chevron-up" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#close-filter" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#cross" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#dropdown-arrow" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#external" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#globe" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#greater-than" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#info" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#lesser-than" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#magnifying-glass" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#minus" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#page-first" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#page-last" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#page-next" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#page-prev" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#plus" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#question-mark" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#settings" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#speech-bubble" />
-	</svg>
-	<svg>
-		<use xlink:href="/Style/Icons/sprite.svg#top" />
-	</svg>
+	@foreach (var file in HostingEnvironment.ContentRootFileProvider.GetDirectoryContents("Style/Icons/"))
+	{
+		var name = file.Name.Replace(".svg", string.Empty);
+		<div>
+			<svg class="icon -@name" role="presentation">
+				<use xlink:href="/Style/Icons/sprite.svg#@name" />
+			</svg>
+		</div>
+	}
 </div>
