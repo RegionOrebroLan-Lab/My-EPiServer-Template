@@ -14,7 +14,7 @@
 			}
 			else
 			{
-				@Html.Partial("~/Views/Shared/Parts/Head/Meta.cshtml", Model)
+				@Html.Partial("~/Views/Shared/Parts/Head/Meta.cshtml")
 			}
 			if(IsSectionDefined("HeadTitle"))
 			{
@@ -22,7 +22,7 @@
 			}
 			else
 			{
-				@Html.Partial("~/Views/Shared/Parts/Head/Title.cshtml", Model)
+				@Html.Partial("~/Views/Shared/Parts/Head/Title.cshtml")
 			}
 			if(IsSectionDefined("HeadLink"))
 			{
@@ -30,7 +30,7 @@
 			}
 			else
 			{
-				@Html.Partial("~/Views/Shared/Parts/Head/Link.cshtml", Model)
+				@Html.Partial("~/Views/Shared/Parts/Head/Link.cshtml")
 			}
 			if(IsSectionDefined("HeadScript"))
 			{
@@ -38,7 +38,7 @@
 			}
 			else
 			{
-				@Html.Partial("~/Views/Shared/Parts/Head/Script.cshtml", Model)
+				@Html.Partial("~/Views/Shared/Parts/Head/Script.cshtml")
 			}
 			if(IsSectionDefined("AdditionalHeadContent"))
 			{
@@ -53,7 +53,7 @@
 		}
 		else
 		{
-			@Html.Partial("~/Views/Shared/Parts/Header.cshtml", Model)
+			@Html.Partial("~/Views/Shared/Parts/Header.cshtml")
 		}
 		@if(IsSectionDefined("Main"))
 		{
@@ -65,15 +65,16 @@
 				<div class="row">
 					@if(Model.Layout.SubNavigation.Any())
 					{
-						@Html.Partial("~/Views/Shared/Parts/Navigation/SubNavigation.cshtml", Model)
+						@Html.Partial("~/Views/Shared/Parts/Navigation/SubNavigation.cshtml")
 						@:<div class="col-md-9">
 					}
 					else
 					{
 						@:<div class="col-md-12">
 					}
-					@Html.Partial("~/Views/Shared/Parts/Heading.cshtml", Model.Content as InformationPage, this.ViewData)
-					@Html.Partial("~/Views/Shared/Parts/MainBody.cshtml", Model.Content as InformationPage, this.ViewData)
+					@Html.Partial("~/Views/Shared/Heading.cshtml", Model.Content, this.ViewData)
+					@Html.Partial("~/Views/Shared/Introduction.cshtml", Model.Content as IIntroductionContent, this.ViewData)
+					@Html.Partial("~/Views/Shared/MainBody.cshtml", Model.Content as IEditorialContent, this.ViewData)
 					@RenderBody()
 					@Html.Raw("</div>")
 				</div>
@@ -85,7 +86,7 @@
 		}
 		else
 		{
-			@Html.Partial("~/Views/Shared/Parts/Footer.cshtml", Model)
+			@Html.Partial("~/Views/Shared/Parts/Footer.cshtml")
 		}
 		@if(IsSectionDefined("Scripts"))
 		{
@@ -93,7 +94,7 @@
 		}
 		else
 		{
-			@Html.Partial("~/Views/Shared/Parts/Scripts.cshtml", Model)
+			@Html.Partial("~/Views/Shared/Parts/Scripts.cshtml")
 		}
 		@if(IsSectionDefined("AdditionalScripts"))
 		{

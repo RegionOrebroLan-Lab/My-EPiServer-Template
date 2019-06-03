@@ -1,0 +1,5 @@
+﻿@model IIntroductionContent
+@if(Model != null)
+{
+	<div class="introduction"@Html.Raw(PageEditing.PageIsInEditMode ? " " + Html.EditAttributes(model => model.Introduction) : null)>@Model.Introduction</div>
+}

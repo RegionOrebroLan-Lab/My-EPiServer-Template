@@ -1,0 +1,5 @@
+﻿@model PageModel
+@if(Model?.View != null)
+{
+	<h1>@(!string.IsNullOrEmpty(Model.View.Heading) ? Model.View.Heading : Model.View.Name)</h1>
+}

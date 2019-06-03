@@ -110,6 +110,7 @@ namespace Prototype.Models.Content
 		public virtual string Heading => this.SiteMapNode.Heading;
 		public virtual string HtmlContent => this.SiteMapNode.HtmlContent;
 		public virtual int Index => this.SiteMapNode.Index;
+		public virtual string Introduction => this.SiteMapNode.Introduction;
 		public virtual IEnumerable<string> Keywords => this.SiteMapNode.Keywords;
 		public virtual string Name => this.SiteMapNode.Name;
 		protected internal virtual ContentNode Parent { get; }

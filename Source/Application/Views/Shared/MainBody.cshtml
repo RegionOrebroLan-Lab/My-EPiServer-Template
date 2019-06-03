@@ -1,0 +1,7 @@
+﻿@model IEditorialContent
+@if(Model != null)
+{
+	<div class="editorial-content"@Html.Raw(PageEditing.PageIsInEditMode ? " " + Html.EditAttributes(model => model.MainBody) : null)>
+		@Html.XhtmlString(Model.MainBody)
+	</div>
+}

@@ -40,6 +40,7 @@ namespace Prototype.Models.ViewModels
 
 		public virtual string Heading => this.ContentNode?.Heading;
 		public virtual string HtmlContent => this.ContentNode?.HtmlContent;
+		public virtual string Introduction => this.ContentNode?.Introduction;
 		public virtual ILayout Layout => this._layout ?? (this._layout = this.ContentNode != null ? this.LayoutFactory.Create(this.ContentNode) : this.LayoutFactory.Create());
 		protected internal virtual ILayoutFactory LayoutFactory { get; }
 		public virtual string Name => this.ContentNode?.Name;

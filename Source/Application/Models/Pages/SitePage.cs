@@ -11,13 +11,13 @@ namespace MyCompany.MyWebApplication.Models.Pages
 	{
 		#region Properties
 
-		[Display(GroupName = SystemTabNames.Content, Order = 100)]
 		[CultureSpecific]
+		[Display(GroupName = SystemTabNames.Content, Order = 100)]
 		[UIHint(UIHint.Textarea)]
 		public virtual string Description { get; set; }
 
-		[Display(GroupName = SystemTabNames.Content, Order = 200)]
 		[CultureSpecific]
+		[Display(GroupName = SystemTabNames.Content, Order = 200)]
 		public virtual IEnumerable<string> Keywords { get; set; }
 
 		#endregion

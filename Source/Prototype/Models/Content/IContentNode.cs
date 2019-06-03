@@ -17,6 +17,7 @@ namespace Prototype.Models.Content
 		string Heading { get; }
 		string HtmlContent { get; }
 		int Index { get; }
+		string Introduction { get; }
 		IEnumerable<string> Keywords { get; }
 		string Name { get; }
 		string Path { get; }

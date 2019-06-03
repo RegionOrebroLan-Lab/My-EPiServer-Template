@@ -170,7 +170,7 @@
 
 	function createRollupOutputOptions(file, sourcemap) {
 		const format = "iife";
-		const name = "oncology.web";
+		const name = "myRollupScriptBundleName.web";
 
 		return {
 			file: file,

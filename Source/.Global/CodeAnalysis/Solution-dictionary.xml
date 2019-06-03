@@ -12,6 +12,7 @@
 		<Recognized>
 			<Word>epi</Word>
 			<Word>mvc</Word>
+			<Word>recaptcha</Word>
 		</Recognized>
 		<Unrecognized>
 			<!--<Word></Word>-->

@@ -72,11 +72,9 @@
 					{
 						@:<div class="col-md-12">
 					}
-					<h1>@(Model.View.Heading ?? Model.View.Name)</h1>
-					@if(!string.IsNullOrEmpty(Model.View.HtmlContent))
-					{
-						@Html.Raw(Model.View.HtmlContent)
-					}
+					<partial name="~/Views/Shared/Heading.cshtml" />
+					<partial name="~/Views/Shared/Introduction.cshtml" />
+					<partial name="~/Views/Shared/MainBody.cshtml" />
 					@RenderBody()
 					@Html.Raw("</div>")
 				</div>

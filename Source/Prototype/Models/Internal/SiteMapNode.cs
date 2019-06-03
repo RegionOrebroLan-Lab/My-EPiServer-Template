@@ -14,6 +14,7 @@ namespace Prototype.Models.Internal
 		public virtual string Heading { get; set; }
 		public virtual string HtmlContent { get; set; }
 		public virtual int Index { get; set; }
+		public virtual string Introduction { get; set; }
 		public virtual ICollection<string> Keywords { get; } = new List<string>();
 		public virtual string Name { get; set; }
 		public virtual string Path { get; set; }

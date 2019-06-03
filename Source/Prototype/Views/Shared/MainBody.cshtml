@@ -1,0 +1,7 @@
+﻿@model PageModel
+@if(!string.IsNullOrEmpty(Model?.View?.HtmlContent))
+{
+	<div class="editorial-content">
+		@Html.Raw(Model.View.HtmlContent)
+	</div>
+}

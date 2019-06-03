@@ -1,0 +1,26 @@
+﻿@model IContent
+@if(Model != null)
+{
+	var contentProviderManager = ServiceLocator.Current.GetInstance<IContentProviderManager>();
+	var headlineContent = Model as IHeadlineContent;
+	if(PageEditing.PageIsInEditMode && !contentProviderManager.ProviderMap.IsEntryPoint(Model.ContentLink) && string.IsNullOrEmpty(Model.ContentLink.ProviderName))
+	{
+		if(headlineContent != null)
+		{
+			<span>
+				<i>@Html.Translate("/editing/nameorheadingash1")</i>
+			</span>
+		}
+		<h1>
+			@Html.PropertyFor(model => model.Name)
+			@if(headlineContent != null)
+			{
+				@Html.PropertyFor(model => headlineContent.Heading)
+			}
+		</h1>
+	}
+	else
+	{
+		<h1>@(headlineContent == null || string.IsNullOrEmpty(headlineContent.Heading) ? Model.Name : headlineContent.Heading)</h1>
+	}
+}

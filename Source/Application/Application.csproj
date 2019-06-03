@@ -345,6 +345,13 @@
     <Compile Include="Controllers\Internal\IControllerFacade.cs" />
     <Compile Include="Controllers\Internal\SitePageController.cs" />
     <Compile Include="Controllers\Internal\SiteContentController.cs" />
+    <Compile Include="Models\Blocks\EditorialBlock.cs" />
+    <Compile Include="Models\Blocks\SiteBlock.cs" />
+    <Compile Include="Models\IRightAreaContent.cs" />
+    <Compile Include="Models\IMainAreaContent.cs" />
+    <Compile Include="Models\IEditorialContent.cs" />
+    <Compile Include="Models\IHeadlineContent.cs" />
+    <Compile Include="Models\IIntroductionContent.cs" />
     <Compile Include="Models\Navigation\NavigationFactory.cs" />
     <Compile Include="Models\Navigation\INavigationFactory.cs" />
     <Compile Include="Models\Navigation\NavigationRoot.cs" />
@@ -368,9 +375,11 @@
     <Compile Include="Models\ViewModels\IStartPageViewModel.cs" />
     <Compile Include="Models\ViewModels\Shared\ILayout.cs" />
     <Compile Include="Models\ViewModels\Shared\ILayoutFactory.cs" />
+    <Compile Include="Models\ViewModels\Shared\IRecaptcha.cs" />
     <Compile Include="Models\ViewModels\Shared\ISettings.cs" />
     <Compile Include="Models\ViewModels\Shared\Layout.cs" />
     <Compile Include="Models\ViewModels\Shared\LayoutFactory.cs" />
+    <Compile Include="Models\ViewModels\Shared\Recaptcha.cs" />
     <Compile Include="Models\ViewModels\Shared\Settings.cs" />
     <Compile Include="Models\ViewModels\StartPageViewModel.cs" />
     <Content Include="Modules\_Protected\CMS\CMS.zip" />
@@ -418,8 +427,8 @@
     <Content Include="Views\Shared\Parts\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\Shared\Parts\Footer.cshtml" />
     <Content Include="Views\Shared\Parts\Header.cshtml" />
-    <Content Include="Views\Shared\Parts\Heading.cshtml" />
-    <Content Include="Views\Shared\Parts\MainBody.cshtml" />
+    <Content Include="Views\Shared\Heading.cshtml" />
+    <Content Include="Views\Shared\MainBody.cshtml" />
     <Content Include="Views\Shared\Parts\Scripts.cshtml" />
     <Content Include="Views\StartPage\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -533,9 +542,9 @@
     <Content Include="Web.Test.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Shared\Introduction.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Blocks\" />
     <Folder Include="Models\Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

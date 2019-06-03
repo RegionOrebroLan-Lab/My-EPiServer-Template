@@ -9,6 +9,7 @@ namespace Prototype.Models.ViewModels
 
 		string Heading { get; }
 		string HtmlContent { get; }
+		string Introduction { get; }
 		ILayout Layout { get; }
 		string Name { get; }
 		Uri Url { get; }
