@@ -1,0 +1,8 @@
+﻿@model IMainAreaContent
+@if(Model != null)
+{
+	<h2>Main-area</h2>
+	<div class="main-area">
+		@Html.PropertyFor(model => model.MainArea)
+	</div>
+}

@@ -1,0 +1,8 @@
+﻿@model IRightAreaContent
+@if(Model != null)
+{
+	<div class="right-area">
+		<h2>Right-area</h2>
+		@Html.PropertyFor(model => model.RightArea)
+	</div>
+}

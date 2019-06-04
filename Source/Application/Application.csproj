@@ -220,6 +220,9 @@
     <Reference Include="RegionOrebroLan.EPiServer.Initialization, Version=0.0.2.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
       <HintPath>..\packages\RegionOrebroLan.EPiServer.Initialization.0.0.2-alpha\lib\netstandard2.0\RegionOrebroLan.EPiServer.Initialization.dll</HintPath>
     </Reference>
+    <Reference Include="RegionOrebroLan.Web, Version=0.3.0.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
+      <HintPath>..\packages\RegionOrebroLan.Web.0.3.0-alpha\lib\netstandard2.0\RegionOrebroLan.Web.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\StructureMap.4.7.1\lib\net45\StructureMap.dll</HintPath>
     </Reference>
@@ -315,6 +318,7 @@
     <Compile Include="Business\Filters\CompositeFilter.cs" />
     <Compile Include="Business\Filters\ContentFilter.cs" />
     <Compile Include="Business\Filters\VisibleInMenuFilter.cs" />
+    <Compile Include="Business\Initialization\FormsInitialization.cs" />
     <Compile Include="Business\Initialization\BundleInitialization.cs" />
     <Compile Include="Business\Initialization\MvcInitialization.cs" />
     <Compile Include="Business\Initialization\ServiceRegistration.cs" />
@@ -339,6 +343,7 @@
       <Link>CodeAnalysis\Solution-suppressions.cs</Link>
     </Compile>
     <Compile Include="CodeAnalysis\Suppressions.cs" />
+    <Compile Include="Controllers\Forms\FormController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Controllers\DefaultPageController.cs" />
     <Compile Include="Controllers\Internal\ControllerFacade.cs" />
@@ -352,6 +357,7 @@
     <Compile Include="Models\IEditorialContent.cs" />
     <Compile Include="Models\IHeadlineContent.cs" />
     <Compile Include="Models\IIntroductionContent.cs" />
+    <Compile Include="Models\Navigation\Extensions\NavigationNodeExtension.cs" />
     <Compile Include="Models\Navigation\NavigationFactory.cs" />
     <Compile Include="Models\Navigation\INavigationFactory.cs" />
     <Compile Include="Models\Navigation\NavigationRoot.cs" />
@@ -543,6 +549,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Shared\Introduction.cshtml" />
+    <Content Include="Views\Shared\RightArea.cshtml" />
+    <Content Include="Views\Shared\MainArea.cshtml" />
+    <Content Include="Views\Shared\Blocks\EditorialBlock.cshtml" />
+    <Content Include="Views\Shared\ElementBlocks\FormContainerBlock.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Forms\" />

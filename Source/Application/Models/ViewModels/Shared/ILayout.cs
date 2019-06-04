@@ -9,9 +9,12 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 	{
 		#region Properties
 
+		string BodyClass { get; set; }
+		string BodyId { get; set; }
 		CultureInfo Culture { get; set; }
 		IDictionary<CultureInfo, Uri> CultureNavigation { get; }
 		string Description { get; set; }
+		bool IncludeRightArea { get; }
 		IList<string> Keywords { get; }
 		INavigationNode MainNavigation { get; set; }
 		INavigationNode SubNavigation { get; set; }

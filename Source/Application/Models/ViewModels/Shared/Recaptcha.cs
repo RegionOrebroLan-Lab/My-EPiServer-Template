@@ -1,49 +1,48 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Web;
-//using EPiServer.ServiceLocation;
+﻿using System;
+using EPiServer.ServiceLocation;
+using RegionOrebroLan.Web.Security.Captcha;
+using RegionOrebroLan.Web.Security.Captcha.Extensions;
 
-//namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
-//{
-//	/// <inheritdoc />
-//	[ServiceConfiguration(typeof(IRecaptcha), Lifecycle = ServiceInstanceScope.HttpContext)]
-//	public class Recaptcha : IRecaptcha
-//	{
-//		#region Fields
+namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
+{
+	/// <inheritdoc />
+	[ServiceConfiguration(typeof(IRecaptcha), Lifecycle = ServiceInstanceScope.Hybrid)]
+	public class Recaptcha : IRecaptcha
+	{
+		#region Fields
 
-//		private bool _enabled;
+		private bool _enabled;
 
-//		#endregion
+		#endregion
 
-//		#region Constructors
+		#region Constructors
 
-//		public Recaptcha(IRecaptchaSettings settings)
-//		{
-//			if (settings == null)
-//				throw new ArgumentNullException(nameof(settings));
+		public Recaptcha(IRecaptchaSettings settings)
+		{
+			if(settings == null)
+				throw new ArgumentNullException(nameof(settings));
 
-//			this.EnabledInternal = settings.EnabledOnClient();
-//			this.ScriptUrl = settings.ClientScriptUrl();
-//			this.SiteKey = settings.SiteKey;
-//			this.TokenParameterName = settings.TokenParameterName;
-//		}
+			this.EnabledInternal = settings.EnabledOnClient();
+			this.ScriptUrl = settings.ClientScriptUrl();
+			this.SiteKey = settings.SiteKey;
+			this.TokenParameterName = settings.TokenParameterName;
+		}
 
-//		#endregion
+		#endregion
 
-//		#region Properties
+		#region Properties
 
-//		public virtual bool Enabled
-//		{
-//			get => this._enabled && this.EnabledInternal;
-//			set => this._enabled = value;
-//		}
+		public virtual bool Enabled
+		{
+			get => this._enabled && this.EnabledInternal;
+			set => this._enabled = value;
+		}
 
-//		protected internal virtual bool EnabledInternal { get; }
-//		public virtual Uri ScriptUrl { get; }
-//		public virtual string SiteKey { get; }
-//		public virtual string TokenParameterName { get; }
+		protected internal virtual bool EnabledInternal { get; }
+		public virtual Uri ScriptUrl { get; }
+		public virtual string SiteKey { get; }
+		public virtual string TokenParameterName { get; }
 
-//		#endregion
-//	}
-//}
+		#endregion
+	}
+}

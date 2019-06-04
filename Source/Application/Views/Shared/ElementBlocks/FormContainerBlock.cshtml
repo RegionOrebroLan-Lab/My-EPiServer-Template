@@ -1,0 +1,12 @@
+﻿@model EPiServer.Forms.Implementation.Elements.FormContainerBlock
+
+<h2>My custom form view</h2>
+<ul>
+	@foreach(var key in this.ViewData.Keys)
+	{
+		<li>
+			<strong>@key: </strong>@(this.ViewData[key])
+		</li>
+	}
+</ul>
+@Html.Partial("/EPiServer/EPiServer.Forms/Views/ElementBlocks/FormContainerBlock.ascx")

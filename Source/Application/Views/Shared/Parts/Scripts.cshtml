@@ -1,17 +1,17 @@
 ﻿@model IViewModel
 @Scripts.Render("~/Site-scripts")
+@if(Model.Settings.Recaptcha.Enabled)
+{
+	<script src="@Model.Settings.Recaptcha.ScriptUrl"></script>
+	<script>
+		myRollupScriptBundle.web.recaptcha(grecaptcha, "@Model.Settings.Recaptcha.SiteKey", "@Model.Settings.Recaptcha.TokenParameterName");
+	</script>
+}
 @*
 	@if(Model.Settings.GoogleTagManager.Enabled)
 	{
 		<noscript>
 			<iframe class="hidden" src="https://www.googletagmanager.com/ns.html?id=@Model.Settings.GoogleTagManager.Id"></iframe>
 		</noscript>
-	}
-	@if (Model.Settings.Recaptcha.Enabled)
-	{
-		<script src="@Model.Settings.Recaptcha.ScriptUrl"></script>
-		<script>
-			company.web.recaptcha(grecaptcha, "@Model.Settings.Recaptcha.SiteKey", "@Model.Settings.Recaptcha.TokenParameterName")
-		</script>
 	}
 *@

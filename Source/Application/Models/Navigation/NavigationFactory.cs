@@ -76,8 +76,8 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 			}
 			else
 			{
-				if(this.Logger.IsWarningEnabled())
-					this.Logger.Warning("The root is {0}.", root == null ? "null" : "empty");
+				if(this.Logger.IsDebugEnabled())
+					this.Logger.Debug("The root is {0}.", root == null ? "null" : "empty");
 			}
 
 			return new NavigationRoot(activeLink, activeLinkAncestors, this.ContentLoader, content, settings);

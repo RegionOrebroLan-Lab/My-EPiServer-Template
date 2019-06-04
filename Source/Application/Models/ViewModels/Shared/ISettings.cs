@@ -1,5 +1,11 @@
 ﻿namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 {
-	[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1040:AvoidEmptyInterfaces")]
-	public interface ISettings { }
+	public interface ISettings
+	{
+		#region Properties
+
+		IRecaptcha Recaptcha { get; }
+
+		#endregion
+	}
 }

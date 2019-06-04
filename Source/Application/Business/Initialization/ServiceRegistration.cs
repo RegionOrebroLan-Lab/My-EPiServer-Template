@@ -6,7 +6,9 @@ using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.Logging;
 using EPiServer.ServiceLocation;
+using MyCompany.MyWebApplication.Business.Configuration;
 using MyCompany.MyWebApplication.Business.Data.SchemaUpdates;
+using RegionOrebroLan.Web.Security.Captcha;
 
 namespace MyCompany.MyWebApplication.Business.Initialization
 {
@@ -30,6 +32,16 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 
 			context.Services.AddSingleton(AppDomain.CurrentDomain);
 			context.Services.AddSingleton<IFileSystem, FileSystem>();
+			context.Services.AddSingleton<IRecaptchaSettings>(serviceLocator =>
+			{
+				var applicationSettings = serviceLocator.GetInstance<IConfigurationManager>().ApplicationSettings;
+
+				return new RecaptchaSettings
+				{
+					SecretKey = applicationSettings["Recaptcha-SecretKey"],
+					SiteKey = applicationSettings["Recaptcha-SiteKey"]
+				};
+			});
 			context.Services.AddSingleton<ISchemaUpdater, ExtensionsSchemaUpdater>();
 			context.Services.AddSingleton(LogManager.LoggerFactory());
 			context.Services.AddSingleton(Settings.Instance);

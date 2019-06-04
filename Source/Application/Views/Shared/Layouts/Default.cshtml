@@ -46,7 +46,7 @@
 			}
 		}
 	</head>
-	<body>
+	<body class="@Model.Layout.BodyClass" id="@Model.Layout.BodyId">
 		@if(IsSectionDefined("Header"))
 		{
 			@RenderSection("Header")
@@ -63,20 +63,27 @@
 		{
 			<main role="main" class="container">
 				<div class="row">
-					@if(Model.Layout.SubNavigation.Any())
+					@{
+						var includeRightArea = Model.Layout.IncludeRightArea;
+						var includeSubNavigation = !NavigationNodeExtension.IsNullOrEmpty(Model.Layout.SubNavigation);
+					}
+					@if(includeSubNavigation)
 					{
 						@Html.Partial("~/Views/Shared/Parts/Navigation/SubNavigation.cshtml")
-						@:<div class="col-md-9">
 					}
-					else
+					<div class="col-md-@(includeRightArea ? includeSubNavigation ? "6" : "9" : includeSubNavigation ? "9" : "12")">
+						@Html.Partial("~/Views/Shared/Heading.cshtml", Model.Content, this.ViewData)
+						@Html.Partial("~/Views/Shared/Introduction.cshtml", Model.Content as IIntroductionContent, this.ViewData)
+						@Html.Partial("~/Views/Shared/MainBody.cshtml", Model.Content as IEditorialContent, this.ViewData)
+						@RenderBody()
+						@Html.Partial("~/Views/Shared/MainArea.cshtml", Model.Content as IMainAreaContent, this.ViewData)
+					</div>
+					@if(includeRightArea)
 					{
-						@:<div class="col-md-12">
+						<div class="col-md-3">
+							@Html.Partial("~/Views/Shared/RightArea.cshtml", Model.Content as IRightAreaContent, this.ViewData)
+						</div>
 					}
-					@Html.Partial("~/Views/Shared/Heading.cshtml", Model.Content, this.ViewData)
-					@Html.Partial("~/Views/Shared/Introduction.cshtml", Model.Content as IIntroductionContent, this.ViewData)
-					@Html.Partial("~/Views/Shared/MainBody.cshtml", Model.Content as IEditorialContent, this.ViewData)
-					@RenderBody()
-					@Html.Raw("</div>")
 				</div>
 			</main><!-- /.container -->
 		}

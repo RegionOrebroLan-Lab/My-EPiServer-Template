@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
@@ -62,9 +64,23 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 			return this.CreateInternal(content);
 		}
 
+		[SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
+		protected internal virtual string CreateBodyId(IContent content)
+		{
+			if(content == null)
+				return "page";
+
+			var typeName = content.GetOriginalType().Name;
+			var parts = Regex.Split(typeName, @"(?<!^)(?=[A-Z])"); // Split on uppercase.
+
+			return string.Join("-", parts.Select(part => part.ToLowerInvariant()));
+		}
+
 		protected internal virtual ILayout CreateInternal(IContent content)
 		{
 			var layout = content == null ? new Layout() : new Layout(content);
+
+			layout.BodyClass = layout.BodyId = this.CreateBodyId(content);
 
 			this.PopulateCultureNavigation(content, layout.CultureNavigation);
 

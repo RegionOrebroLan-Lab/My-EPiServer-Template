@@ -1,5 +1,5 @@
 # My EPiServer-template
-This is an EPiServer Visual Studio solution to use as a template. The idea is to download it and then do search and replace on some values and use it as a template for new EPiServer Visual Studio solutions. The values to search and replace are **MyCompany-MyWebApplication**, **MyCompany.MyWebApplication** and **myRollupScriptBundleName**.
+This is an EPiServer Visual Studio solution to use as a template. The idea is to download it and then do search and replace on some values and use it as a template for new EPiServer Visual Studio solutions. The values to search and replace are **MyCompany-MyWebApplication**, **MyCompany.MyWebApplication** and **myRollupScriptBundle**.
 
 These values are in files in the solution so you can use **Replace in Files** (Ctrl+Shift+H) to easily replace them. The values are not in the *.csproj-files but in **Build.props** files imported in the *.csproj-files.
 
@@ -15,7 +15,7 @@ You also should change the name of the solution file, [**MyCompany-MyWebApplicat
 4. Open the solution in Visual Studio.
 5. Search for **MyCompany** and replace with **YourCompany** or whatever you like.
 6. Search for **MyWebApplication** and replace with **YourWebApplication** or whatever you like, eg. **Web** or **Intranet**.
-7. Search for **myRollupScriptBundleName** and replace with **yourCompany** or whatever you like.
+7. Search for **myRollupScriptBundle** and replace with **yourCompany** or whatever you like.
 8. Close and reopen the solution (eg. to avoid ReSharper warnings).
 
 The focus for the EPiServer project is initialization and continous-release.

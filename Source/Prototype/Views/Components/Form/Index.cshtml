@@ -1,6 +1,6 @@
 ﻿@page
 @model PageModel
-<form>
+<form action="#" data-recaptcha-enabled="true">
 	<fieldset>
 		<legend>Form-legend</legend>
 		<div class="form-group">
@@ -33,5 +33,8 @@
 
 @section AdditionalScripts
 {
-
+	<script src="https://www.google.com/recaptcha/api.js?render=6Leeb44UAAAAALmNP4AYgKGr1manwm_X_yewlh-Q"></script>
+	<script>
+		myRollupScriptBundle.web.recaptcha(grecaptcha, "6Leeb44UAAAAALmNP4AYgKGr1manwm_X_yewlh-Q", "RecaptchaToken");
+	</script>
 }
