@@ -6,7 +6,7 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1 class="display-3">@Html.PropertyFor(model => model.Content.Name)</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nibh odio.</p>
+				@Html.Partial("~/Views/Shared/MainBody.cshtml", Model.Content)
 				<p>
 					<a class="btn btn-primary btn-lg" href="#" role="button">Läs mer &raquo;</a>
 				</p>
