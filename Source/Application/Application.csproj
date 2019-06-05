@@ -242,7 +242,7 @@
 		</Reference>
 		<Reference Include="System.Drawing" />
 		<Reference Include="System.IO.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=96bf224d23c43e59, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.IO.Abstractions.4.2.13\lib\net40\System.IO.Abstractions.dll</HintPath>
+			<HintPath>..\packages\System.IO.Abstractions.4.2.17\lib\net40\System.IO.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="System.IO.Compression" />
 		<Reference Include="System.Net" />
