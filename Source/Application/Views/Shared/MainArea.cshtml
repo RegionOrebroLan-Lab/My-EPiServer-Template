@@ -1,8 +1,7 @@
 ﻿@model IMainAreaContent
-@if(Model != null)
+@if(Model != null && Model.MainArea != null)
 {
-	<h2>Main-area</h2>
 	<div class="main-area">
-		@Html.PropertyFor(model => model.MainArea)
+		@Html.PropertyFor(model => model.MainArea, new {ChildrenCssClass = "content-area-item", ChildrenCustomTagName = "li", CssClass = "content-area", CustomTag = "ul"})
 	</div>
 }

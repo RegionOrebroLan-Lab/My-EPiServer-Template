@@ -4,5 +4,33 @@
 		<editing>
 			<nameorheadingash1>Namn eller rubrik som h1</nameorheadingash1>
 		</editing>
+		<previewing>
+			<modes>
+				<mainArea>
+					<description>Förhandsgranskning för huvud-area.</description>
+					<heading>Huvud-area 1</heading>
+				</mainArea>
+				<mainAreaWithRightArea>
+					<description>Förhandsgranskning för huvud-area med höger-area.</description>
+					<heading>Huvud-area 2</heading>
+				</mainAreaWithRightArea>
+				<mainAreaWithSubNavigation>
+					<description>Förhandsgranskning för huvud-area med sub-navigering.</description>
+					<heading>Huvud-area 3</heading>
+				</mainAreaWithSubNavigation>
+				<mainAreaWithSubNavigationAndRightArea>
+					<description>Förhandsgranskning för huvud-area med sub-navigering och höger-area.</description>
+					<heading>Huvud-area 4</heading>
+				</mainAreaWithSubNavigationAndRightArea>
+				<rightArea>
+					<description>Förhandsgranskning för höger-area.</description>
+					<heading>Höger-area 1</heading>
+				</rightArea>
+				<rightAreaWithSubNavigation>
+					<description>Förhandsgranskning för höger-area med sub-navigering.</description>
+					<heading>Höger-area 2</heading>
+				</rightAreaWithSubNavigation>
+			</modes>
+		</previewing>
 	</language>
 </languages>

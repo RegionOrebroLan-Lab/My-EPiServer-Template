@@ -4,5 +4,33 @@
 		<editing>
 			<nameorheadingash1>Name or heading as h1</nameorheadingash1>
 		</editing>
+		<previewing>
+			<modes>
+				<mainArea>
+					<description>Preview for main-area.</description>
+					<heading>Main-area 1</heading>
+				</mainArea>
+				<mainAreaWithRightArea>
+					<description>Preview for main-area with right-area.</description>
+					<heading>Main-area 2</heading>
+				</mainAreaWithRightArea>
+				<mainAreaWithSubNavigation>
+					<description>Preview for main-area with sub-navigation.</description>
+					<heading>Main-area 3</heading>
+				</mainAreaWithSubNavigation>
+				<mainAreaWithSubNavigationAndRightArea>
+					<description>Preview for main-area with sub-navigation and right-area.</description>
+					<heading>Main-area 4</heading>
+				</mainAreaWithSubNavigationAndRightArea>
+				<rightArea>
+					<description>Preview for right-area.</description>
+					<heading>Right-area 1</heading>
+				</rightArea>
+				<rightAreaWithSubNavigation>
+					<description>Preview for right-area with sub-navigation.</description>
+					<heading>Right-area 2</heading>
+				</rightAreaWithSubNavigation>
+			</modes>
+		</previewing>
 	</language>
 </languages>

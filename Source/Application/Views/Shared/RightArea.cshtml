@@ -1,8 +1,7 @@
 ﻿@model IRightAreaContent
-@if(Model != null)
+@if(Model != null && Model.RightArea != null)
 {
-	<div class="right-area">
-		<h2>Right-area</h2>
-		@Html.PropertyFor(model => model.RightArea)
+	<div class="col-md-3 right-area">
+		@Html.PropertyFor(model => model.RightArea, new {ChildrenCssClass = "content-area-item", ChildrenCustomTagName = "li", CssClass = "content-area", CustomTag = "ul"})
 	</div>
 }

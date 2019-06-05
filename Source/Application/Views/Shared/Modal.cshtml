@@ -1,0 +1,32 @@
+﻿@model IModal
+<div class="modal fade show@(!string.IsNullOrEmpty(Model.CssClass) ? " " + Model.CssClass : string.Empty)" id="modal" role="dialog" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				@*@Html.Partial("~/Views/Shared/Alert.cshtml", Model.Alert)*@
+				@if(Model.Actions.Any())
+				{
+					var index = 0;
+					<div class="text-right">
+						@foreach(var action in Model.Actions)
+						{
+							if(index == 0)
+							{
+								<a class="btn btn-primary" data-modal-element-initially-focused="true" href="@action.Value" tabindex="@index">
+									@action.Key
+								</a>
+							}
+							else
+							{
+								<a class="btn" href="@action.Value" tabindex="@index">
+									@action.Key
+								</a>
+							}
+							index++;
+						}
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</div>

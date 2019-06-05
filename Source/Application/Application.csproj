@@ -329,6 +329,8 @@
     <Compile Include="Business\Personalization\ProfileRepository.cs" />
     <Compile Include="Business\Web\IWebFacade.cs" />
     <Compile Include="Business\Web\Mvc\DependencyResolver.cs" />
+    <Compile Include="Business\Web\Mvc\IModal.cs" />
+    <Compile Include="Business\Web\Mvc\Modal.cs" />
     <Compile Include="Business\Web\Profile\IProfileManager.cs" />
     <Compile Include="Business\Web\Profile\ProfileManagerWrapper.cs" />
     <Compile Include="Business\Web\WebFacade.cs" />
@@ -343,6 +345,7 @@
       <Link>CodeAnalysis\Solution-suppressions.cs</Link>
     </Compile>
     <Compile Include="CodeAnalysis\Suppressions.cs" />
+    <Compile Include="Controllers\Blocks\PreviewController.cs" />
     <Compile Include="Controllers\Forms\FormController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Controllers\DefaultPageController.cs" />
@@ -368,6 +371,9 @@
     <Compile Include="Models\Pages\SitePage.cs" />
     <Compile Include="Models\Pages\InformationPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
+    <Compile Include="Models\ViewModels\Blocks\Internal\PreviewMode.cs" />
+    <Compile Include="Models\ViewModels\Blocks\IPreviewViewModel.cs" />
+    <Compile Include="Models\ViewModels\Blocks\PreviewViewModel.cs" />
     <Compile Include="Models\ViewModels\Internal\IContentViewModel.cs" />
     <Compile Include="Models\ViewModels\Internal\IViewModel.cs" />
     <Compile Include="Models\ViewModels\Internal\IViewModelFacade.cs" />
@@ -553,6 +559,9 @@
     <Content Include="Views\Shared\MainArea.cshtml" />
     <Content Include="Views\Shared\Blocks\EditorialBlock.cshtml" />
     <Content Include="Views\Shared\ElementBlocks\FormContainerBlock.cshtml" />
+    <Content Include="Views\Shared\ModalBackground.cshtml" />
+    <Content Include="Views\Shared\Modal.cshtml" />
+    <Content Include="Views\Shared\Blocks\Preview\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Forms\" />

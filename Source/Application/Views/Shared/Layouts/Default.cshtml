@@ -46,7 +46,11 @@
 			}
 		}
 	</head>
-	<body class="@Model.Layout.BodyClass" id="@Model.Layout.BodyId">
+	<body class="@Model.Layout.BodyClass@(Model.Layout.Modal != null ? " modal-open" : string.Empty)" id="@Model.Layout.BodyId">
+		@if(Model.Layout.Modal != null)
+		{
+			@Html.Partial("~/Views/Shared/Modal.cshtml", Model.Layout.Modal)
+		}
 		@if(IsSectionDefined("Header"))
 		{
 			@RenderSection("Header")
@@ -80,9 +84,7 @@
 					</div>
 					@if(includeRightArea)
 					{
-						<div class="col-md-3">
-							@Html.Partial("~/Views/Shared/RightArea.cshtml", Model.Content as IRightAreaContent, this.ViewData)
-						</div>
+						@Html.Partial("~/Views/Shared/RightArea.cshtml", Model.Content as IRightAreaContent, this.ViewData)
 					}
 				</div>
 			</main><!-- /.container -->
@@ -94,6 +96,10 @@
 		else
 		{
 			@Html.Partial("~/Views/Shared/Parts/Footer.cshtml")
+		}
+		@if(Model.Layout.Modal != null)
+		{
+			@Html.Partial("~/Views/Shared/ModalBackground.cshtml")
 		}
 		@if(IsSectionDefined("Scripts"))
 		{

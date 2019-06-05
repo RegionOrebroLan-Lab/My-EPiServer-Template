@@ -1,0 +1,95 @@
+﻿@{ Layout = null; }
+@model IPreviewViewModel
+<!DOCTYPE html>
+<html lang="@Model.Culture">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>@Html.Translate("/editor/tools/dynamiccontent/adapterpreviewheading")</title>
+		@Styles.Render("~/Site-style")
+	</head>
+	<body class="preview" id="preview">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="#">@Html.Translate("/editor/tools/dynamiccontent/adapterpreviewheading")</a>
+			<button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" type="button">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="navbar-nav mr-auto">
+					@foreach(var mode in Model.Modes)
+					{
+						<li class="nav-item">
+							<a class="nav-link@(mode.Key == Model.Mode ? " active" : string.Empty)" href="@mode.Value" title="@Html.Translate("/previewing/modes/" + mode.Key.ToString().ToLowerInvariant() + "/description")">@Html.Translate("/previewing/modes/" + mode.Key.ToString().ToLowerInvariant() + "/heading")</a>
+						</li>
+					}
+				</ul>
+			</div>
+		</nav>
+		<main role="main" class="container">
+			<div class="row">
+				@if(Model.IncludeSubNavigation)
+				{
+					<nav class="col-md-3 sub-navigation">
+						<ul>
+							<li>
+								<a href="#">
+									Lorem ipsum
+									<svg class="icon" role="presentation">
+										<use xlink:href="/Style/Icons/sprite.svg#arrow-right"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Nunc quam
+									<svg class="icon" role="presentation">
+										<use xlink:href="/Style/Icons/sprite.svg#arrow-right"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									Duis magna
+									<svg class="icon" role="presentation">
+										<use xlink:href="/Style/Icons/sprite.svg#arrow-right"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				}
+				<div class="col-md-@(Model.IncludeRightArea ? Model.IncludeSubNavigation ? "6" : "9" : Model.IncludeSubNavigation ? "9" : "12")">
+					<h1>Lorem ipsum</h1>
+					<div class="editorial-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta enim et ullamcorper pulvinar. Fusce quis augue id tellus congue facilisis.</p>
+						<p>Maecenas ut dui orci. Sed congue egestas nulla, vitae aliquam neque. In hac habitasse platea dictumst. Nullam sit amet enim mattis, facilisis lacus ac, sodales nulla.</p>
+					</div>
+					@if(Model.MainArea != null)
+					{
+						@Html.Partial("~/Views/Shared/MainArea.cshtml")
+					}
+				</div>
+				@if(Model.IncludeRightArea)
+				{
+					if(Model.RightArea != null)
+					{
+						@Html.Partial("~/Views/Shared/RightArea.cshtml")
+					}
+					else
+					{
+						<div class="col-md-3 right-area">
+							<ul class="content-area">
+								<li class="content-area-item">
+									<div class="editorial-content">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porta enim et ullamcorper pulvinar. Fusce quis augue id tellus congue facilisis.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					}
+				}
+			</div>
+		</main><!-- /.container -->
+		@Scripts.Render("~/Site-scripts")
+	</body>
+</html>

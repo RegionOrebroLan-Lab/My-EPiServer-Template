@@ -7,8 +7,12 @@ main {
 }
 
 .right-area {
-	background-color: $gray-200; /* bootstrap */
-	background-color: $blue; /* bootstrap */
+	background-color: #d1ecf1;
 	border-radius: .25rem;
-	padding: 0.4em;
+	padding: 0.8em;
+}
+
+li.content-area-item {
+	display: block;
+	list-style: none;
 }
