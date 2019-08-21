@@ -75,65 +75,65 @@
 		<Reference Include="EPiCode.SqlBlobProvider, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiCode.SqlBlobProvider.1.5.2\lib\net461\EPiCode.SqlBlobProvider.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.Core.11.12.0\lib\net461\EPiServer.dll</HintPath>
+		<Reference Include="EPiServer, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.Core.11.13.0\lib\net461\EPiServer.dll</HintPath>
 		</Reference>
 		<Reference Include="EPiServer.AddOns.Helpers, Version=0.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.AddOns.Helpers.0.4.0.0\lib\EPiServer.AddOns.Helpers.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.ApplicationModules, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.12.0\lib\net461\EPiServer.ApplicationModules.dll</HintPath>
+		<Reference Include="EPiServer.ApplicationModules, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.ApplicationModules.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Cms.AspNet, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.AspNet.11.12.0\lib\net461\EPiServer.Cms.AspNet.dll</HintPath>
+		<Reference Include="EPiServer.Cms.AspNet, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.0\lib\net461\EPiServer.Cms.AspNet.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Cms.Shell.UI, Version=11.20.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.20.1\lib\net461\EPiServer.Cms.Shell.UI.dll</HintPath>
+		<Reference Include="EPiServer.Cms.Shell.UI, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.4\lib\net461\EPiServer.Cms.Shell.UI.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Cms.TinyMce, Version=2.8.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.TinyMce.2.8.0\lib\net461\EPiServer.Cms.TinyMce.dll</HintPath>
+		<Reference Include="EPiServer.Cms.TinyMce, Version=2.8.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.TinyMce.2.8.1\lib\net461\EPiServer.Cms.TinyMce.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Cms.UI.AspNetIdentity, Version=11.20.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.AspNetIdentity.11.20.1\lib\net461\EPiServer.Cms.UI.AspNetIdentity.dll</HintPath>
+		<Reference Include="EPiServer.Cms.UI.AspNetIdentity, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.AspNetIdentity.11.21.4\lib\net461\EPiServer.Cms.UI.AspNetIdentity.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Configuration, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.AspNet.11.12.0\lib\net461\EPiServer.Configuration.dll</HintPath>
+		<Reference Include="EPiServer.Configuration, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.0\lib\net461\EPiServer.Configuration.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Data, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.12.0\lib\net461\EPiServer.Data.dll</HintPath>
+		<Reference Include="EPiServer.Data, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Data.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Data.Cache, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.12.0\lib\net461\EPiServer.Data.Cache.dll</HintPath>
+		<Reference Include="EPiServer.Data.Cache, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Data.Cache.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Enterprise, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.Core.11.12.0\lib\net461\EPiServer.Enterprise.dll</HintPath>
+		<Reference Include="EPiServer.Enterprise, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.Core.11.13.0\lib\net461\EPiServer.Enterprise.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Events, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.12.0\lib\net461\EPiServer.Events.dll</HintPath>
+		<Reference Include="EPiServer.Events, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Events.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Forms, Version=4.24.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Forms.4.24.3\lib\EPiServer.Forms.dll</HintPath>
+		<Reference Include="EPiServer.Forms, Version=4.25.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Forms.4.25.1\lib\EPiServer.Forms.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Forms.Core, Version=4.24.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Forms.Core.4.24.3\lib\EPiServer.Forms.Core.dll</HintPath>
+		<Reference Include="EPiServer.Forms.Core, Version=4.25.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Forms.Core.4.25.1\lib\EPiServer.Forms.Core.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Forms.UI, Version=4.24.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Forms.UI.4.24.3\lib\EPiServer.Forms.UI.dll</HintPath>
+		<Reference Include="EPiServer.Forms.UI, Version=4.25.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Forms.UI.4.25.1\lib\EPiServer.Forms.UI.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Framework, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.12.0\lib\net461\EPiServer.Framework.dll</HintPath>
+		<Reference Include="EPiServer.Framework, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Framework.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Framework.AspNet, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.AspNet.11.12.0\lib\net461\EPiServer.Framework.AspNet.dll</HintPath>
+		<Reference Include="EPiServer.Framework.AspNet, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.AspNet.11.13.0\lib\net461\EPiServer.Framework.AspNet.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.ImageLibrary, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.AspNet.11.12.0\lib\net461\EPiServer.ImageLibrary.dll</HintPath>
+		<Reference Include="EPiServer.ImageLibrary, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.0\lib\net461\EPiServer.ImageLibrary.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Licensing, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.12.0\lib\net461\EPiServer.Licensing.dll</HintPath>
+		<Reference Include="EPiServer.Licensing, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Licensing.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.LinkAnalyzer, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.Core.11.12.0\lib\net461\EPiServer.LinkAnalyzer.dll</HintPath>
+		<Reference Include="EPiServer.LinkAnalyzer, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.Core.11.13.0\lib\net461\EPiServer.LinkAnalyzer.dll</HintPath>
 		</Reference>
 		<Reference Include="EPiServer.Logging.Log4Net, Version=2.2.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.Logging.Log4Net.2.2.2\lib\net461\EPiServer.Logging.Log4Net.dll</HintPath>
@@ -144,23 +144,23 @@
 		<Reference Include="EPiServer.Search.IndexingService, Version=9.0.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.Search.9.0.3\lib\net461\EPiServer.Search.IndexingService.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.ServiceLocation.StructureMap, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.ServiceLocation.StructureMap.2.0.1\lib\net461\EPiServer.ServiceLocation.StructureMap.dll</HintPath>
+		<Reference Include="EPiServer.ServiceLocation.StructureMap, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.ServiceLocation.StructureMap.2.0.2\lib\net461\EPiServer.ServiceLocation.StructureMap.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Shell, Version=11.20.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.20.1\lib\net461\EPiServer.Shell.dll</HintPath>
+		<Reference Include="EPiServer.Shell, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.4\lib\net461\EPiServer.Shell.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Shell.UI, Version=11.20.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.20.1\lib\net461\EPiServer.Shell.UI.dll</HintPath>
+		<Reference Include="EPiServer.Shell.UI, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.4\lib\net461\EPiServer.Shell.UI.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.UI, Version=11.20.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.20.1\lib\net461\EPiServer.UI.dll</HintPath>
+		<Reference Include="EPiServer.UI, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.4\lib\net461\EPiServer.UI.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Web.WebControls, Version=11.12.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.AspNet.11.12.0\lib\net461\EPiServer.Web.WebControls.dll</HintPath>
+		<Reference Include="EPiServer.Web.WebControls, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.0\lib\net461\EPiServer.Web.WebControls.dll</HintPath>
 		</Reference>
-		<Reference Include="ICSharpCode.SharpZipLib, Version=1.1.0.145, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-			<HintPath>..\packages\SharpZipLib.1.1.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+		<Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+			<HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
 		</Reference>
 		<Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
 			<HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -241,8 +241,8 @@
 			<HintPath>..\packages\System.Data.SqlClient.4.6.1\lib\net461\System.Data.SqlClient.dll</HintPath>
 		</Reference>
 		<Reference Include="System.Drawing" />
-		<Reference Include="System.IO.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=96bf224d23c43e59, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.IO.Abstractions.5.0.1\lib\net40\System.IO.Abstractions.dll</HintPath>
+		<Reference Include="System.IO.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=96bf224d23c43e59, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.IO.Abstractions.6.0.21\lib\net40\System.IO.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="System.IO.Compression" />
 		<Reference Include="System.Net" />
@@ -429,6 +429,9 @@
 			<DependentUpon>Site.css</DependentUpon>
 		</Content>
 		<Content Include="Views\InformationPage\Index.cshtml" />
+		<Content Include="Views\Shared\Blocks\Preview\Index.cshtml" />
+		<Content Include="Views\Shared\Blocks\EditorialBlock.cshtml" />
+		<Content Include="Views\Shared\ElementBlocks\FormContainerBlock.cshtml" />
 		<Content Include="Views\Shared\Layouts\Default.cshtml" />
 		<Content Include="Views\Shared\Parts\Head\Link.cshtml" />
 		<Content Include="Views\Shared\Parts\Head\Meta.cshtml" />
@@ -439,9 +442,14 @@
 		<Content Include="Views\Shared\Parts\Navigation\SubNavigation.cshtml" />
 		<Content Include="Views\Shared\Parts\Footer.cshtml" />
 		<Content Include="Views\Shared\Parts\Header.cshtml" />
-		<Content Include="Views\Shared\Heading.cshtml" />
-		<Content Include="Views\Shared\MainBody.cshtml" />
 		<Content Include="Views\Shared\Parts\Scripts.cshtml" />
+		<Content Include="Views\Shared\Heading.cshtml" />
+		<Content Include="Views\Shared\Introduction.cshtml" />
+		<Content Include="Views\Shared\MainArea.cshtml" />
+		<Content Include="Views\Shared\MainBody.cshtml" />
+		<Content Include="Views\Shared\Modal.cshtml" />
+		<Content Include="Views\Shared\ModalBackground.cshtml" />
+		<Content Include="Views\Shared\RightArea.cshtml" />
 		<Content Include="Views\StartPage\Index.cshtml" />
 		<Content Include="Views\_ViewStart.cshtml" />
 		<Content Include="Views\Web.config">
@@ -554,14 +562,6 @@
 		<Content Include="Web.Test.config">
 			<DependentUpon>Web.config</DependentUpon>
 		</Content>
-		<Content Include="Views\Shared\Introduction.cshtml" />
-		<Content Include="Views\Shared\RightArea.cshtml" />
-		<Content Include="Views\Shared\MainArea.cshtml" />
-		<Content Include="Views\Shared\Blocks\EditorialBlock.cshtml" />
-		<Content Include="Views\Shared\ElementBlocks\FormContainerBlock.cshtml" />
-		<Content Include="Views\Shared\ModalBackground.cshtml" />
-		<Content Include="Views\Shared\Modal.cshtml" />
-		<Content Include="Views\Shared\Blocks\Preview\Index.cshtml" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Models\Forms\" />
