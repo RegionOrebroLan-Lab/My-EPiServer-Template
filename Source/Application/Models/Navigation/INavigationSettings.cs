@@ -8,11 +8,11 @@ namespace MyCompany.MyWebApplication.Models.Navigation
 	{
 		#region Properties
 
-		int? Depth { get; }
-		bool ExpandAll { get; }
-		IContentFilter Filter { get; }
-		bool IncludeRoot { get; }
-		Func<IContent, string> TextResolver { get; }
+		int? Depth { get; set; }
+		bool ExpandAll { get; set; }
+		IContentFilter Filter { get; set; }
+		bool IncludeRoot { get; set; }
+		Func<IContent, string> TextResolver { get; set; }
 
 		#endregion
 	}

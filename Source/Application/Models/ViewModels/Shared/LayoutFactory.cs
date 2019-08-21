@@ -40,11 +40,11 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		#region Properties
 
 		protected internal virtual IContentLoader ContentLoader { get; }
-		protected internal virtual INavigationSettings MainNavigationSettings => _mainNavigationSettings ?? (_mainNavigationSettings = new NavigationSettings {Depth = 1});
+		public virtual INavigationSettings MainNavigationSettings => _mainNavigationSettings ?? (_mainNavigationSettings = new NavigationSettings {Depth = 1});
 		protected internal virtual INavigationFactory NavigationFactory { get; }
 		protected internal virtual EPiServerSettings Settings { get; }
 		protected internal virtual ISiteDefinitionResolver SiteDefinitionResolver { get; }
-		protected internal virtual INavigationSettings SubNavigationSettings => _subNavigationSettings ?? (_subNavigationSettings = new NavigationSettings());
+		public virtual INavigationSettings SubNavigationSettings => _subNavigationSettings ?? (_subNavigationSettings = new NavigationSettings());
 		protected internal virtual IUrlResolver UrlResolver { get; }
 
 		#endregion

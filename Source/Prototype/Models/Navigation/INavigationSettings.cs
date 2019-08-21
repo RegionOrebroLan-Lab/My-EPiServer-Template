@@ -7,10 +7,10 @@ namespace Prototype.Models.Navigation
 	{
 		#region Properties
 
-		int? Depth { get; }
-		bool ExpandAll { get; }
-		bool IncludeRoot { get; }
-		Func<IContentNode, string> TextResolver { get; }
+		int? Depth { get; set; }
+		bool ExpandAll { get; set; }
+		bool IncludeRoot { get; set; }
+		Func<IContentNode, string> TextResolver { get; set; }
 
 		#endregion
 	}

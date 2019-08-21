@@ -29,9 +29,9 @@ namespace Prototype.Models.ViewModels.Shared
 		#region Properties
 
 		protected internal virtual IContentRoot ContentMap { get; }
-		protected internal virtual INavigationSettings MainNavigationSettings => _mainNavigationSettings ?? (_mainNavigationSettings = new NavigationSettings {Depth = 1});
+		public virtual INavigationSettings MainNavigationSettings => _mainNavigationSettings ?? (_mainNavigationSettings = new NavigationSettings {Depth = 1});
 		protected internal virtual INavigationFactory NavigationFactory { get; }
-		protected internal virtual INavigationSettings SubNavigationSettings => _subNavigationSettings ?? (_subNavigationSettings = new NavigationSettings());
+		public virtual INavigationSettings SubNavigationSettings => _subNavigationSettings ?? (_subNavigationSettings = new NavigationSettings());
 
 		#endregion
 
