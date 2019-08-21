@@ -1,17 +1,20 @@
 ﻿@model PageModel
 @if(Model.View.Layout.CultureNavigation.Count > 1)
 {
-	<ul class="culture-navigation">
-		@foreach(var item in Model.View.Layout.CultureNavigation)
-		{
-			<li@(Html.Raw(item.Key.Equals(Model.View.Layout.Culture) ? " class=\"active\"" : string.Empty))>
+	<ul class="culture-navigation navbar-nav">
+		<li class="nav-item dropdown active">
+			<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="culture-selector" title="Select culture.">
 				<svg class="icon" role="presentation">
 					<use xlink:href="/Style/Icons/sprite.svg#globe"></use>
 				</svg>
-				<a href="@item.Value">
-					@item.Key.NativeName
-				</a>
-			</li>
-		}
+				@Model.View.Layout.Culture?.NativeName
+			</a>
+			<div class="dropdown-menu" aria-labelledby="culture-selector">
+				@foreach(var item in Model.View.Layout.CultureNavigation)
+				{
+					<a class="dropdown-item@(item.Key.Equals(Model.View.Layout.Culture) ? " active" : string.Empty)" href="@item.Value" title="Select @item.Key.NativeName - @item.Key">@item.Key.NativeName</a>
+				}
+			</div>
+		</li>
 	</ul>
 }
