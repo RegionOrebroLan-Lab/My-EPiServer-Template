@@ -1,5 +1,6 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<Import Project="Build\Build.props" />
+	<Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
 	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
 	<PropertyGroup>
 		<AppDesignerFolder>Properties</AppDesignerFolder>
@@ -67,49 +68,49 @@
 			<HintPath>..\packages\Castle.Windsor.4.1.1\lib\net45\Castle.Windsor.dll</HintPath>
 		</Reference>
 		<Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-			<HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+			<HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
 		</Reference>
 		<Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-			<HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+			<HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
 		</Reference>
 		<Reference Include="EPiCode.SqlBlobProvider, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiCode.SqlBlobProvider.1.5.2\lib\net461\EPiCode.SqlBlobProvider.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.Core.11.13.0\lib\net461\EPiServer.dll</HintPath>
+		<Reference Include="EPiServer, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.Core.11.13.1\lib\net461\EPiServer.dll</HintPath>
 		</Reference>
 		<Reference Include="EPiServer.AddOns.Helpers, Version=0.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.AddOns.Helpers.0.4.0.0\lib\EPiServer.AddOns.Helpers.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.ApplicationModules, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.ApplicationModules.dll</HintPath>
+		<Reference Include="EPiServer.ApplicationModules, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.1\lib\net461\EPiServer.ApplicationModules.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Cms.AspNet, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.0\lib\net461\EPiServer.Cms.AspNet.dll</HintPath>
+		<Reference Include="EPiServer.Cms.AspNet, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.1\lib\net461\EPiServer.Cms.AspNet.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Cms.Shell.UI, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.4\lib\net461\EPiServer.Cms.Shell.UI.dll</HintPath>
+		<Reference Include="EPiServer.Cms.Shell.UI, Version=11.21.7.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.7\lib\net461\EPiServer.Cms.Shell.UI.dll</HintPath>
 		</Reference>
 		<Reference Include="EPiServer.Cms.TinyMce, Version=2.8.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.CMS.TinyMce.2.8.1\lib\net461\EPiServer.Cms.TinyMce.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Cms.UI.AspNetIdentity, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.AspNetIdentity.11.21.4\lib\net461\EPiServer.Cms.UI.AspNetIdentity.dll</HintPath>
+		<Reference Include="EPiServer.Cms.UI.AspNetIdentity, Version=11.21.7.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.AspNetIdentity.11.21.7\lib\net461\EPiServer.Cms.UI.AspNetIdentity.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Configuration, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.0\lib\net461\EPiServer.Configuration.dll</HintPath>
+		<Reference Include="EPiServer.Configuration, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.1\lib\net461\EPiServer.Configuration.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Data, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Data.dll</HintPath>
+		<Reference Include="EPiServer.Data, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.1\lib\net461\EPiServer.Data.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Data.Cache, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Data.Cache.dll</HintPath>
+		<Reference Include="EPiServer.Data.Cache, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.1\lib\net461\EPiServer.Data.Cache.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Enterprise, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.Core.11.13.0\lib\net461\EPiServer.Enterprise.dll</HintPath>
+		<Reference Include="EPiServer.Enterprise, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.Core.11.13.1\lib\net461\EPiServer.Enterprise.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Events, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Events.dll</HintPath>
+		<Reference Include="EPiServer.Events, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.1\lib\net461\EPiServer.Events.dll</HintPath>
 		</Reference>
 		<Reference Include="EPiServer.Forms, Version=4.25.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.Forms.4.25.1\lib\EPiServer.Forms.dll</HintPath>
@@ -120,20 +121,20 @@
 		<Reference Include="EPiServer.Forms.UI, Version=4.25.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.Forms.UI.4.25.1\lib\EPiServer.Forms.UI.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Framework, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Framework.dll</HintPath>
+		<Reference Include="EPiServer.Framework, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.1\lib\net461\EPiServer.Framework.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Framework.AspNet, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.AspNet.11.13.0\lib\net461\EPiServer.Framework.AspNet.dll</HintPath>
+		<Reference Include="EPiServer.Framework.AspNet, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.AspNet.11.13.1\lib\net461\EPiServer.Framework.AspNet.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.ImageLibrary, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.0\lib\net461\EPiServer.ImageLibrary.dll</HintPath>
+		<Reference Include="EPiServer.ImageLibrary, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.1\lib\net461\EPiServer.ImageLibrary.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Licensing, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.Framework.11.13.0\lib\net461\EPiServer.Licensing.dll</HintPath>
+		<Reference Include="EPiServer.Licensing, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.Framework.11.13.1\lib\net461\EPiServer.Licensing.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.LinkAnalyzer, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.Core.11.13.0\lib\net461\EPiServer.LinkAnalyzer.dll</HintPath>
+		<Reference Include="EPiServer.LinkAnalyzer, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.Core.11.13.1\lib\net461\EPiServer.LinkAnalyzer.dll</HintPath>
 		</Reference>
 		<Reference Include="EPiServer.Logging.Log4Net, Version=2.2.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.Logging.Log4Net.2.2.2\lib\net461\EPiServer.Logging.Log4Net.dll</HintPath>
@@ -147,17 +148,17 @@
 		<Reference Include="EPiServer.ServiceLocation.StructureMap, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
 			<HintPath>..\packages\EPiServer.ServiceLocation.StructureMap.2.0.2\lib\net461\EPiServer.ServiceLocation.StructureMap.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Shell, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.4\lib\net461\EPiServer.Shell.dll</HintPath>
+		<Reference Include="EPiServer.Shell, Version=11.21.7.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.7\lib\net461\EPiServer.Shell.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Shell.UI, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.4\lib\net461\EPiServer.Shell.UI.dll</HintPath>
+		<Reference Include="EPiServer.Shell.UI, Version=11.21.7.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.7\lib\net461\EPiServer.Shell.UI.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.UI, Version=11.21.4.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.4\lib\net461\EPiServer.UI.dll</HintPath>
+		<Reference Include="EPiServer.UI, Version=11.21.7.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.UI.Core.11.21.7\lib\net461\EPiServer.UI.dll</HintPath>
 		</Reference>
-		<Reference Include="EPiServer.Web.WebControls, Version=11.13.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.0\lib\net461\EPiServer.Web.WebControls.dll</HintPath>
+		<Reference Include="EPiServer.Web.WebControls, Version=11.13.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+			<HintPath>..\packages\EPiServer.CMS.AspNet.11.13.1\lib\net461\EPiServer.Web.WebControls.dll</HintPath>
 		</Reference>
 		<Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
 			<HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
@@ -205,20 +206,23 @@
 		<Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
 			<HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
 		</Reference>
-		<Reference Include="RegionOrebroLan, Version=1.0.4.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
-			<HintPath>..\packages\RegionOrebroLan.1.0.4\lib\netstandard2.0\RegionOrebroLan.dll</HintPath>
+		<Reference Include="RegionOrebroLan, Version=1.0.6.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
+			<HintPath>..\packages\RegionOrebroLan.1.0.6\lib\netstandard2.0\RegionOrebroLan.dll</HintPath>
 		</Reference>
 		<Reference Include="RegionOrebroLan.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
 			<HintPath>..\packages\RegionOrebroLan.Abstractions.1.0.0\lib\netstandard2.0\RegionOrebroLan.Abstractions.dll</HintPath>
 		</Reference>
-		<Reference Include="RegionOrebroLan.Data, Version=1.1.0.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
-			<HintPath>..\packages\RegionOrebroLan.Data.1.1.0-alpha\lib\netstandard2.0\RegionOrebroLan.Data.dll</HintPath>
+		<Reference Include="RegionOrebroLan.Data, Version=1.2.0.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
+			<HintPath>..\packages\RegionOrebroLan.Data.1.2.0-alpha\lib\netstandard2.0\RegionOrebroLan.Data.dll</HintPath>
 		</Reference>
-		<Reference Include="RegionOrebroLan.EPiServer.Data, Version=0.0.1.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
-			<HintPath>..\packages\RegionOrebroLan.EPiServer.Data.0.0.1-alpha\lib\netstandard2.0\RegionOrebroLan.EPiServer.Data.dll</HintPath>
+		<Reference Include="RegionOrebroLan.EPiServer, Version=0.0.0.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
+			<HintPath>..\packages\RegionOrebroLan.EPiServer.0.0.0-alpha\lib\net461\RegionOrebroLan.EPiServer.dll</HintPath>
 		</Reference>
-		<Reference Include="RegionOrebroLan.EPiServer.Initialization, Version=0.0.2.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
-			<HintPath>..\packages\RegionOrebroLan.EPiServer.Initialization.0.0.2-alpha\lib\netstandard2.0\RegionOrebroLan.EPiServer.Initialization.dll</HintPath>
+		<Reference Include="RegionOrebroLan.EPiServer.Data, Version=0.0.2.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
+			<HintPath>..\packages\RegionOrebroLan.EPiServer.Data.0.0.2-alpha\lib\netstandard2.0\RegionOrebroLan.EPiServer.Data.dll</HintPath>
+		</Reference>
+		<Reference Include="RegionOrebroLan.EPiServer.Initialization, Version=0.0.5.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
+			<HintPath>..\packages\RegionOrebroLan.EPiServer.Initialization.0.0.5-alpha\lib\netstandard2.0\RegionOrebroLan.EPiServer.Initialization.dll</HintPath>
 		</Reference>
 		<Reference Include="RegionOrebroLan.Web, Version=0.3.0.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
 			<HintPath>..\packages\RegionOrebroLan.Web.0.3.0-alpha\lib\netstandard2.0\RegionOrebroLan.Web.dll</HintPath>
@@ -231,41 +235,44 @@
 		</Reference>
 		<Reference Include="System" />
 		<Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+			<HintPath>..\packages\System.ComponentModel.Annotations.4.6.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
 		</Reference>
 		<Reference Include="System.ComponentModel.DataAnnotations" />
 		<Reference Include="System.Configuration" />
+		<Reference Include="System.Configuration.ConfigurationManager, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Configuration.ConfigurationManager.4.6.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+		</Reference>
 		<Reference Include="System.Data" />
 		<Reference Include="System.Data.OracleClient" />
-		<Reference Include="System.Data.SqlClient, Version=4.5.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.Data.SqlClient.4.6.1\lib\net461\System.Data.SqlClient.dll</HintPath>
+		<Reference Include="System.Data.SqlClient, Version=4.6.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Data.SqlClient.4.7.0\lib\net461\System.Data.SqlClient.dll</HintPath>
 		</Reference>
 		<Reference Include="System.Drawing" />
-		<Reference Include="System.IO.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=96bf224d23c43e59, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.IO.Abstractions.6.0.21\lib\net40\System.IO.Abstractions.dll</HintPath>
+		<Reference Include="System.IO.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=96bf224d23c43e59, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.IO.Abstractions.7.0.4\lib\net40\System.IO.Abstractions.dll</HintPath>
 		</Reference>
 		<Reference Include="System.IO.Compression" />
 		<Reference Include="System.Net" />
 		<Reference Include="System.Runtime.Remoting" />
 		<Reference Include="System.Security" />
-		<Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+		<Reference Include="System.Security.AccessControl, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Security.AccessControl.4.6.0\lib\net461\System.Security.AccessControl.dll</HintPath>
 		</Reference>
-		<Reference Include="System.Security.Cryptography.Xml, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.Security.Cryptography.Xml.4.5.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+		<Reference Include="System.Security.Cryptography.Xml, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Security.Cryptography.Xml.4.6.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
 		</Reference>
-		<Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+		<Reference Include="System.Security.Permissions, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Security.Permissions.4.6.0\lib\net461\System.Security.Permissions.dll</HintPath>
 		</Reference>
-		<Reference Include="System.Security.Principal.Windows, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.Security.Principal.Windows.4.5.1\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+		<Reference Include="System.Security.Principal.Windows, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Security.Principal.Windows.4.6.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
 		</Reference>
 		<Reference Include="System.ServiceModel" />
 		<Reference Include="System.ServiceModel.Activation" />
 		<Reference Include="System.ServiceModel.Web" />
 		<Reference Include="System.ServiceProcess" />
-		<Reference Include="System.Threading.AccessControl, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-			<HintPath>..\packages\System.Threading.AccessControl.4.5.0\lib\net461\System.Threading.AccessControl.dll</HintPath>
+		<Reference Include="System.Threading.AccessControl, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+			<HintPath>..\packages\System.Threading.AccessControl.4.6.0\lib\net461\System.Threading.AccessControl.dll</HintPath>
 		</Reference>
 		<Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
 			<HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
@@ -303,6 +310,7 @@
 		<Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
 			<HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
 		</Reference>
+		<Reference Include="WindowsBase" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="App_Data\DefaultSiteContent.episerverdata" />
@@ -566,8 +574,16 @@
 	<ItemGroup>
 		<Folder Include="Models\Forms\" />
 	</ItemGroup>
+	<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+		<PropertyGroup>
+			<ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+		</PropertyGroup>
+		<Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+		<Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+	</Target>
 	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 	<Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
 	<Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+	<Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
 	<Import Project="Build\Build.targets" />
 </Project>
