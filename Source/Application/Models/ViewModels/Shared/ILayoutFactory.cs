@@ -1,5 +1,5 @@
 ﻿using EPiServer.Core;
-using MyCompany.MyWebApplication.Models.Navigation;
+using RegionOrebroLan.EPiServer.Collections;
 
 namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 {
@@ -7,8 +7,8 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 	{
 		#region Properties
 
-		INavigationSettings MainNavigationSettings { get; }
-		INavigationSettings SubNavigationSettings { get; }
+		ITreeSettings MainNavigationSettings { get; }
+		ITreeSettings SubNavigationSettings { get; }
 
 		#endregion
 

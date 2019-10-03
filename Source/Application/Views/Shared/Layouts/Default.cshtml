@@ -69,7 +69,7 @@
 				<div class="row">
 					@{
 						var includeRightArea = Model.Layout.IncludeRightArea;
-						var includeSubNavigation = !NavigationNodeExtension.IsNullOrEmpty(Model.Layout.SubNavigation);
+						var includeSubNavigation = !Model.Layout.SubNavigation.IsNullOrEmpty();
 					}
 					@if(includeSubNavigation)
 					{

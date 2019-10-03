@@ -10,5 +10,8 @@
 		<Rule Id="IDE0008" Action="None" />
 		<Rule Id="IDE0009" Action="None" />
 		<Rule Id="IDE0011" Action="None" />
+		<Rule Id="IDE0053" Action="None" />
+		<Rule Id="IDE0055" Action="None" />
+		<Rule Id="IDE0058" Action="None" />
 	</Rules>
 </RuleSet>

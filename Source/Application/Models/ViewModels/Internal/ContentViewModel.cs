@@ -28,7 +28,7 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Internal
 
 		protected internal override ILayout CreateLayout()
 		{
-			return this.LayoutFactory.Create(this.Content);
+			return this.Facade.LayoutFactory.Create(this.Content);
 		}
 
 		#endregion

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.IO.Abstractions;
 using EPiServer.Configuration;
 using EPiServer.Data.SchemaUpdates;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
-using EPiServer.Logging;
 using EPiServer.ServiceLocation;
 using MyCompany.MyWebApplication.Business.Configuration;
 using MyCompany.MyWebApplication.Business.Data.SchemaUpdates;
@@ -30,8 +28,6 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 			if(context == null)
 				throw new ArgumentNullException(nameof(context));
 
-			context.Services.AddSingleton(AppDomain.CurrentDomain);
-			context.Services.AddSingleton<IFileSystem, FileSystem>();
 			context.Services.AddSingleton<IRecaptchaSettings>(serviceLocator =>
 			{
 				var applicationSettings = serviceLocator.GetInstance<IConfigurationManager>().ApplicationSettings;
@@ -43,7 +39,6 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 				};
 			});
 			context.Services.AddSingleton<ISchemaUpdater, ExtensionsSchemaUpdater>();
-			context.Services.AddSingleton(LogManager.LoggerFactory());
 			context.Services.AddSingleton(Settings.Instance);
 		}
 

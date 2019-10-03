@@ -1,8 +1,6 @@
-﻿using System.Web;
-using EPiServer;
-using EPiServer.Framework.Localization;
-using EPiServer.Web;
+﻿using EPiServer.Framework.Localization;
 using MyCompany.MyWebApplication.Models.ViewModels.Shared;
+using RegionOrebroLan.EPiServer;
 
 namespace MyCompany.MyWebApplication.Models.ViewModels.Internal
 {
@@ -10,12 +8,10 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Internal
 	{
 		#region Properties
 
-		IContentLoader ContentLoader { get; }
-		HttpContextBase HttpContext { get; }
+		IContentFacade ContentFacade { get; }
 		ILayoutFactory LayoutFactory { get; }
 		LocalizationService LocalizationService { get; }
 		ISettings Settings { get; }
-		ISiteDefinitionResolver SiteDefinitionResolver { get; }
 
 		#endregion
 	}

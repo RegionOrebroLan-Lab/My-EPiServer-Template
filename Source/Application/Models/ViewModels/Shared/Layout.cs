@@ -5,7 +5,8 @@ using System.Globalization;
 using System.Linq;
 using EPiServer.Core;
 using MyCompany.MyWebApplication.Business.Web.Mvc;
-using MyCompany.MyWebApplication.Models.Navigation;
+using MyCompany.MyWebApplication.Models.Pages;
+using RegionOrebroLan.EPiServer.Collections;
 
 namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 {
@@ -50,9 +51,9 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		}
 
 		public virtual IList<string> Keywords { get; } = new List<string>();
-		public virtual INavigationNode MainNavigation { get; set; }
+		public virtual IContentRoot<SitePage> MainNavigation { get; set; }
 		public virtual IModal Modal { get; set; }
-		public virtual INavigationNode SubNavigation { get; set; }
+		public virtual IContentRoot<SitePage> SubNavigation { get; set; }
 		public virtual string Title { get; set; }
 
 		#endregion

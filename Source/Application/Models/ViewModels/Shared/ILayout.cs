@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Globalization;
 using MyCompany.MyWebApplication.Business.Web.Mvc;
-using MyCompany.MyWebApplication.Models.Navigation;
+using MyCompany.MyWebApplication.Models.Pages;
+using RegionOrebroLan.EPiServer.Collections;
 
 namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 {
@@ -17,9 +18,9 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		string Description { get; set; }
 		bool IncludeRightArea { get; }
 		IList<string> Keywords { get; }
-		INavigationNode MainNavigation { get; set; }
+		IContentRoot<SitePage> MainNavigation { get; set; }
 		IModal Modal { get; set; }
-		INavigationNode SubNavigation { get; set; }
+		IContentRoot<SitePage> SubNavigation { get; set; }
 		string Title { get; set; }
 
 		#endregion

@@ -3,19 +3,20 @@
 	@Render(Model.Layout.SubNavigation)
 </nav>
 
-@helper Render(INavigationNode node)
+@helper Render(IContentNode<SitePage> node)
 {
 	if(node != null)
 	{
-		if(node.Parent == null && node.Include)
+		var root = node as IContentRoot;
+		if(root != null && root.Include)
 		{
 			@:<ul>
 		}
-		if(node.Include)
+		if(root == null || root.Include)
 		{
 			@:<li class="@( ((node.Active ? " active" : string.Empty) + (node.ActiveAncestor ? " active-ancestor" : string.Empty)).Trim())">
-			<a href="@Url.ContentUrl(node.Content.ContentLink)">
-				@node.Text
+			<a href="@Url.ContentUrl(node.Value.ContentLink)">
+				@node.Value.Name
 				@if(!node.Leaf || node.Active)
 				{
 					<svg class="icon" role="presentation">
@@ -33,11 +34,11 @@
 				}
 			</ul>
 		}
-		if(node.Include)
+		if(root == null || root.Include)
 		{
 			@:</li>
 		}
-		if(node.Parent == null && node.Include)
+		if(root != null && root.Include)
 		{
 			@:</ul>
 		}

@@ -7,9 +7,10 @@ using System.Text.RegularExpressions;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
-using EPiServer.Web;
 using EPiServer.Web.Routing;
-using MyCompany.MyWebApplication.Models.Navigation;
+using MyCompany.MyWebApplication.Models.Pages;
+using RegionOrebroLan.EPiServer;
+using RegionOrebroLan.EPiServer.Collections;
 using EPiServerSettings = EPiServer.Configuration.Settings;
 
 namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
@@ -19,33 +20,27 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 	{
 		#region Fields
 
-		private static INavigationSettings _mainNavigationSettings;
-		private static INavigationSettings _subNavigationSettings;
+		private static ITreeSettings _mainNavigationSettings;
+		private static ITreeSettings _subNavigationSettings;
 
 		#endregion
 
 		#region Constructors
 
-		public LayoutFactory(IContentLoader contentLoader, INavigationFactory navigationFactory, EPiServerSettings settings, ISiteDefinitionResolver siteDefinitionResolver, IUrlResolver urlResolver)
+		public LayoutFactory(IContentFacade contentFacade, EPiServerSettings settings)
 		{
-			this.ContentLoader = contentLoader ?? throw new ArgumentNullException(nameof(contentLoader));
-			this.NavigationFactory = navigationFactory ?? throw new ArgumentNullException(nameof(navigationFactory));
+			this.ContentFacade = contentFacade ?? throw new ArgumentNullException(nameof(contentFacade));
 			this.Settings = settings ?? throw new ArgumentNullException(nameof(settings));
-			this.SiteDefinitionResolver = siteDefinitionResolver ?? throw new ArgumentNullException(nameof(siteDefinitionResolver));
-			this.UrlResolver = urlResolver ?? throw new ArgumentNullException(nameof(urlResolver));
 		}
 
 		#endregion
 
 		#region Properties
 
-		protected internal virtual IContentLoader ContentLoader { get; }
-		public virtual INavigationSettings MainNavigationSettings => _mainNavigationSettings ?? (_mainNavigationSettings = new NavigationSettings {Depth = 1});
-		protected internal virtual INavigationFactory NavigationFactory { get; }
+		protected internal virtual IContentFacade ContentFacade { get; }
+		public virtual ITreeSettings MainNavigationSettings => _mainNavigationSettings ?? (_mainNavigationSettings = new TreeSettings {Depth = 1, IncludeRoot = true, IndicateActiveContent = true});
 		protected internal virtual EPiServerSettings Settings { get; }
-		protected internal virtual ISiteDefinitionResolver SiteDefinitionResolver { get; }
-		public virtual INavigationSettings SubNavigationSettings => _subNavigationSettings ?? (_subNavigationSettings = new NavigationSettings());
-		protected internal virtual IUrlResolver UrlResolver { get; }
+		public virtual ITreeSettings SubNavigationSettings => _subNavigationSettings ?? (_subNavigationSettings = new TreeSettings {IndicateActiveContent = true});
 
 		#endregion
 
@@ -84,7 +79,7 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 
 			this.PopulateCultureNavigation(content, layout.CultureNavigation);
 
-			var startPageLink = this.SiteDefinitionResolver.GetByContent(content?.ContentLink, true)?.StartPage;
+			var startPageLink = this.ContentFacade.SiteDefinitionResolver.GetByContent(content?.ContentLink, true)?.StartPage;
 
 			layout.MainNavigation = this.CreateMainNavigation(startPageLink);
 			layout.SubNavigation = this.CreateSubNavigation(content, startPageLink);
@@ -92,12 +87,12 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 			return layout;
 		}
 
-		protected internal virtual INavigationNode CreateMainNavigation(ContentReference startPageLink)
+		protected internal virtual IContentRoot<SitePage> CreateMainNavigation(ContentReference startPageLink)
 		{
-			return this.NavigationFactory.Create(startPageLink, this.MainNavigationSettings);
+			return this.ContentFacade.Collections.TreeFactory.Create<SitePage>(startPageLink, this.MainNavigationSettings);
 		}
 
-		protected internal virtual INavigationNode CreateSubNavigation(IContent content, ContentReference startPageLink)
+		protected internal virtual IContentRoot<SitePage> CreateSubNavigation(IContent content, ContentReference startPageLink)
 		{
 			ContentReference subNavigationRoot = null;
 
@@ -106,7 +101,7 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 			{
 				// We can check some property on the content to get the root-container for the sub-menu.
 
-				var ancestors = this.ContentLoader.GetAncestors(content.ContentLink).ToArray();
+				var ancestors = this.ContentFacade.Loader.GetAncestors(content.ContentLink).ToArray();
 
 				for(var i = 0; i < ancestors.Length; i++)
 				{
@@ -121,7 +116,7 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 			}
 			// ReSharper restore InvertIf
 
-			return this.NavigationFactory.Create(subNavigationRoot, this.SubNavigationSettings);
+			return !ContentReference.IsNullOrEmpty(subNavigationRoot) ? this.ContentFacade.Collections.TreeFactory.Create<SitePage>(subNavigationRoot, this.SubNavigationSettings) : null;
 		}
 
 		protected internal virtual void PopulateCultureNavigation(IContent content, IDictionary<CultureInfo, Uri> cultureNavigation)
@@ -137,7 +132,7 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 
 			foreach(var culture in localizable.ExistingLanguages)
 			{
-				cultureNavigation.Add(culture, new Uri(this.UrlResolver.GetUrl(((IContent) localizable).ContentLink.ToReferenceWithoutVersion(), culture.Name), UriKind.RelativeOrAbsolute));
+				cultureNavigation.Add(culture, new Uri(this.ContentFacade.UrlResolver.GetUrl(((IContent) localizable).ContentLink.ToReferenceWithoutVersion(), culture.Name), UriKind.RelativeOrAbsolute));
 			}
 		}
 

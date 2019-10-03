@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Web;
-using EPiServer;
 using EPiServer.Framework.Localization;
 using EPiServer.ServiceLocation;
-using EPiServer.Web;
-using MyCompany.MyWebApplication.Business.Web;
 using MyCompany.MyWebApplication.Models.ViewModels.Shared;
+using RegionOrebroLan.EPiServer;
 
 namespace MyCompany.MyWebApplication.Models.ViewModels.Internal
 {
@@ -14,35 +11,25 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Internal
 	{
 		#region Constructors
 
-		public ViewModelFacade(IContentLoader contentLoader, ILayoutFactory layoutFactory, LocalizationService localizationService, ISettings settings, ISiteDefinitionResolver siteDefinitionResolver, IWebFacade webFacade)
+		public ViewModelFacade(IContentFacade contentFacade, ILayoutFactory layoutFactory, LocalizationService localizationService, ISettings settings)
 		{
-			this.ContentLoader = contentLoader ?? throw new ArgumentNullException(nameof(contentLoader));
+			this.ContentFacade = contentFacade ?? throw new ArgumentNullException(nameof(contentFacade));
 			this.LayoutFactory = layoutFactory ?? throw new ArgumentNullException(nameof(layoutFactory));
 			this.LocalizationService = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
 			this.Settings = settings ?? throw new ArgumentNullException(nameof(settings));
-			this.SiteDefinitionResolver = siteDefinitionResolver ?? throw new ArgumentNullException(nameof(siteDefinitionResolver));
 
-			if(webFacade == null)
-				throw new ArgumentNullException(nameof(webFacade));
-
-			var httpContext = webFacade.HttpContext;
-
-			if(httpContext == null)
-				throw new ArgumentException("The http-context-property can not be null.", nameof(webFacade));
-
-			this.HttpContext = webFacade.HttpContext;
+			if(contentFacade.Web?.HttpContext == null)
+				throw new ArgumentException("The http-context-property, of the web-facade, can not be null.", nameof(contentFacade));
 		}
 
 		#endregion
 
 		#region Properties
 
-		public virtual IContentLoader ContentLoader { get; }
-		public virtual HttpContextBase HttpContext { get; }
+		public virtual IContentFacade ContentFacade { get; }
 		public virtual ILayoutFactory LayoutFactory { get; }
 		public virtual LocalizationService LocalizationService { get; }
 		public virtual ISettings Settings { get; }
-		public virtual ISiteDefinitionResolver SiteDefinitionResolver { get; }
 
 		#endregion
 	}
