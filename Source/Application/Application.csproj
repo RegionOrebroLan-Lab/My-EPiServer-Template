@@ -215,8 +215,8 @@
 		<Reference Include="RegionOrebroLan.Data, Version=1.2.0.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
 			<HintPath>..\packages\RegionOrebroLan.Data.1.2.0-alpha\lib\netstandard2.0\RegionOrebroLan.Data.dll</HintPath>
 		</Reference>
-		<Reference Include="RegionOrebroLan.EPiServer, Version=0.0.2.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
-			<HintPath>..\packages\RegionOrebroLan.EPiServer.0.0.2-alpha\lib\net461\RegionOrebroLan.EPiServer.dll</HintPath>
+		<Reference Include="RegionOrebroLan.EPiServer, Version=0.0.3.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
+			<HintPath>..\packages\RegionOrebroLan.EPiServer.0.0.3-alpha\lib\net461\RegionOrebroLan.EPiServer.dll</HintPath>
 		</Reference>
 		<Reference Include="RegionOrebroLan.EPiServer.Data, Version=0.0.2.0, Culture=neutral, PublicKeyToken=520b099ae7bbdead, processorArchitecture=MSIL">
 			<HintPath>..\packages\RegionOrebroLan.EPiServer.Data.0.0.2-alpha\lib\netstandard2.0\RegionOrebroLan.EPiServer.Data.dll</HintPath>
