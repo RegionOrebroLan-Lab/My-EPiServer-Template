@@ -20,8 +20,8 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 	{
 		#region Fields
 
-		private static ITreeSettings _mainNavigationSettings;
-		private static ITreeSettings _subNavigationSettings;
+		private ITreeSettings _mainNavigationSettings;
+		private ITreeSettings _subNavigationSettings;
 
 		#endregion
 
@@ -38,9 +38,28 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		#region Properties
 
 		protected internal virtual IContentFacade ContentFacade { get; }
-		public virtual ITreeSettings MainNavigationSettings => _mainNavigationSettings ?? (_mainNavigationSettings = new TreeSettings {Depth = 1, IncludeRoot = true, IndicateActiveContent = true});
+
+		public virtual ITreeSettings MainNavigationSettings
+		{
+			get
+			{
+				// ReSharper disable InvertIf
+				if(this._mainNavigationSettings == null)
+				{
+					var mainNavigationSettings = this.CreateNavigationSettings();
+					mainNavigationSettings.Depth = 1;
+					mainNavigationSettings.IncludeRoot = true;
+
+					this._mainNavigationSettings = mainNavigationSettings;
+				}
+				// ReSharper restore InvertIf
+
+				return this._mainNavigationSettings;
+			}
+		}
+
 		protected internal virtual EPiServerSettings Settings { get; }
-		public virtual ITreeSettings SubNavigationSettings => _subNavigationSettings ?? (_subNavigationSettings = new TreeSettings {IndicateActiveContent = true});
+		public virtual ITreeSettings SubNavigationSettings => this._subNavigationSettings ?? (this._subNavigationSettings = this.CreateNavigationSettings());
 
 		#endregion
 
@@ -90,6 +109,18 @@ namespace MyCompany.MyWebApplication.Models.ViewModels.Shared
 		protected internal virtual IContentRoot<SitePage> CreateMainNavigation(ContentReference startPageLink)
 		{
 			return this.ContentFacade.Collections.TreeFactory.Create<SitePage>(startPageLink, this.MainNavigationSettings);
+		}
+
+		protected internal virtual TreeSettings CreateNavigationSettings()
+		{
+			var navigationSettings = new TreeSettings
+			{
+				IndicateActiveContent = true
+			};
+
+			navigationSettings.Filters.Add(this.ContentFacade.Filters.NavigationFilter);
+
+			return navigationSettings;
 		}
 
 		protected internal virtual IContentRoot<SitePage> CreateSubNavigation(IContent content, ContentReference startPageLink)
