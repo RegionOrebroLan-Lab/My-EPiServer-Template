@@ -16,7 +16,11 @@ namespace MyCompany.MyWebApplication.Business.Initialization
 			if(context == null)
 				throw new ArgumentNullException(nameof(context));
 
-			BundleTable.EnableOptimizations = bool.Parse(context.Locate.Advanced.GetInstance<IConfigurationManager>().ApplicationSettings["EnableBundleOptimizations"]);
+			BundleTable.EnableOptimizations = false;
+
+			if(bool.TryParse(context.Locate.Advanced.GetInstance<IConfigurationManager>().ApplicationSettings["EnableBundleOptimizations"], out var enableBundleOptimizations))
+				BundleTable.EnableOptimizations = enableBundleOptimizations;
+
 			BundleTable.Bundles.FileExtensionReplacementList.Clear();
 
 			var scriptBundle = new ScriptBundle("~/Site-scripts").Include(BundleTable.EnableOptimizations ? new[] {"~/Scripts/Site.min.js"} : new[] {"~/Scripts/Site.js"});

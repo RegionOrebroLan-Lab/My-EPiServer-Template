@@ -1,14 +1,17 @@
 <Project>
-	<Target Name="DeployScriptsToApplicationDataDirectory" AfterTargets="PublishScripts">
+	<Target Name="DeployScriptsToDataDirectories" AfterTargets="PublishScripts">
+		<ItemGroup>
+			<_DataDirectory Include="$(SolutionDir)Application\App_Data\" />
+			<_DataDirectory Include="$(SolutionDir)Integration-tests\App_Data\" />
+		</ItemGroup>
 		<PropertyGroup>
-			<_DestinationFolder>$(SolutionDir)Application\App_Data\</_DestinationFolder>
 			<_SourceFile>$(OutputPath)$(SqlTargetName).sql</_SourceFile>
 		</PropertyGroup>
 		<Message
 			Importance="high"
-			Text="Copying '$(_SourceFile)' to '$(_DestinationFolder)'."
+			Text="Copying '$(_SourceFile)' to '%(_DataDirectory.Identity)'."
 		/>
-		<Copy DestinationFolder="$(_DestinationFolder)" SourceFiles="$(_SourceFile)" />
+		<Copy DestinationFolder="%(_DataDirectory.Identity)" SourceFiles="$(_SourceFile)" />
 	</Target>
 	<Target Name="PublishScripts" AfterTargets="AfterBuild">
 		<SqlPublishTask SourceModel="@(SqlTarget)" SqlPublishProfilePath="Build.publish.xml" UpdateDatabase="false" />
