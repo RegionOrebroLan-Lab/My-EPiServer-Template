@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.IO;
+using EPiServer.Framework;
+using EPiServer.Framework.Initialization;
+using EPiServer.ServiceLocation.AutoDiscovery;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MyCompany.MyWebApplication.IntegrationTests.Helpers;
 
 namespace MyCompany.MyWebApplication.IntegrationTests
 {
@@ -11,6 +16,8 @@ namespace MyCompany.MyWebApplication.IntegrationTests
 	{
 		#region Fields
 
+		public static readonly InitializationEngine InitializationEngine = new InitializationEngine((IServiceLocatorFactory) null, HostType.WebApplication, InitializationModule.Assemblies.AllowedAssemblies);
+
 		// ReSharper disable PossibleNullReferenceException
 		public static readonly string ProjectDirectoryPath = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
 		// ReSharper restore PossibleNullReferenceException
@@ -19,28 +26,27 @@ namespace MyCompany.MyWebApplication.IntegrationTests
 
 		#region Methods
 
+		[AssemblyCleanup]
+		public static void Cleanup()
+		{
+			if(InitializationEngine.InitializationState == InitializationState.Initialized)
+				InitializationEngine.Uninitialize();
+
+			DatabaseHelper.DropDatabasesIfTheyExist();
+		}
+
 		[AssemblyInitialize]
 		[SuppressMessage("Usage", "CA1801:Review unused parameters")]
-		public static void AssemblyInitialize(TestContext testContext) { }
-
-		[SuppressMessage("Globalization", "CA1303:Do not pass literals as localized parameters")]
-		public static string GetDirectoryPath(Type type)
+		public static void Initialize(TestContext testContext)
 		{
-			if(type == null)
-				throw new ArgumentNullException(nameof(type));
+			if(testContext == null)
+				throw new ArgumentNullException(nameof(testContext));
 
-			if(type.Assembly != typeof(Global).Assembly)
-				throw new InvalidOperationException("It is not possible to get the directory-path for a type outside this assembly.");
+			DatabaseHelper.DropDatabasesIfTheyExist();
 
-			var @namespace = type.Namespace ?? string.Empty;
-			var assemblyName = type.Assembly.GetName().Name;
+			CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("sv");
 
-			if(!@namespace.StartsWith(assemblyName, StringComparison.OrdinalIgnoreCase))
-				throw new InvalidOperationException("The namespace must start with the assembly-name.");
-
-			var relativePath = @namespace.Substring(assemblyName.Length).TrimStart('.').Replace(".", @"\");
-
-			return Path.Combine(ProjectDirectoryPath, relativePath);
+			InitializationEngine.Initialize();
 		}
 
 		#endregion

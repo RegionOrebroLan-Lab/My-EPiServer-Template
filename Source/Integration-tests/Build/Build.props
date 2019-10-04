@@ -2,5 +2,11 @@
 	<PropertyGroup>
 		<AssemblyName>MyCompany.MyWebApplication.IntegrationTests</AssemblyName>
 		<CodeAnalysisRuleSet>CodeAnalysis\Rules.ruleset</CodeAnalysisRuleSet>
+		<PackagesDirectory Condition="$(PackagesDirectory) == ''">$(SolutionDir)packages\</PackagesDirectory>
 	</PropertyGroup>
+	<ItemDefinitionGroup>
+		<FileToCopy>
+			<CopyAlways>false</CopyAlways>
+		</FileToCopy>
+	</ItemDefinitionGroup>
 </Project>

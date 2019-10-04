@@ -273,6 +273,10 @@ Source/Application/Style/*
 
 !Source/Database/Build.publish.xml
 
+Source/Integration-tests/App_Data/*
+!Source/Integration-tests/App_Data/DefaultSiteContent.episerverdata
+!Source/Integration-tests/App_Data/EPiServer.Data.Resources.SqlCreateScripts.zip-Replacements.zip
+
 Source/Prototype/wwwroot/Scripts/
 Source/Prototype/wwwroot/Style/
 Source/Prototype/package-lock.json

@@ -1,1 +1,24 @@
-<Project />
+<Project>
+	<Target Name="CopyFiles" AfterTargets="PrepareForBuild" DependsOnTargets="PopulateFilesToCopy">
+		<Message
+			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
+			Importance="high"
+			Text="Target 'CopyFiles': Copying '%(FileToCopy.FullPath)' to '%(DestinationFile)'."
+		/>
+		<Copy
+			Condition="%(CopyAlways) OR (!Exists('%(DestinationFile)') OR $([System.DateTime]::Parse('%(ModifiedTime)').Ticks) > $([System.IO.File]::GetLastWriteTime('%(DestinationFile)').Ticks))"
+			DestinationFiles="%(DestinationFile)"
+			SourceFiles="%(FileToCopy.FullPath)"
+		/>
+	</Target>
+	<Target Name="PopulateFilesToCopy">
+		<ItemGroup>
+			<_ApplicationDataFileToCopy Include="$(PackagesDirectory)EPiServer.CMS.*\content\App_Data\GeoLiteCity.dat" />
+		</ItemGroup>
+		<ItemGroup>
+			<FileToCopy Include="@(_ApplicationDataFileToCopy)">
+				<DestinationFile>App_Data\%(_ApplicationDataFileToCopy.Filename)%(_ApplicationDataFileToCopy.Extension)</DestinationFile>
+			</FileToCopy>
+		</ItemGroup>
+	</Target>
+</Project>
