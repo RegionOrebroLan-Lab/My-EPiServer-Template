@@ -6,6 +6,30 @@
 		<TargetFramework>net462</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
+		<PackageReference Include="EPiServer.CMS.AspNet" Version="11.13.1" />
+		<PackageReference Include="EPiServer.CMS.Core" Version="11.13.1" />
+		<PackageReference Include="EPiServer.CMS.UI.Core" Version="11.21.7" />
+		<!--
+		<PackageReference Include="EPiCode.SqlBlobProvider" Version="1.5.2" />
+		<PackageReference Include="EPiServer.AddOns.Helpers" Version="0.4.0.0" />
+		<PackageReference Include="EPiServer.CMS" Version="11.13.1" />
+		<PackageReference Include="EPiServer.CMS.AspNet" Version="11.13.1" />
+		<PackageReference Include="EPiServer.CMS.Core" Version="11.13.1" />
+		<PackageReference Include="EPiServer.CMS.TinyMce" Version="2.8.1" />
+		<PackageReference Include="EPiServer.CMS.UI" Version="11.21.7" />
+		<PackageReference Include="EPiServer.CMS.UI.AspNetIdentity" Version="11.21.7" />
+		<PackageReference Include="EPiServer.CMS.UI.Core" Version="11.21.7" />
+		<PackageReference Include="EPiServer.Forms" Version="4.25.1" />
+		<PackageReference Include="EPiServer.Forms.Core" Version="4.25.1" />
+		<PackageReference Include="EPiServer.Forms.UI" Version="4.25.1" />
+		<PackageReference Include="EPiServer.Framework" Version="11.13.1" />
+		<PackageReference Include="EPiServer.Framework.AspNet" Version="11.13.1" />
+		<PackageReference Include="EPiServer.Logging.Log4Net" Version="2.2.2" />
+		<PackageReference Include="EPiServer.Search" Version="9.0.3" />
+		<PackageReference Include="EPiServer.Search.Cms" Version="9.0.3" />
+		<PackageReference Include="EPiServer.ServiceLocation.StructureMap" Version="2.0.2" />
+		-->
+		<PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
 		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
 		<PackageReference Include="Moq" Version="4.13.0" />
