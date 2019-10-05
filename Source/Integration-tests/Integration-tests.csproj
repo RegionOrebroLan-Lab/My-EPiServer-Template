@@ -39,7 +39,7 @@
 		<PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
 		<PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
 		<PackageReference Include="RegionOrebroLan.Data" Version="1.2.0-alpha" />
-		<PackageReference Include="RegionOrebroLan.EPiServer" Version="0.0.3-alpha" />
+		<PackageReference Include="RegionOrebroLan.EPiServer" Version="0.0.4-alpha" />
 		<PackageReference Include="RegionOrebroLan.EPiServer.Initialization" Version="0.0.5-alpha" />
 		<PackageReference Include="System.IO.Abstractions" Version="7.0.4" />
 	</ItemGroup>
