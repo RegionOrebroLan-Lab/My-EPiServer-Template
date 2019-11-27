@@ -7,10 +7,10 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="EPiCode.SqlBlobProvider" Version="1.5.2" />
-		<PackageReference Include="EPiServer.CMS.AspNet" Version="11.13.1" />
-		<PackageReference Include="EPiServer.CMS.Core" Version="11.13.1" />
-		<PackageReference Include="EPiServer.CMS.UI.Core" Version="11.21.7" />
-		<PackageReference Include="EPiServer.Framework" Version="11.13.1" />
+		<PackageReference Include="EPiServer.CMS.AspNet" Version="11.13.2" />
+		<PackageReference Include="EPiServer.CMS.Core" Version="11.13.2" />
+		<PackageReference Include="EPiServer.CMS.UI.Core" Version="11.23.0" />
+		<PackageReference Include="EPiServer.Framework" Version="11.13.2" />
 		<PackageReference Include="EPiServer.ServiceLocation.StructureMap" Version="2.0.2" />
 		<!--
 		<PackageReference Include="EPiCode.SqlBlobProvider" Version="1.5.2" />
@@ -33,15 +33,15 @@
 		<PackageReference Include="EPiServer.ServiceLocation.StructureMap" Version="2.0.2" />
 		-->
 		<PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
-		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
-		<PackageReference Include="Moq" Version="4.13.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+		<PackageReference Include="Moq" Version="4.13.1" />
 		<PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
 		<PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
 		<PackageReference Include="RegionOrebroLan.Data" Version="1.2.0-alpha" />
-		<PackageReference Include="RegionOrebroLan.EPiServer" Version="0.0.6-alpha" />
+		<PackageReference Include="RegionOrebroLan.EPiServer" Version="0.0.9-alpha" />
 		<PackageReference Include="RegionOrebroLan.EPiServer.Initialization" Version="0.0.5-alpha" />
-		<PackageReference Include="System.IO.Abstractions" Version="7.0.4" />
+		<PackageReference Include="System.IO.Abstractions" Version="7.0.7" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Application\Application.csproj" />
